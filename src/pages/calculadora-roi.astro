@@ -1,8 +1,8 @@
 ---
 // src/pages/calculadora-roi.astro
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CalculadoraROI from '../components/react/CalculadoraROI';
-import { Wrench, Building2, Hammer, ChevronRight } from '@lucide/astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CalculadoraROI from "../components/react/CalculadoraROI";
+import { Wrench, Building2, Hammer, ChevronRight } from "@lucide/astro";
 ---
 
 <BaseLayout
@@ -10,14 +10,21 @@ import { Wrench, Building2, Hammer, ChevronRight } from '@lucide/astro';
   description="Calcula cuánto dinero pierdes mensualmente en visitas comerciales inútiles y leads de marketplaces. Descubre tu ROI con un sistema de captación propio."
 >
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-linear-to-br from-blue-600 to-blue-900 text-white py-16"> 
-    <div class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.png')] bg-cover bg-no-repeat opacity-10"></div>
+  <section
+    class="relative overflow-hidden bg-linear-to-br from-blue-600 to-blue-900 text-white py-16"
+  >
+    <div
+      class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.webp')] bg-cover bg-no-repeat opacity-10"
+    >
+    </div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl lg:text-5xl font-bold mb-6">
         ¿Cuánto Dinero Pierdes Mensualmente?
       </h1>
       <p class="text-xl text-blue-100">
-        La mayoría de empresas de reformas pierden entre <strong>12.000€ y 35.000€ al año</strong> en visitas comerciales inútiles y leads de baja calidad.
+        La mayoría de empresas de reformas pierden entre <strong
+          >12.000€ y 35.000€ al año</strong
+        > en visitas comerciales inútiles y leads de baja calidad.
       </p>
     </div>
   </section>
@@ -42,8 +49,12 @@ import { Wrench, Building2, Hammer, ChevronRight } from '@lucide/astro';
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-100 hover:border-blue-300 transition-all">
-          <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+        <div
+          class="bg-slate-50 rounded-xl p-6 border-2 border-slate-100 hover:border-blue-300 transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4"
+          >
             <Wrench class="w-8 h-8 text-blue-600" />
           </div>
           <h3 class="font-bold text-slate-900 mb-2">Reformas M&P</h3>
@@ -60,8 +71,12 @@ import { Wrench, Building2, Hammer, ChevronRight } from '@lucide/astro';
           </div>
         </div>
 
-        <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-100 hover:border-blue-300 transition-all">
-          <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+        <div
+          class="bg-slate-50 rounded-xl p-6 border-2 border-slate-100 hover:border-blue-300 transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4"
+          >
             <Building2 class="w-8 h-8 text-orange-600" />
           </div>
           <h3 class="font-bold text-slate-900 mb-2">Construcciones JL</h3>
@@ -78,8 +93,12 @@ import { Wrench, Building2, Hammer, ChevronRight } from '@lucide/astro';
           </div>
         </div>
 
-        <div class="bg-slate-50 rounded-xl p-6 border-2 border-slate-100 hover:border-blue-300 transition-all">
-          <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+        <div
+          class="bg-slate-50 rounded-xl p-6 border-2 border-slate-100 hover:border-blue-300 transition-all"
+        >
+          <div
+            class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4"
+          >
             <Hammer class="w-8 h-8 text-purple-600" />
           </div>
           <h3 class="font-bold text-slate-900 mb-2">Obras & Diseño</h3>
@@ -108,12 +127,14 @@ import { Wrench, Building2, Hammer, ChevronRight } from '@lucide/astro';
       <p class="text-xl text-blue-100 mb-8">
         Te muestro cómo conseguirlos en una demo de 30 minutos
       </p>
-      <a 
+      <a
         href="/contacto"
         class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-lg transition-all shadow-xl text-lg group"
       >
         Agenda tu Demo Gratuita
-        <ChevronRight class="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
+        <ChevronRight
+          class="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform"
+        />
       </a>
     </div>
   </section>

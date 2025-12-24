@@ -1,11 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Aviso Legal",
-  "description": "Aviso legal y condiciones de uso de Obras Digitales"
+  name: "Aviso Legal",
+  description: "Aviso legal y condiciones de uso de Obras Digitales",
 };
 ---
 
@@ -15,25 +15,37 @@ const schema = {
   schema={schema}
 >
   <!-- Hero compacto -->
-  <section class="relative overflow-hidden bg-linear-to-br from-blue-600 via-blue-700 to-blue-900 text-white py-16">
-    <div class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.png')] bg-cover bg-no-repeat opacity-10"></div>
-    
+  <section
+    class="relative overflow-hidden bg-linear-to-br from-blue-600 via-blue-700 to-blue-900 text-white py-16"
+  >
+    <div
+      class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.webp')] bg-cover bg-no-repeat opacity-10"
+    >
+    </div>
+
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4">
+      <div
+        class="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4"
+      >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1.323l-3.954 1.582a1 1 0 00-.641.926V7a1 1 0 001 1h4.5l.04.5a1 1 0 001.02.98h1.082a1 1 0 001.02-.98L12.5 8H17a1 1 0 001-1v-.5a1 1 0 00-.641-.926L13.5 4.323V3a1 1 0 00-1-1h-2.5z" clip-rule="evenodd"/>
-          <path d="M10 11c-1.657 0-3 1.343-3 3v4a1 1 0 001 1h4a1 1 0 001-1v-4c0-1.657-1.343-3-3-3z"/>
+          <path
+            fill-rule="evenodd"
+            d="M10 2a1 1 0 00-1 1v1.323l-3.954 1.582a1 1 0 00-.641.926V7a1 1 0 001 1h4.5l.04.5a1 1 0 001.02.98h1.082a1 1 0 001.02-.98L12.5 8H17a1 1 0 001-1v-.5a1 1 0 00-.641-.926L13.5 4.323V3a1 1 0 00-1-1h-2.5z"
+            clip-rule="evenodd"></path>
+          <path
+            d="M10 11c-1.657 0-3 1.343-3 3v4a1 1 0 001 1h4a1 1 0 001-1v-4c0-1.657-1.343-3-3-3z"
+          ></path>
         </svg>
         Legal
       </div>
-      
-      <h1 class="text-4xl lg:text-5xl font-bold mb-4">
-        Aviso Legal
-      </h1>
+
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">Aviso Legal</h1>
       <p class="text-lg text-blue-100">
         Condiciones de uso y datos identificativos
       </p>
-      <p class="text-sm text-blue-200 mt-4">Última actualización: Diciembre 2024</p>
+      <p class="text-sm text-blue-200 mt-4">
+        Última actualización: Diciembre 2024
+      </p>
     </div>
   </section>
 
@@ -41,13 +53,22 @@ const schema = {
   <section class="bg-white border-b border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex gap-4 py-4 overflow-x-auto">
-        <a href="/privacidad" class="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg whitespace-nowrap transition-colors">
+        <a
+          href="/privacidad"
+          class="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg whitespace-nowrap transition-colors"
+        >
           Privacidad
         </a>
-        <a href="/cookies" class="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg whitespace-nowrap transition-colors">
+        <a
+          href="/cookies"
+          class="px-4 py-2 text-slate-600 hover:bg-slate-100 rounded-lg whitespace-nowrap transition-colors"
+        >
           Cookies
         </a>
-        <a href="/aviso-legal" class="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg font-semibold whitespace-nowrap">
+        <a
+          href="/aviso-legal"
+          class="px-4 py-2 bg-blue-100 text-blue-700 rounded-lg font-semibold whitespace-nowrap"
+        >
           Aviso Legal
         </a>
       </nav>
@@ -58,28 +79,42 @@ const schema = {
   <section class="py-16 bg-slate-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
-        
         <!-- Datos identificativos destacados -->
-        <div class="mb-12 bg-linear-to-br from-blue-50 to-blue-100 rounded-xl p-8">
-          <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-            <span class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-lg text-sm font-bold">1</span>
+        <div
+          class="mb-12 bg-linear-to-br from-blue-50 to-blue-100 rounded-xl p-8"
+        >
+          <h2
+            class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"
+          >
+            <span
+              class="flex items-center justify-center w-8 h-8 bg-blue-600 text-white rounded-lg text-sm font-bold"
+              >1</span
+            >
             Datos Identificativos
           </h2>
           <p class="text-slate-700 mb-6 leading-relaxed">
-            En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:
+            En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio,
+            de Servicios de la Sociedad de la Información y Comercio Electrónico
+            (LSSI-CE), se informa de los datos del titular de este sitio web:
           </p>
           <div class="grid md:grid-cols-2 gap-4">
             <div class="bg-white rounded-lg p-4 border border-blue-200">
               <p class="text-sm text-slate-600 mb-1">Titular</p>
-              <p class="font-semibold text-slate-900">[TU NOMBRE COMPLETO O RAZÓN SOCIAL]</p>
+              <p class="font-semibold text-slate-900">
+                [TU NOMBRE COMPLETO O RAZÓN SOCIAL]
+              </p>
             </div>
             <div class="bg-white rounded-lg p-4 border border-blue-200">
               <p class="text-sm text-slate-600 mb-1">NIF/CIF</p>
               <p class="font-semibold text-slate-900">[TU DNI/NIE O CIF]</p>
             </div>
-            <div class="bg-white rounded-lg p-4 border border-blue-200 md:col-span-2">
+            <div
+              class="bg-white rounded-lg p-4 border border-blue-200 md:col-span-2"
+            >
               <p class="text-sm text-slate-600 mb-1">Domicilio Social</p>
-              <p class="font-semibold text-slate-900">[TU DIRECCIÓN COMPLETA], Madrid, España</p>
+              <p class="font-semibold text-slate-900">
+                [TU DIRECCIÓN COMPLETA], Madrid, España
+              </p>
             </div>
             <div class="bg-white rounded-lg p-4 border border-blue-200">
               <p class="text-sm text-slate-600 mb-1">Email</p>
@@ -89,124 +124,231 @@ const schema = {
               <p class="text-sm text-slate-600 mb-1">Teléfono</p>
               <p class="font-semibold text-slate-900">[TU TELÉFONO]</p>
             </div>
-            <div class="bg-white rounded-lg p-4 border border-blue-200 md:col-span-2">
+            <div
+              class="bg-white rounded-lg p-4 border border-blue-200 md:col-span-2"
+            >
               <p class="text-sm text-slate-600 mb-1">Actividad</p>
-              <p class="font-semibold text-slate-900">Desarrollo web, diseño y marketing digital especializado en el sector de reformas y construcción</p>
+              <p class="font-semibold text-slate-900">
+                Desarrollo web, diseño y marketing digital especializado en el
+                sector de reformas y construcción
+              </p>
             </div>
           </div>
           <p class="text-xs text-slate-500 mt-4 italic">
-            [SI ERES SOCIEDAD - Añade: Registro Mercantil: Tomo, Libro, Folio, Sección, Hoja, Inscripción]
+            [SI ERES SOCIEDAD - Añade: Registro Mercantil: Tomo, Libro, Folio,
+            Sección, Hoja, Inscripción]
           </p>
         </div>
 
         <!-- Sección 2 -->
         <div class="mb-12">
-          <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold">2</span>
+          <h2
+            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"
+          >
+            <span
+              class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold"
+              >2</span
+            >
             Objeto
           </h2>
           <p class="text-slate-700 leading-relaxed mb-4">
-            El presente aviso legal regula el uso y utilización del sitio web <strong class="text-blue-600">obrasdigitales.es</strong>, del que es titular [TU NOMBRE/EMPRESA].
+            El presente aviso legal regula el uso y utilización del sitio web <strong
+              class="text-blue-600">obrasdigitales.es</strong
+            >, del que es titular [TU NOMBRE/EMPRESA].
           </p>
           <p class="text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-lg">
-            La navegación por el sitio web atribuye la condición de usuario del mismo e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso Legal.
+            La navegación por el sitio web atribuye la condición de usuario del
+            mismo e implica la aceptación plena y sin reservas de todas y cada
+            una de las disposiciones incluidas en este Aviso Legal.
           </p>
         </div>
 
         <!-- Sección 3 -->
         <div class="mb-12">
-          <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold">3</span>
+          <h2
+            class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"
+          >
+            <span
+              class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold"
+              >3</span
+            >
             Condiciones de uso
           </h2>
 
           <div class="mb-6">
-            <h3 class="text-lg font-semibold text-slate-900 mb-3">Uso correcto del sitio web</h3>
-            <p class="text-slate-700 mb-4">El Usuario se compromete a utilizar el sitio web de forma diligente, correcta y lícita. En particular, se compromete a NO:</p>
+            <h3 class="text-lg font-semibold text-slate-900 mb-3">
+              Uso correcto del sitio web
+            </h3>
+            <p class="text-slate-700 mb-4">
+              El Usuario se compromete a utilizar el sitio web de forma
+              diligente, correcta y lícita. En particular, se compromete a NO:
+            </p>
             <ul class="space-y-2">
               <li class="flex items-start gap-3 text-slate-700">
-                <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                <svg
+                  class="w-5 h-5 text-red-500 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                Utilizar los contenidos de forma contraria a la ley, la moral o el orden público
+                Utilizar los contenidos de forma contraria a la ley, la moral o el
+                orden público
               </li>
               <li class="flex items-start gap-3 text-slate-700">
-                <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                <svg
+                  class="w-5 h-5 text-red-500 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
                 </svg>
                 Reproducir, copiar, distribuir o modificar los contenidos sin autorización
               </li>
               <li class="flex items-start gap-3 text-slate-700">
-                <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                <svg
+                  class="w-5 h-5 text-red-500 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
                 </svg>
                 Vulnerar los derechos de propiedad intelectual o industrial
               </li>
               <li class="flex items-start gap-3 text-slate-700">
-                <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                <svg
+                  class="w-5 h-5 text-red-500 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
                 </svg>
-                Utilizar el sitio para transmitir virus, malware o cualquier código dañino
+                Utilizar el sitio para transmitir virus, malware o cualquier código
+                dañino
               </li>
               <li class="flex items-start gap-3 text-slate-700">
-                <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                <svg
+                  class="w-5 h-5 text-red-500 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"></path>
                 </svg>
                 Intentar acceder a áreas restringidas del sistema informático
               </li>
             </ul>
           </div>
 
-          <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg">
-            <h3 class="text-lg font-semibold text-slate-900 mb-2">Responsabilidad del Usuario</h3>
+          <div
+            class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-r-lg"
+          >
+            <h3 class="text-lg font-semibold text-slate-900 mb-2">
+              Responsabilidad del Usuario
+            </h3>
             <p class="text-slate-700">
-              El Usuario es el único responsable de las infracciones en las que pueda incurrir o de los perjuicios que pueda causar por el uso del sitio web.
+              El Usuario es el único responsable de las infracciones en las que
+              pueda incurrir o de los perjuicios que pueda causar por el uso del
+              sitio web.
             </p>
           </div>
         </div>
 
         <!-- Sección 4 -->
         <div class="mb-12">
-          <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold">4</span>
+          <h2
+            class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3"
+          >
+            <span
+              class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold"
+              >4</span
+            >
             Propiedad Intelectual e Industrial
           </h2>
           <div class="space-y-4">
             <p class="text-slate-700 leading-relaxed">
-              Todos los contenidos del sitio web (textos, imágenes, marcas, logotipos, código fuente, estructura, diseño gráfico) son propiedad de <strong>[TU NOMBRE/EMPRESA]</strong> o de terceros que han autorizado su uso, y están protegidos por derechos de propiedad intelectual e industrial.
+              Todos los contenidos del sitio web (textos, imágenes, marcas,
+              logotipos, código fuente, estructura, diseño gráfico) son
+              propiedad de <strong>[TU NOMBRE/EMPRESA]</strong> o de terceros que
+              han autorizado su uso, y están protegidos por derechos de propiedad
+              intelectual e industrial.
             </p>
-            <p class="text-slate-700 leading-relaxed bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
-              <strong>Prohibido:</strong> La reproducción, distribución, comunicación pública y transformación de los contenidos sin la autorización expresa y por escrito del titular.
+            <p
+              class="text-slate-700 leading-relaxed bg-red-50 p-4 rounded-lg border-l-4 border-red-500"
+            >
+              <strong>Prohibido:</strong> La reproducción, distribución, comunicación
+              pública y transformación de los contenidos sin la autorización expresa
+              y por escrito del titular.
             </p>
             <p class="text-slate-700 leading-relaxed">
-              El nombre de dominio <strong class="text-blue-600">obrasdigitales.es</strong>, así como los diseños, logotipos y marcas que aparecen en el sitio web son propiedad del titular.
+              El nombre de dominio <strong class="text-blue-600"
+                >obrasdigitales.es</strong
+              >, así como los diseños, logotipos y marcas que aparecen en el
+              sitio web son propiedad del titular.
             </p>
           </div>
         </div>
 
         <!-- Sección 5 -->
         <div class="mb-12">
-          <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-            <span class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold">5</span>
+          <h2
+            class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3"
+          >
+            <span
+              class="flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-lg text-sm font-bold"
+              >5</span
+            >
             Limitación de responsabilidad
           </h2>
 
           <div class="grid md:grid-cols-2 gap-4">
             <div class="border border-slate-200 rounded-lg p-4">
-              <h3 class="font-semibold text-slate-900 mb-2">Disponibilidad del servicio</h3>
-              <p class="text-sm text-slate-600">No garantizamos disponibilidad 24/7. No nos responsabilizamos de fallos ajenos a nuestro control.</p>
+              <h3 class="font-semibold text-slate-900 mb-2">
+                Disponibilidad del servicio
+              </h3>
+              <p class="text-sm text-slate-600">
+                No garantizamos disponibilidad 24/7. No nos responsabilizamos de
+                fallos ajenos a nuestro control.
+              </p>
             </div>
             <div class="border border-slate-200 rounded-lg p-4">
               <h3 class="font-semibold text-slate-900 mb-2">Contenidos</h3>
-              <p class="text-sm text-slate-600">La calculadora de presupuestos ofrece estimaciones orientativas, no ofertas vinculantes.</p>
+              <p class="text-sm text-slate-600">
+                La calculadora de presupuestos ofrece estimaciones orientativas,
+                no ofertas vinculantes.
+              </p>
             </div>
             <div class="border border-slate-200 rounded-lg p-4">
-              <h3 class="font-semibold text-slate-900 mb-2">Enlaces a terceros</h3>
-              <p class="text-sm text-slate-600">No nos responsabilizamos de los contenidos de sitios web externos enlazados.</p>
+              <h3 class="font-semibold text-slate-900 mb-2">
+                Enlaces a terceros
+              </h3>
+              <p class="text-sm text-slate-600">
+                No nos responsabilizamos de los contenidos de sitios web
+                externos enlazados.
+              </p>
             </div>
             <div class="border border-slate-200 rounded-lg p-4">
-              <h3 class="font-semibold text-slate-900 mb-2">Virus y seguridad</h3>
-              <p class="text-sm text-slate-600">Adoptamos medidas de seguridad, pero no garantizamos ausencia absoluta de virus.</p>
+              <h3 class="font-semibold text-slate-900 mb-2">
+                Virus y seguridad
+              </h3>
+              <p class="text-sm text-slate-600">
+                Adoptamos medidas de seguridad, pero no garantizamos ausencia
+                absoluta de virus.
+              </p>
             </div>
           </div>
         </div>
@@ -214,43 +356,90 @@ const schema = {
         <!-- Secciones finales compactas -->
         <div class="space-y-8">
           <div>
-            <h2 class="text-xl font-bold text-slate-900 mb-3">6. Modificaciones</h2>
+            <h2 class="text-xl font-bold text-slate-900 mb-3">
+              6. Modificaciones
+            </h2>
             <p class="text-slate-700 leading-relaxed">
-              Nos reservamos el derecho de efectuar modificaciones y actualizaciones de la información contenida en la web en cualquier momento y sin previo aviso.
+              Nos reservamos el derecho de efectuar modificaciones y
+              actualizaciones de la información contenida en la web en cualquier
+              momento y sin previo aviso.
             </p>
           </div>
 
-          <div class="bg-linear-to-br from-slate-50 to-slate-100 rounded-lg p-6 border border-slate-200">
-            <h2 class="text-xl font-bold text-slate-900 mb-3">7. Legislación aplicable y jurisdicción</h2>
+          <div
+            class="bg-linear-to-br from-slate-50 to-slate-100 rounded-lg p-6 border border-slate-200"
+          >
+            <h2 class="text-xl font-bold text-slate-900 mb-3">
+              7. Legislación aplicable y jurisdicción
+            </h2>
             <p class="text-slate-700 leading-relaxed">
-              Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier controversia, las partes se someten expresamente a los Juzgados y Tribunales de <strong>Madrid capital</strong>.
+              Las presentes condiciones se rigen por la legislación española.
+              Para la resolución de cualquier controversia, las partes se
+              someten expresamente a los Juzgados y Tribunales de <strong
+                >Madrid capital</strong
+              >.
             </p>
           </div>
 
           <div>
             <h2 class="text-xl font-bold text-slate-900 mb-3">8. Contacto</h2>
             <p class="text-slate-700 leading-relaxed mb-4">
-              Para cualquier consulta, reclamación o sugerencia relacionada con este Aviso Legal:
+              Para cualquier consulta, reclamación o sugerencia relacionada con
+              este Aviso Legal:
             </p>
             <div class="grid sm:grid-cols-3 gap-4">
               <div class="bg-blue-50 rounded-lg p-4 text-center">
-                <svg class="w-8 h-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                <svg
+                  class="w-8 h-8 text-blue-600 mx-auto mb-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
                 </svg>
                 <p class="text-sm font-semibold text-slate-900">Email</p>
                 <p class="text-xs text-blue-600">[TU EMAIL]</p>
               </div>
               <div class="bg-blue-50 rounded-lg p-4 text-center">
-                <svg class="w-8 h-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                <svg
+                  class="w-8 h-8 text-blue-600 mx-auto mb-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
                 </svg>
                 <p class="text-sm font-semibold text-slate-900">Teléfono</p>
                 <p class="text-xs text-slate-600">[TU TELÉFONO]</p>
               </div>
               <div class="bg-blue-50 rounded-lg p-4 text-center">
-                <svg class="w-8 h-8 text-blue-600 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <svg
+                  class="w-8 h-8 text-blue-600 mx-auto mb-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <p class="text-sm font-semibold text-slate-900">Dirección</p>
                 <p class="text-xs text-slate-600">[TU DIRECCIÓN]</p>
@@ -259,14 +448,21 @@ const schema = {
           </div>
 
           <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
-            <h2 class="text-lg font-semibold text-slate-900 mb-2">9. Resolución de litigios en línea</h2>
+            <h2 class="text-lg font-semibold text-slate-900 mb-2">
+              9. Resolución de litigios en línea
+            </h2>
             <p class="text-sm text-slate-700">
-              De conformidad con el Reglamento (UE) 524/2013, los consumidores pueden acceder a la plataforma de resolución de litigios en línea: 
-              <a href="https://ec.europa.eu/consumers/odr" class="text-blue-600 hover:underline font-medium" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>
+              De conformidad con el Reglamento (UE) 524/2013, los consumidores
+              pueden acceder a la plataforma de resolución de litigios en línea:
+              <a
+                href="https://ec.europa.eu/consumers/odr"
+                class="text-blue-600 hover:underline font-medium"
+                target="_blank"
+                rel="noopener">https://ec.europa.eu/consumers/odr</a
+              >
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -274,8 +470,13 @@ const schema = {
   <!-- CTA de contacto -->
   <section class="py-12 bg-white border-t border-slate-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-slate-600 mb-4">¿Tienes dudas sobre las condiciones de uso?</p>
-      <a href="/contacto" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all">
+      <p class="text-slate-600 mb-4">
+        ¿Tienes dudas sobre las condiciones de uso?
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all"
+      >
         Contacta con nosotros
       </a>
     </div>
