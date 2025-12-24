@@ -34,7 +34,7 @@ export default defineConfig({
         plugins: [tailwindcss()], // ← AQUÍ es donde va Tailwind v4
         build: {
             cssMinify: true,
-            minify: 'terser',
+            minify: 'esbuild',
             terserOptions: {
                 compress: {
                     drop_console: true,
