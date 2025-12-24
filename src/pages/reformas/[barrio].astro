@@ -1,0 +1,217 @@
+---
+// src/pages/reformas/[barrio].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import barriosData from '../../data/barrios-madrid.json';
+import { Flame, Star, TrendingUp, ArrowRight, MapPin, Zap, Euro, Check, ChevronRight, Users, Calculator, Target } from '@lucide/astro';
+
+export async function getStaticPaths() {
+  return barriosData.barrios.map((barrio) => ({
+    params: { barrio: barrio.slug },
+    props: { barrioData: barrio },
+  }));
+}
+
+const { barrioData } = Astro.props;
+const { nombre, zona, descripcion, caracteristicas, ticketMedio, demanda, coordenadas } = barrioData;
+
+const demandaConfig = {
+  'muy-alta': {
+    label: 'Demanda Muy Alta',
+    icon: Flame,
+    color: 'text-orange-400'
+  },
+  'alta': {
+    label: 'Demanda Alta',
+    icon: Star,
+    color: 'text-yellow-400'
+  },
+  'media-alta': {
+    label: 'Demanda Media-Alta',
+    icon: TrendingUp,
+    color: 'text-green-400'
+  },
+  'media': {
+    label: 'Demanda Media',
+    icon: ArrowRight,
+    color: 'text-blue-400'
+  }
+};
+
+const demandaInfo = demandaConfig[demanda];
+
+const schema = {
+  "@type": "Service",
+  "serviceType": `Reformas en ${nombre}`,
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Obras Digitales Madrid"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": nombre,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": coordenadas.lat,
+      "longitude": coordenadas.lng
+    }
+  }
+};
+---
+
+<BaseLayout
+  title={`Diseño Web para Empresas de Reformas en ${nombre}`}
+  description={`Consigue clientes de reformas en ${nombre} con una web que filtra curiosos. Sistema de captación especializado para ${zona} de Madrid. Ticket medio: ${Number(ticketMedio).toLocaleString('es-ES')}€.`}
+  schema={schema}
+>
+  <!-- Hero Local -->
+  <section class="relative overflow-hidden bg-linear-to-br from-blue-600 to-blue-900 text-white py-20">
+     <div class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.png')] bg-cover bg-no-repeat opacity-10"></div>
+    <div class="max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <!-- Breadcrumb -->
+          <nav class="text-sm text-blue-200 mb-4">
+            <a href="/" class="hover:text-white">Inicio</a>
+            <span class="mx-2">/</span>
+            <a href="/reformas" class="hover:text-white">Reformas Madrid</a>
+            <span class="mx-2">/</span>
+            <span class="text-white">{nombre}</span>
+          </nav>
+
+          <div class="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <demandaInfo.icon class={`w-4 h-4 ${demandaInfo.color}`} />
+            <span>{demandaInfo.label}</span>
+          </div>
+
+          <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+            Webs para Empresas de Reformas en <span class="text-yellow-300">{nombre}</span>
+          </h1>
+
+          <p class="text-xl text-blue-100 mb-8">
+            {descripcion}
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a 
+              href="/demo" 
+              class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-lg hover:bg-yellow-300 transition-all shadow-xl group"
+            >
+              Ver Sistema de Captación
+              <ChevronRight class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            <a 
+              href="/calculadora-roi" 
+              class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border-2 border-white/30"
+            >
+              <Calculator class="w-5 h-5 mr-2" />
+              <span>Calcular mi ROI</span>
+            </a>
+          </div>
+
+          <!-- Stats locales -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div class="text-2xl font-bold text-yellow-300">{Number(ticketMedio).toLocaleString('es-ES')}€</div>
+              <div class="text-sm text-blue-200">Ticket medio reformas</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+              <div class="text-2xl font-bold text-yellow-300">{zona}</div>
+              <div class="text-sm text-blue-200">Zona de Madrid</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapa/Imagen del barrio -->
+        <div class="relative">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+            <h3 class="text-xl font-bold mb-4">Características de {nombre}</h3>
+            <ul class="space-y-3">
+              {caracteristicas.map((item) => (
+                <li class="flex items-start gap-3">
+                  <Check class="w-6 h-6 text-green-400 shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué tu empresa necesita esto en este barrio -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">
+        El mercado de reformas en {nombre}
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Users class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Perfil del Cliente</h3>
+          <p class="text-slate-600">
+            Los clientes en {nombre} buscan empresas con presencia online profesional y casos de éxito demostrables en la zona.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Calculator class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Ticket Medio</h3>
+          <p class="text-slate-600">
+            Las reformas en esta zona promedian {Number(ticketMedio).toLocaleString('es-ES')}€, lo que permite márgenes para invertir en captación digital.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 rounded-xl p-6">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <Target class="w-6 h-6 text-blue-600" />
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Competencia</h3>
+          <p class="text-slate-600">
+            La mayoría de empresas de reformas en {nombre} dependen de marketplaces o boca a boca. Tu web te diferenciará.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 bg-linear-to-br from-blue-600 to-blue-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        ¿Operas en {nombre}?
+      </h2>
+      <p class="text-xl text-blue-100 mb-8">
+        Agenda una demo y te muestro cómo captar clientes cualificados de tu zona sin depender de marketplaces.
+      </p>
+      <a 
+        href="/contacto" 
+        class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-lg hover:bg-yellow-300 transition-all shadow-xl text-lg group"
+      >
+        Solicitar Demo para {nombre}
+        <ChevronRight class="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
+      </a>
+      
+      <div class="mt-8 flex items-center justify-center gap-6 text-sm text-blue-200">
+        <div class="flex items-center gap-2">
+          <MapPin class="w-4 h-4" />
+          <span>Especialistas en {zona}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Zap class="w-4 h-4" />
+          <span>Setup en 2-3 semanas</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Euro class="w-4 h-4" />
+          <span>Desde 1.400€</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

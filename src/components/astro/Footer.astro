@@ -1,0 +1,145 @@
+---
+// src/components/astro/Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-slate-900 text-slate-300 bg-brick-pattern ">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <!-- Columna 1: Logo y descripción -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 text-white font-bold text-xl mb-4">
+          <a
+            href="/"
+            class="flex items-center gap-2 font-bold text-xl text-blue-600 hover:text-blue-700 transition-colors"
+          >
+            <img src="/logo.svg" alt="Ir a la página de inicio" class="h-8 w-auto" />
+          </a>
+        </div>
+        <p class="text-slate-400 mb-6 max-w-md">
+          Desarrollo web especializado para empresas de reformas y construcción en Madrid. 
+        </p>
+        <div class="flex gap-4">
+          <a 
+            href="https://linkedin.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a 
+            href="https://twitter.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-slate-400 hover:text-white transition-colors"
+            aria-label="Twitter"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna 2: Servicios -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Servicios</h3>
+        <ul class="space-y-2 text-sm">
+        
+          <li>
+            <a href="/servicios#calculadora" class="hover:text-white transition-colors">
+              Calculadora de Presupuestos
+            </a>
+          </li>
+          <li>
+            <a href="/servicios#seo" class="hover:text-white transition-colors">
+              SEO Local Madrid
+            </a>
+          </li>
+          <li>
+            <a href="/servicios#velocidad" class="hover:text-white transition-colors">
+            Velocidad Extrema (1.2 segundos)
+            </a>
+          </li>
+          <li>
+            <a href="/demo" class="hover:text-white transition-colors">
+              Ver Demo
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Zonas de Madrid -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Zonas de Madrid</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/reformas/barrio-salamanca" class="hover:text-white transition-colors">
+              Barrio de Salamanca
+            </a>
+          </li>
+          <li>
+            <a href="/reformas/chamartin" class="hover:text-white transition-colors">
+              Chamartín
+            </a>
+          </li>
+          <li>
+            <a href="/reformas/pozuelo" class="hover:text-white transition-colors">
+              Pozuelo de Alarcón
+            </a>
+          </li>
+          <li>
+            <a href="/reformas/majadahonda" class="hover:text-white transition-colors">
+              Majadahonda
+            </a>
+          </li>
+          <li>
+            <a href="/reformas" class="hover:text-white transition-colors font-medium">
+              Ver todas las zonas →
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright y enlaces legales -->
+    <div class=" pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-slate-400 text-center md:text-left">
+          &copy; {currentYear} Obras Digitales Madrid. Todos los derechos reservados.
+        </p>
+        
+        <!-- 
+        ╔════════════════════════════════════════════════════════════════════╗
+        ║  📋 ENLACES LEGALES - COMENTADOS TEMPORALMENTE                     ║
+        ║                                                                    ║
+        ║  ⚠️  DESCOMENTA estos enlaces cuando:                              ║
+        ║  1️⃣  Te des de alta como autónomo                                  ║
+        ║  2️⃣  Rellenes tus datos en las páginas legales                     ║
+        ║  3️⃣  Actives Google Analytics o formularios de contacto           ║
+        ║                                                                    ║
+        ║  📁 Las páginas están guardadas en:                                ║
+        ║     src/_legal-templates/                                         ║
+        ║     (Muévelas a src/pages/ cuando las actives)                    ║
+        ╚════════════════════════════════════════════════════════════════════╝
+        -->
+        
+        <!-- <div class="flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/privacidad" class="text-slate-400 hover:text-white transition-colors">
+            Política de Privacidad
+          </a>
+          <a href="/cookies" class="text-slate-400 hover:text-white transition-colors">
+            Cookies
+          </a>
+          <a href="/aviso-legal" class="text-slate-400 hover:text-white transition-colors">
+            Aviso Legal
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</footer>

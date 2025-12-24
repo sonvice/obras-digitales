@@ -1,0 +1,53 @@
+{
+
+  "faqs": [
+    {
+      "pregunta": "¿Cuánto tarda el desarrollo?",
+      "respuesta": "El desarrollo completo toma entre 2 y 3 semanas desde el briefing inicial hasta el lanzamiento. Esto incluye: setup técnico, diseño personalizado, configuración de WordPress, creación de las landing pages SEO y formación para que gestiones el contenido."
+    },
+    {
+      "pregunta": "¿Puedo gestionar el contenido yo mismo?",
+      "respuesta": "Sí, completamente. Usamos WordPress como panel de control para que subas fotos y proyectos como lo harías en Instagram. No necesitas conocimientos técnicos. Incluimos una sesión de formación de 1 hora donde te enseñamos todo."
+    },
+    {
+      "pregunta": "¿Qué pasa si mi sector no es reformas?",
+      "respuesta": "El sistema funciona para cualquier servicio B2C con ticket medio superior a 10.000€. Lo hemos adaptado para: piscinas, jardines, instalación de aire acondicionado, reformas de fachadas, y más. Si tu servicio requiere visitas comerciales costosas, el sistema te ayudará."
+    },
+    {
+      "pregunta": "¿Cuánto cuesta el mantenimiento mensual?",
+      "respuesta": "Entre 90€ y 150€/mes dependiendo del plan. Incluye: hosting del frontend y backend, soporte técnico prioritario, actualizaciones de seguridad, informe mensual de leads capturados y garantía de uptime del 99.9%."
+    },
+    {
+      "pregunta": "¿Necesito contratar hosting aparte?",
+      "respuesta": "No, el hosting está incluido en la cuota mensual. Tu web estará en servidores de alta velocidad y tu panel WordPress en un servidor optimizado. No tienes que preocuparte por aspectos técnicos."
+    },
+    {
+      "pregunta": "¿Puedo cancelar el mantenimiento?",
+      "respuesta": "Sí, no hay permanencia obligatoria. Si cancelas el mantenimiento, la web dejará de estar online ya que el hosting está incluido en la cuota. Puedes pausar y reactivar cuando quieras."
+    },
+    {
+      "pregunta": "¿Cómo se diferencia de una web WordPress normal?",
+      "respuesta": "Una web WordPress tradicional tarda 5-8 segundos en cargar. La nuestra carga en 1.2 segundos gracias a tecnología de nueva generación que genera código ultra-optimizado. Esto significa mejor SEO, menos rebote y más conversiones. Además, incluyes la calculadora de presupuestos que filtra leads automáticamente."
+    },
+    {
+      "pregunta": "¿Funciona en móvil?",
+      "respuesta": "Sí, está 100% optimizado para móvil. De hecho, el 73% de las búsquedas de reformas se hacen desde el teléfono. Por eso nos obsesionamos con la velocidad de carga en redes 4G."
+    },
+    {
+      "pregunta": "¿Incluye certificado SSL y seguridad?",
+      "respuesta": "Sí, todo incluido. Certificado SSL automático, protección DDoS, backups diarios y actualizaciones de seguridad. Tu web estará siempre protegida."
+    },
+    {
+      "pregunta": "¿Puedo ver ejemplos reales antes de contratar?",
+      "respuesta": "Sí, agenda una demo y te mostramos el sistema funcionando en vivo. También puedes probar todas las funcionalidades en nuestra página /demo. Si eres early adopter, aparecerás como caso de estudio oficial."
+    },
+    {
+      "pregunta": "¿Qué pasa con el SEO de mi web actual?",
+      "respuesta": "Si ya tienes una web con posicionamiento, hacemos una migración cuidadosa con redirecciones 301 para no perder tu SEO. Si es tu primera web, empezamos a posicionar desde cero con las landing pages locales."
+    },
+    {
+      "pregunta": "¿Puedo añadir un blog después?",
+      "respuesta": "Sí, puedes añadir un blog en cualquier momento. Se gestiona desde el mismo WordPress. El blog te ayudará a posicionar para más keywords y generar contenido educativo que atraiga clientes."
+    }
+  ]
+}

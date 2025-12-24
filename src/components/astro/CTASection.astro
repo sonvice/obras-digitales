@@ -1,0 +1,75 @@
+---
+// src/components/astro/CTASection.astro
+import { CheckCircle, Zap, Euro, ArrowRight } from "@lucide/astro";
+
+interface Props {
+  title: string;
+  description: string;
+  buttonText?: string;
+  buttonHref?: string;
+  variant?: 'default' | 'dark' | 'gradient';
+}
+
+const {
+  title,
+  description,
+  buttonText = 'Solicitar Demo',
+  buttonHref = '/contacto',
+  variant = 'gradient',
+} = Astro.props;
+
+const variantClasses = {
+  default: 'bg-slate-50',
+  dark: 'bg-slate-900 text-white',
+  gradient: 'bg-gradient-to-br from-blue-600 to-blue-900 text-white',
+};
+
+const textColorClass = variant === 'default' ? 'text-slate-600' : 'text-blue-100';
+---
+
+<section class={`py-20 ${variantClasses[variant]}`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+      {title}
+    </h2>
+    <p class={`text-xl mb-8 ${textColorClass}`}>
+      {description}
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a 
+        href={buttonHref}
+        class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold rounded-lg transition-all shadow-xl hover:shadow-2xl text-lg"
+      >
+        {buttonText}
+        <ArrowRight class="w-5 h-5 ml-2" />
+      </a>
+      
+      {variant !== 'default' && (
+        <a 
+          href="/calculadora-roi"
+          class="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg transition-all border-2 border-white/30"
+        >
+          Calcular mi ROI
+        </a>
+      )}
+    </div>
+    
+    <div class="mt-8 text-sm opacity-80">
+      <p class="flex items-center justify-center gap-4 flex-wrap">
+        <span class="inline-flex items-center gap-1.5">
+          <CheckCircle class="w-4 h-4" />
+          Respuesta en menos de 24h
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <Zap class="w-4 h-4" />
+          Setup en 2-3 semanas
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <Euro class="w-4 h-4" />
+          Desde 2.200€
+        </span>
+      </p>
+    </div>
+  </div>
+</section>

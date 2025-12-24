@@ -1,0 +1,241 @@
+---
+// src/pages/index.astro
+import "../styles/global.css";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SpeedComparison from '../components/react/SpeedComparison';
+import BeforeAfterSlider from '../components/react/BeforeAfterSlider';
+
+const schema = {
+  "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://niveldigital.es/reformas/{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+---
+
+<BaseLayout
+  title="Webs Rápidas para Empresas de Reformas en Madrid"
+  description="Consigue clientes de reformas cualificados, no curiosos. Diseño web ultra-rápido con Astro para constructoras y reformistas en Madrid. Sistema de captación que filtra leads sin presupuesto."
+  schema={schema}
+>
+  <!-- Hero Section -->
+<section class="relative overflow-hidden bg-linear-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
+  <div class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.png')] bg-cover bg-no-repeat opacity-10"></div>
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Columna izquierda: Texto -->
+      <div>
+        <!-- Badge mejorado (sin mencionar Astro) -->
+        <div class="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          Sistema Profesional de Captación
+        </div>
+        
+        <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+          Consigue <span class="text-yellow-300">clientes cualificados</span>, no curiosos
+        </h1>
+        
+        <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+          Webs ultra-rápidas para empresas de reformas en Madrid. 
+          <strong>Sistema de captación que filtra leads sin presupuesto</strong> 
+          antes de que cojas el coche.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a 
+            href="/demo" 
+            class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-lg hover:bg-yellow-300 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+          >
+            Ver Demo en Vivo
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          
+          <a 
+            href="/calculadora-roi" 
+            class="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all border-2 border-white/30"
+          >
+            Calcular mi ROI
+          </a>
+        </div>
+        
+        <!-- Stats mejorados (lenguaje de negocio) -->
+        <div class="mt-12 grid grid-cols-3 gap-6">
+          <div class="text-center sm:text-left">
+            <div class="text-3xl font-bold text-yellow-300">1.2s</div>
+            <div class="text-sm text-blue-200">Carga instantánea</div>
+          </div>
+          <div class="text-center sm:text-left">
+            <div class="text-3xl font-bold text-yellow-300">-70%</div>
+            <div class="text-sm text-blue-200">Visitas inútiles</div>
+          </div>
+          <div class="text-center sm:text-left">
+            <div class="text-3xl font-bold text-yellow-300">3x</div>
+            <div class="text-sm text-blue-200">Más conversiones</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Columna derecha: Comparador de velocidad -->
+      <div class="relative">
+
+        <div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+          <SpeedComparison client:visible />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Problema que resuelves -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          El verdadero problema de las empresas de reformas
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          No es conseguir visitas. Es <strong>filtrar curiosos</strong> y atraer clientes con presupuesto real.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Problema 1 -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <div class="flex items-center mb-4">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h3 class="ml-3 text-xl font-bold text-slate-900">Marketplaces caros</h3>
+          </div>
+          <p class="text-slate-700">
+            Pagas 40€ por lead que se vende a 4 competidores más. Guerra de precios, márgenes destruidos.
+          </p>
+        </div>
+        
+        <!-- Problema 2 -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <div class="flex items-center mb-4">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <h3 class="ml-3 text-xl font-bold text-slate-900">Visitas inútiles</h3>
+          </div>
+          <p class="text-slate-700">
+            Pierdes 2 horas en el coche para descubrir que el cliente quiere una reforma de 5.000€ cuando tu mínimo es 20.000€.
+          </p>
+        </div>
+        
+        <!-- Problema 3 -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <div class="flex items-center mb-4">
+            <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h3 class="ml-3 text-xl font-bold text-slate-900">Webs lentas</h3>
+          </div>
+          <p class="text-slate-700">
+            Tu web tarda 8 segundos en cargar en móvil. El 53% de usuarios se van antes de ver tus trabajos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- La Solución -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          El "Motor de Captación de Obras"
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+          Un sistema web que <strong>filtra automáticamente</strong> a los clientes sin presupuesto y te entrega leads cualificados.
+        </p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Funcionalidad principal -->
+        <div>
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-blue-600 font-bold text-xl">1</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Calculadora de Presupuestos</h3>
+                <p class="text-slate-600">
+                  El cliente introduce metros, tipo de reforma y calidad. <strong>Obtiene un rango realista</strong> solo después de dar su email. Si su presupuesto es bajo, ya lo sabes antes de visitarlo.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-blue-600 font-bold text-xl">2</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Slider "Antes y Después"</h3>
+                <p class="text-slate-600">
+                  Galería interactiva donde el usuario <strong>desliza para ver la transformación</strong>. Aumenta el tiempo en página y genera confianza instantánea.
+                </p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span class="text-blue-600 font-bold text-xl">3</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Velocidad Extrema (1.2s)</h3>
+                <p class="text-slate-600">
+                  Tecnología: <strong>HTML puro sin JavaScript innecesario</strong>. Tu web supera técnicamente al 90% de la competencia local.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Demo del slider -->
+        <div>
+          <BeforeAfterSlider 
+            client:visible
+            beforeImage="/images/demos/antes-cocina.png"
+            afterImage="/images/demos/despues-cocina.png"
+            alt="Reforma de cocina - Antes y después"
+          />
+          <p class="text-sm text-center text-slate-500 mt-4">
+            ☝️ Pruébalo: desliza para ver el antes y después
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 bg-linear-to-br from-blue-600 to-blue-900 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        ¿Listo para dejar de perder tiempo con curiosos?
+      </h2>
+      <p class="text-xl text-blue-100 mb-8">
+        Agenda una videollamada de 30 minutos y te muestro cómo funciona el sistema con los datos de tu empresa.
+      </p>
+      <a 
+        href="/contacto" 
+        class="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-lg hover:bg-yellow-300 transition-all shadow-xl text-lg"
+      >
+        Solicitar Demo Personalizada
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

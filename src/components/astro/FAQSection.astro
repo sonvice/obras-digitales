@@ -1,0 +1,90 @@
+---
+// src/components/astro/FAQSection.astro
+import faqsData from '../../data/faqs.json';
+
+interface Props {
+  maxItems?: number;
+  title?: string;
+  description?: string;
+}
+
+const {
+  maxItems,
+  title = "Preguntas Frecuentes",
+  description = "Todo lo que necesitas saber sobre nuestro sistema"
+} = Astro.props;
+
+const faqs = maxItems ? faqsData.faqs.slice(0, maxItems) : faqsData.faqs;
+
+// Schema.org para SEO
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.pregunta,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.respuesta
+    }
+  }))
+};
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+        {title}
+      </h2>
+      <p class="text-xl text-slate-600">
+        {description}
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-slate-50 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-slate-100 transition-colors">
+            <h3 class="font-semibold text-slate-900 pr-8">
+              {faq.pregunta}
+            </h3>
+            <svg 
+              class="w-5 h-5 text-slate-600 flex-shrink-0 transition-transform group-open:rotate-180" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+            {faq.respuesta}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <!-- CTA dentro de FAQs -->
+    <div class="mt-12 text-center bg-blue-50 rounded-xl p-8">
+      <h3 class="text-xl font-bold text-slate-900 mb-3">
+        ¿Tienes más preguntas?
+      </h3>
+      <p class="text-slate-600 mb-6">
+        Agenda una videollamada de 30 minutos sin compromiso
+      </p>
+      <a 
+        href="/contacto"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all"
+      >
+        Hablar con un Experto
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Schema.org para SEO -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

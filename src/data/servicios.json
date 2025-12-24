@@ -1,0 +1,80 @@
+  {"servicios": [
+    {
+      "id": "calculadora",
+      "nombre": "Calculadora de Presupuestos",
+      "descripcion": "Sistema interactivo que filtra leads sin presupuesto antes de que pierdas tiempo visitándolos",
+      "beneficios": [
+        "Captura email antes de mostrar precio",
+        "Filtra automáticamente clientes sin presupuesto",
+        "Sabes qué espera pagar antes de visitarlo",
+        "Reduce visitas inútiles en 70%"
+      ],
+      "precio": "Incluido en setup",
+      "icono": "calculator"
+    },
+    {
+      "id": "web-astro",
+      "nombre": "Web Ultra-Rápida (Astro)",
+      "descripcion": "Tecnología de última generación que carga 20x más rápido que WordPress tradicional",
+      "beneficios": [
+        "Carga en menos de 0.5 segundos",
+        "Google PageSpeed 100/100",
+        "Mejor posicionamiento en buscadores",
+        "47% menos rebote en móvil"
+      ],
+      "precio": "2.200€ - 2.900€",
+      "icono": "speed"
+    },
+    {
+      "id": "seo-local",
+      "nombre": "SEO Local Avanzado",
+      "descripcion": "Landing pages automáticas para cada barrio de Madrid",
+      "beneficios": [
+        "50+ landing pages por zona",
+        "Contenido optimizado automáticamente",
+        "Aparecer en búsquedas locales",
+        "Tráfico orgánico cualificado"
+      ],
+      "precio": "Incluido en setup",
+      "icono": "seo"
+    },
+    {
+      "id": "wordpress-headless",
+      "nombre": "Panel WordPress Fácil",
+      "descripcion": "Gestiona tus proyectos como en Instagram, sin afectar la velocidad",
+      "beneficios": [
+        "Interfaz familiar y sencilla",
+        "Sube fotos y proyectos en minutos",
+        "No requiere conocimientos técnicos",
+        "Formación incluida"
+      ],
+      "precio": "Incluido en setup",
+      "icono": "responsive"
+    },
+    {
+      "id": "slider-antes-despues",
+      "nombre": "Slider Antes/Después",
+      "descripcion": "Galería interactiva que genera confianza y aumenta conversión",
+      "beneficios": [
+        "Interacción táctil y visual",
+        "3x más tiempo en página",
+        "45% más probabilidad de contacto",
+        "Prueba social que vende"
+      ],
+      "precio": "Incluido en setup",
+      "icono": "slider"
+    },
+    {
+      "id": "integracion-crm",
+      "nombre": "Integración CRM (Opcional)",
+      "descripcion": "Conecta leads directamente a tu sistema de gestión",
+      "beneficios": [
+        "Leads automáticos en tu CRM",
+        "Notificaciones en tiempo real",
+        "Seguimiento automatizado",
+        "Compatible con cualquier CRM"
+      ],
+      "precio": "Desde 300€",
+      "icono": "filter"
+    }
+  ]}

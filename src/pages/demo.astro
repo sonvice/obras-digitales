@@ -1,0 +1,140 @@
+---
+// src/pages/demo.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CalculadoraPresupuesto from '../components/react/CalculadoraPresupuesto';
+import BeforeAfterSlider from '../components/react/BeforeAfterSlider';
+import SpeedComparison from '../components/react/SpeedComparison';
+import CTASection from '../components/astro/CTASection.astro';
+---
+
+<BaseLayout
+  title="Demo Interactiva del Sistema de Captación"
+  description="Prueba en vivo cómo funciona nuestro sistema de captación de clientes para empresas de reformas. Calculadora de presupuestos, slider antes/después y comparador de velocidad."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-linear-to-br from-blue-600 to-blue-900 text-white py-16">
+     <div class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.png')] bg-cover bg-no-repeat opacity-10"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+        Prueba el Sistema en Vivo
+      </h1>
+      <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+        Esta es una demo 100% funcional. Todo lo que ves aquí es exactamente lo que tus clientes verán en tu web. <strong>Pruébalo tú mismo.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- Demo 1: Calculadora -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          Demo #1
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          Calculadora de Presupuestos Inteligente
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+          Rellena los campos como si fueras un cliente interesado. Fíjate cómo el sistema pide el email <strong>ANTES</strong> de mostrar el precio.
+        </p>
+      </div>
+
+      <CalculadoraPresupuesto client:load />
+
+      <div class="max-w-3xl mx-auto mt-12 bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+        <div class="flex items-start gap-4">
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2">¿Por qué funciona?</h3>
+            <p class="text-slate-700">
+              Así obtienes el contacto y sabes su rango de presupuesto ANTES de llamarle. 
+              Si busca gastar 8.000€ y tu mínimo es 30.000€, <strong>no pierdes tiempo ni gasolina</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo 2: Slider -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          Demo #2
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          Slider "Antes y Después" Interactivo
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+          Las galerías estáticas aburren. El slider interactivo mantiene al usuario <strong>3x más tiempo</strong> en tu web.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <BeforeAfterSlider 
+          client:visible
+          beforeImage="/images/demos/antes-cocina.png"
+          afterImage="/images/demos/despues-cocina.png"
+          alt="Reforma de cocina - Antes y después"
+        />
+        <p class="text-center text-slate-500 mt-4">
+          ☝️ Desliza la barra para ver la transformación
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-12 bg-green-50 border-2 border-green-200 rounded-xl p-6">
+        <div class="flex items-start gap-4">
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2">Impacto en conversión</h3>
+            <p class="text-slate-700">
+              Los usuarios que interactúan con el slider tienen <strong>un 45% más de probabilidad de contactar</strong>. 
+              Es prueba social visual que genera confianza instantánea.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo 3: Velocidad -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          Demo #3
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+          Tu Web Cargará 7x Más Rápido
+        </h2>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+          Google penaliza las webs lentas. La tuya será <strong>la más rápida de tu sector</strong> en Madrid.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-linear-to-br from-slate-800 to-slate-900 rounded-2xl p-8">
+          <SpeedComparison client:load />
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto mt-12 bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
+        <div class="flex items-start gap-4">
+          <div>
+            <h3 class="font-bold text-slate-900 mb-2">Ventaja competitiva real</h3>
+            <p class="text-slate-700">
+              El 53% de usuarios móviles abandonan si una web tarda más de 3 segundos. 
+              Tu competencia pierde la mitad de sus visitas. <strong>Tú no.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <CTASection
+    title="¿Quieres este sistema para tu empresa?"
+    description="Agenda una videollamada de 30 minutos y te muestro cómo personalizarlo con tus proyectos reales."
+    buttonText="Solicitar Demo Personalizada"
+  />
+</BaseLayout>

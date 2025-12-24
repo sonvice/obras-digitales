@@ -1,0 +1,189 @@
+{
+  "barrios": [
+    {
+      "slug": "barrio-salamanca",
+      "nombre": "Barrio de Salamanca",
+      "zona": "Centro",
+      "descripcion": "El Barrio de Salamanca es la zona de mayor poder adquisitivo de Madrid. Las reformas aquí suelen ser integrales y de alta gama, con presupuestos que oscilan entre 80.000€ y 200.000€.",
+      "caracteristicas": [
+        "Edificios señoriales del siglo XIX",
+        "Viviendas de 150-300m²",
+        "Clientes con alto poder adquisitivo",
+        "Reformas de lujo y diseño exclusivo"
+      ],
+      "ticketMedio": "120000",
+      "demanda": "muy-alta",
+      "coordenadas": {
+        "lat": "40.4283",
+        "lng": "-3.6799"
+      }
+    },
+    {
+      "slug": "chamartin",
+      "nombre": "Chamartín",
+      "zona": "Norte",
+      "descripcion": "Chamartín es un distrito residencial de alta categoría al norte de Madrid, con edificios modernos y zonas verdes. Las reformas suelen enfocarse en modernización y eficiencia energética.",
+      "caracteristicas": [
+        "Edificios de los años 70-90",
+        "Viviendas amplias con terraza",
+        "Clientes profesionales y ejecutivos",
+        "Reformas de calidad media-alta"
+      ],
+      "ticketMedio": "75000",
+      "demanda": "alta",
+      "coordenadas": {
+        "lat": "40.4710",
+        "lng": "-3.6787"
+      }
+    },
+    {
+      "slug": "pozuelo",
+      "nombre": "Pozuelo de Alarcón",
+      "zona": "Oeste",
+      "descripcion": "Pozuelo es uno de los municipios con mayor renta per cápita de España. Las reformas aquí son principalmente en chalets y viviendas unifamiliares de lujo.",
+      "caracteristicas": [
+        "Chalets y viviendas unifamiliares",
+        "Reformas integrales de más de 300m²",
+        "Proyectos de alta gama",
+        "Clientes empresarios y directivos"
+      ],
+      "ticketMedio": "150000",
+      "demanda": "muy-alta",
+      "coordenadas": {
+        "lat": "40.4354",
+        "lng": "-3.8127"
+      }
+    },
+    {
+      "slug": "majadahonda",
+      "nombre": "Majadahonda",
+      "zona": "Oeste",
+      "descripcion": "Majadahonda es ideal para reformas en viviendas familiares. Gran demanda de reformas de cocinas, baños y espacios exteriores.",
+      "caracteristicas": [
+        "Urbanizaciones residenciales",
+        "Viviendas unifamiliares y adosados",
+        "Reformas funcionales y estéticas",
+        "Familias con niños"
+      ],
+      "ticketMedio": "60000",
+      "demanda": "alta",
+      "coordenadas": {
+        "lat": "40.4732",
+        "lng": "-3.8718"
+      }
+    },
+    {
+      "slug": "las-rozas",
+      "nombre": "Las Rozas",
+      "zona": "Noroeste",
+      "descripcion": "Las Rozas combina urbanizaciones modernas con zonas más establecidas. Gran mercado de reformas de viviendas de gama media-alta.",
+      "caracteristicas": [
+        "Chalets adosados y pareados",
+        "Reformas de 40-80m²",
+        "Modernización de espacios",
+        "Clientes clase media-alta"
+      ],
+      "ticketMedio": "55000",
+      "demanda": "alta",
+      "coordenadas": {
+        "lat": "40.4933",
+        "lng": "-3.8737"
+      }
+    },
+    {
+      "slug": "retiro",
+      "nombre": "Retiro",
+      "zona": "Centro-Este",
+      "descripcion": "El distrito de Retiro ofrece viviendas clásicas cerca del parque. Reformas enfocadas en mantener el carácter histórico con comodidades modernas.",
+      "caracteristicas": [
+        "Edificios de principios del siglo XX",
+        "Techos altos y arquitectura clásica",
+        "Reformas de conservación y modernización",
+        "Clientes que valoran la calidad"
+      ],
+      "ticketMedio": "85000",
+      "demanda": "media-alta",
+      "coordenadas": {
+        "lat": "40.4125",
+        "lng": "-3.6820"
+      }
+    },
+    {
+      "slug": "boadilla-del-monte",
+      "nombre": "Boadilla del Monte",
+      "zona": "Oeste",
+      "descripcion": "Boadilla del Monte es un municipio residencial con gran cantidad de urbanizaciones. Muy activo en reformas de viviendas unifamiliares.",
+      "caracteristicas": [
+        "Chalets independientes",
+        "Reformas de jardines y exteriores",
+        "Modernización de instalaciones",
+        "Clientes familias establecidas"
+      ],
+      "ticketMedio": "70000",
+      "demanda": "alta",
+      "coordenadas": {
+        "lat": "40.4036",
+        "lng": "-3.8680"
+      }
+    },
+    {
+      "slug": "hortaleza",
+      "nombre": "Hortaleza",
+      "zona": "Norte",
+      "descripcion": "Hortaleza es un distrito en expansión con muchas viviendas de nueva construcción que requieren reformas de personalización.",
+      "caracteristicas": [
+        "Edificios modernos (años 2000+)",
+        "Reformas de personalización",
+        "Cocinas y baños principalmente",
+        "Clientes jóvenes profesionales"
+      ],
+      "ticketMedio": "40000",
+      "demanda": "media",
+      "coordenadas": {
+        "lat": "40.4749",
+        "lng": "-3.6406"
+      }
+    },
+    {
+      "slug": "getafe",
+      "nombre": "Getafe",
+      "zona": "Sur",
+      "descripcion": "Getafe es un municipio industrial con creciente demanda de reformas en viviendas antiguas. Mercado de gama media con gran volumen.",
+      "caracteristicas": [
+        "Viviendas de los años 70-80",
+        "Reformas completas de actualización",
+        "Presupuestos ajustados",
+        "Gran volumen de proyectos"
+      ],
+      "ticketMedio": "35000",
+      "demanda": "media-alta",
+      "coordenadas": {
+        "lat": "40.3056",
+        "lng": "-3.7328"
+      }
+    },
+    {
+      "slug": "alcobendas",
+      "nombre": "Alcobendas",
+      "zona": "Norte",
+      "descripcion": "Alcobendas es una ciudad de negocios con viviendas de alta calidad. Gran demanda de reformas de diseño contemporáneo.",
+      "caracteristicas": [
+        "Edificios residenciales modernos",
+        "Reformas de diseño y calidad",
+        "Clientes profesionales",
+        "Proyectos de gama media-alta"
+      ],
+      "ticketMedio": "65000",
+      "demanda": "alta",
+      "coordenadas": {
+        "lat": "40.5333",
+        "lng": "-3.6333"
+      }
+    }
+  ],
+  "metadata": {
+    "totalBarrios": 10,
+    "ultimaActualizacion": "2025-01-15",
+    "fuenteDatos": "Análisis de mercado Madrid 2025"
+  }
+}

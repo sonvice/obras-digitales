@@ -1,0 +1,188 @@
+---
+// src/pages/casos-exito.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Testimonial from '../components/astro/Testimonial.astro';
+import CTASection from '../components/astro/CTASection.astro';
+---
+
+<BaseLayout
+  title="Casos de Éxito - Empresas que Captaron Más Clientes"
+  description="Descubre cómo empresas de reformas en Madrid multiplicaron sus leads cualificados y ahorraron tiempo con nuestro sistema de captación web."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-600 to-blue-900 text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+        Casos de Éxito Reales
+      </h1>
+      <p class="text-xl text-blue-100">
+        Empresas que captaron más clientes y ahorraron tiempo con el sistema
+      </p>
+    </div>
+  </section>
+
+  <!-- Nota temporal -->
+  <section class="py-12 bg-yellow-50 border-b border-yellow-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-start gap-4">
+        <svg class="w-6 h-6 text-yellow-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+        </svg>
+        <div>
+          <h3 class="font-bold text-slate-900 mb-1">Casos Reales Próximamente</h3>
+          <p class="text-slate-700 text-sm">
+            Estamos desarrollando nuestros primeros proyectos. Mientras tanto, aquí te mostramos 
+            ejemplos ficticios basados en métricas reales del sector. <strong>Si eres de las primeras empresas, 
+            obtendrás un 30% de descuento.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Caso 1 -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            Caso de Estudio #1
+          </div>
+          <h2 class="text-3xl font-bold text-slate-900 mb-4">
+            Reformas Deluxe - Barrio de Salamanca
+          </h2>
+          
+          <div class="bg-slate-50 rounded-xl p-6 mb-6">
+            <h3 class="font-bold text-slate-900 mb-3">El Problema</h3>
+            <p class="text-slate-700">
+              Dependían 100% de Habitissimo. Pagaban 1.200€/mes en leads compartidos con 4 competidores. 
+              Cerraban solo 1 de cada 10 visitas. Perdían 15 horas semanales en desplazamientos a clientes sin presupuesto real.
+            </p>
+          </div>
+
+          <div class="bg-blue-50 rounded-xl p-6 mb-6">
+            <h3 class="font-bold text-slate-900 mb-3">La Solución</h3>
+            <p class="text-slate-700 mb-3">
+              Web con calculadora de presupuestos + SEO local. Landing page específica: 
+              <a href="/reformas/barrio-salamanca" class="text-blue-600 hover:underline">/reformas/barrio-salamanca</a>
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700">
+              <li>• Setup completo en 3 semanas</li>
+              <li>• 10 landing pages por zona</li>
+              <li>• Integración con su CRM</li>
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+              <div class="text-2xl font-bold text-green-600">+180%</div>
+              <div class="text-sm text-slate-600">Leads orgánicos</div>
+            </div>
+            <div class="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+              <div class="text-2xl font-bold text-green-600">32%</div>
+              <div class="text-sm text-slate-600">Tasa de cierre</div>
+            </div>
+            <div class="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+              <div class="text-2xl font-bold text-green-600">-70%</div>
+              <div class="text-sm text-slate-600">Visitas inútiles</div>
+            </div>
+            <div class="bg-green-50 rounded-xl p-4 border-2 border-green-200">
+              <div class="text-2xl font-bold text-green-600">7.200€</div>
+              <div class="text-sm text-slate-600">Ahorro/semestre</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bg-slate-100 rounded-2xl p-8 mb-6">
+            <div class="text-center mb-6">
+              <div class="text-6xl mb-2">📊</div>
+              <div class="font-bold text-slate-900">Captura de pantalla web</div>
+              <div class="text-sm text-slate-600">Aquí iría screenshot real</div>
+            </div>
+            <div class="bg-white rounded-lg p-4">
+              <div class="h-48 bg-slate-200 rounded-lg flex items-center justify-center text-slate-400">
+                Preview del sitio web
+              </div>
+            </div>
+          </div>
+
+          <Testimonial
+            quote="En 6 meses recuperamos la inversión. Ahora recibimos consultas de clientes reales con presupuesto claro. El filtrado automático nos ahorra 10 horas semanales."
+            author="Juan Pérez"
+            role="CEO"
+            company="Reformas Deluxe"
+            rating={5}
+          />
+        </div>
+      </div>
+
+      <!-- Timeline de resultados -->
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold text-slate-900 mb-8 text-center">
+          Timeline de Resultados
+        </h3>
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="w-24 flex-shrink-0 text-right">
+              <div class="font-bold text-blue-600">Mes 1</div>
+            </div>
+            <div class="flex-1 bg-slate-50 rounded-lg p-4">
+              <div class="font-semibold text-slate-900 mb-1">Setup y lanzamiento</div>
+              <div class="text-sm text-slate-600">Web live + 5 primeros leads orgánicos</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-24 flex-shrink-0 text-right">
+              <div class="font-bold text-blue-600">Mes 3</div>
+            </div>
+            <div class="flex-1 bg-slate-50 rounded-lg p-4">
+              <div class="font-semibold text-slate-900 mb-1">Primera página Google</div>
+              <div class="text-sm text-slate-600">Keyword: "reformas integrales Barrio Salamanca"</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-24 flex-shrink-0 text-right">
+              <div class="font-bold text-blue-600">Mes 6</div>
+            </div>
+            <div class="flex-1 bg-green-50 rounded-lg p-4 border-2 border-green-200">
+              <div class="font-semibold text-slate-900 mb-1">ROI positivo</div>
+              <div class="text-sm text-slate-600">25 leads cualificados/mes, cancelan Habitissimo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Early Adopter -->
+  <section class="py-20 bg-gradient-to-br from-yellow-400 to-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-5xl mb-4">🎉</div>
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+        Oferta Early Adopter
+      </h2>
+      <p class="text-xl mb-8">
+        Sé una de las primeras 5 empresas y obtén <strong>30% de descuento</strong> en el setup + aparecer como caso de estudio oficial
+      </p>
+      <a 
+        href="/contacto"
+        class="inline-flex items-center justify-center px-8 py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg transition-all shadow-xl text-lg"
+      >
+        Solicitar Descuento Early Adopter
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      <p class="text-sm mt-4 opacity-90">
+        Solo 3 plazas disponibles
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Normal -->
+  <CTASection
+    title="¿Quieres resultados similares para tu empresa?"
+    description="Agenda una demo y te muestro cómo podemos replicar este sistema para tu zona y tipo de obras."
+  />
+</BaseLayout>

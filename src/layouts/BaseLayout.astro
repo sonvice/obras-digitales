@@ -1,0 +1,117 @@
+---
+// src/layouts/BaseLayout.astro
+import '../styles/global.css';
+import Header from '../components/astro/Header.astro';
+import Footer from '../components/astro/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+  schema?: object;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/images/og-default.jpg',
+  canonical = Astro.url.href,
+  schema = {},
+} = Astro.props;
+
+const fullTitle = `${title} | Obras Digitales Madrid`;
+const siteUrl = 'https://obrasdigitales.es';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Básico -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+    
+    <!-- Geo Tags (Madrid) -->
+    <meta name="geo.region" content="ES-M" />
+    <meta name="geo.placename" content="Madrid" />
+    <meta name="geo.position" content="40.416775;-3.703790" />
+    <meta name="ICBM" content="40.416775, -3.703790" />
+    
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Obras Digitales Madrid",
+      "description": "Desarrollo web especializado para empresas de reformas y construcción en Madrid",
+      "url": siteUrl,
+      "telephone": "+34-XXX-XXX-XXX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressRegion": "Comunidad de Madrid",
+        "addressCountry": "ES"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "40.416775",
+          "longitude": "-3.703790"
+        },
+        "geoRadius": "50000"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/obras-digitales",
+      ],
+      ...schema
+    })} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+    
+    <!-- Web Performance -->
+    <meta name="theme-color" content="#1e40af" />
+    
+    <slot name="head" />
+  </head>
+  
+  <body class="antialiased bg-slate-50 text-slate-900">
+    <Header />
+    
+    <main>
+      <slot />
+    </main>
+    
+    <Footer />
+    
+    <!-- Analytics (opcional) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
