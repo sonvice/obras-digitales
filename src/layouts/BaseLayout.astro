@@ -1,5 +1,6 @@
 ---
 // src/layouts/BaseLayout.astro
+import { ClientRouter } from "astro:transitions";
 import '../styles/global.css';
 import Header from '../components/astro/Header.astro';
 import Footer from '../components/astro/Footer.astro';
@@ -10,6 +11,9 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   schema?: object;
+  // Nuevas props para control de transiciones
+  disableTransitions?: boolean;
+  transitionName?: string;
 }
 
 const {
@@ -25,7 +29,7 @@ const siteUrl = 'https://obrasdigitales.es';
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" transition:animate="fade">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,6 +38,9 @@ const siteUrl = 'https://obrasdigitales.es';
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    
+    <!-- ClientRouter - Habilitando SPA mode -->
+    <ClientRouter />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -62,7 +69,7 @@ const siteUrl = 'https://obrasdigitales.es';
       "name": "Obras Digitales Madrid",
       "description": "Desarrollo web especializado para empresas de reformas y construcción en Madrid",
       "url": siteUrl,
-      "telephone": "+34-XXX-XXX-XXX",
+      "telephone": "+34651754276",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Madrid",
@@ -86,32 +93,51 @@ const siteUrl = 'https://obrasdigitales.es';
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     
     <!-- Web Performance -->
     <meta name="theme-color" content="#1e40af" />
+    
+    <!-- Preconnect a dominios externos para mejorar performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     
     <slot name="head" />
   </head>
   
   <body class="antialiased bg-slate-50 text-slate-900">
+    <!-- Header con nombre de transición único -->
     <Header />
     
-    <main>
+    <!-- Main content con transición -->
+    <main >
       <slot />
     </main>
     
+    <!-- Footer persistente entre navegaciones -->
     <Footer />
     
-    <!-- Analytics (opcional) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+    <!-- Script para reinicializar componentes después de transiciones -->
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        // Aquí puedes reinicializar scripts que lo necesiten
+        // Por ejemplo: analytics, scroll animaciones, etc.
+        console.log('🎨 Página cargada con transiciones');
+      });
+
+      // Antes de cada navegación
+      document.addEventListener('astro:before-preparation', () => {
+        // Cleanup de scripts si es necesario
+      });
+
+      // Después de cada navegación
+      document.addEventListener('astro:after-swap', () => {
+        // Reiniciar animaciones, scroll to top, etc.
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+    </script>
   </body>
 </html>
-
-<style is:global>
-  @import '../styles/global.css';
-</style>
