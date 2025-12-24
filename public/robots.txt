@@ -1,0 +1,29 @@
+# robots.txt para Obras Digitales Madrid
+# https://obrasdigitales.es
+
+# Permitir a todos los bots acceder a todo
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://obrasdigitales.es/sitemap-index.xml
+
+# Bloquear directorios privados (si los tienes)
+Disallow: /admin/
+Disallow: /_astro/
+
+# Crawl delay opcional (solo si tienes problemas de carga)
+# Crawl-delay: 1
+
+# Bots específicos (opcional)
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Googlebot Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
