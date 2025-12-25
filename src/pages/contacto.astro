@@ -3,8 +3,7 @@
 export const prerender = false;
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/astro/ContactForm.astro";
-console.log('🔍 Contacto renderizado en servidor:', new Date().toISOString());
-console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURADA' : 'FALTA');
+import { Video, Calculator, FileText, CircleCheck } from '@lucide/astro';
 ---
 
 <BaseLayout
@@ -39,7 +38,7 @@ console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURAD
           <h2 class="text-2xl font-bold text-slate-900 mb-6">
             Cuéntanos sobre tu empresa
           </h2>
-          <ContactForm/>
+          <ContactForm />
         </div>
 
         <!-- Información adicional -->
@@ -49,23 +48,12 @@ console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURAD
               ¿Qué incluye la demo?
             </h3>
             <div class="space-y-4">
+              <!-- Videollamada personalizada -->
               <div class="flex items-start gap-4">
                 <div
                   class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0"
                 >
-                  <svg
-                    class="w-5 h-5 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                    ></path>
-                  </svg>
+                  <Video class="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
                   <div class="font-semibold text-slate-900 mb-1">
@@ -78,23 +66,12 @@ console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURAD
                 </div>
               </div>
 
+              <!-- Análisis de ROI -->
               <div class="flex items-start gap-4">
                 <div
                   class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0"
                 >
-                  <svg
-                    class="w-5 h-5 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    ></path>
-                  </svg>
+                  <Calculator class="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
                   <div class="font-semibold text-slate-900 mb-1">
@@ -107,23 +84,12 @@ console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURAD
                 </div>
               </div>
 
+              <!-- Propuesta sin compromiso -->
               <div class="flex items-start gap-4">
                 <div
                   class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0"
                 >
-                  <svg
-                    class="w-5 h-5 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    ></path>
-                  </svg>
+                  <FileText class="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
                   <div class="font-semibold text-slate-900 mb-1">
@@ -164,42 +130,15 @@ console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURAD
             <h3 class="font-bold mb-4">Nuestras garantías</h3>
             <div class="space-y-3 text-sm">
               <div class="flex items-center gap-2">
-                <svg
-                  class="w-5 h-5 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
+                <CircleCheck class="w-5 h-5 text-green-400" />
                 <span>Respuesta en menos de 24h</span>
               </div>
               <div class="flex items-center gap-2">
-                <svg
-                  class="w-5 h-5 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
+                <CircleCheck class="w-5 h-5 text-green-400" />
                 <span>Sin compromisos de permanencia</span>
               </div>
               <div class="flex items-center gap-2">
-                <svg
-                  class="w-5 h-5 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
+                <CircleCheck class="w-5 h-5 text-green-400" />
                 <span>Presupuesto transparente</span>
               </div>
             </div>

@@ -19,7 +19,7 @@ export default defineConfig({
             debug: false,
         },
     })],
-       // Node para local, Netlify para producción
+    // Node para local, Netlify para producción
     adapter: useNodeAdapter ? node({ mode: 'standalone' }) : netlify(),
 
     // Optimización de imágenes
@@ -28,15 +28,13 @@ export default defineConfig({
     },
  // Prefetch para transiciones más rápidas
     prefetch: {
-        prefetchAll: true, // Prefetch automático de todos los links
-        defaultStrategy: 'hover', // Carga al hacer hover (más rápido que 'viewport')
+        prefetchAll: true, 
+        defaultStrategy: 'hover',
     },
-    // Optimización de build
     build: {
         inlineStylesheets: 'auto',
     },
 
-    // Compresión HTML
     compressHTML: true,
 
     // Seguridad (importante para formularios)
@@ -44,9 +42,8 @@ export default defineConfig({
         checkOrigin: true, // CSRF protection activada
     },
     
-    // Configuración de Vite con Tailwind v4
     vite: {
-        plugins: [tailwindcss()], // ← AQUÍ es donde va Tailwind v4
+        plugins: [tailwindcss()],
         build: {
             cssMinify: true,
             minify: 'esbuild',

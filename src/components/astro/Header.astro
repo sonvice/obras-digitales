@@ -105,40 +105,32 @@ const currentPath = Astro.url.pathname;
       parent.replaceChild(newButton, button);
     }
     
-    // Obtener los íconos del nuevo botón
     const newMenuIcon = newButton.querySelector("#menu-icon") as HTMLElement;
     const newCloseIcon = newButton.querySelector("#close-icon") as HTMLElement;
     
     if (!newMenuIcon || !newCloseIcon) return;
     
-    // Añadir nuevo listener
     newButton.addEventListener("click", () => {
       const isExpanded = newButton.getAttribute("aria-expanded") === "true";
       const willExpand = !isExpanded;
       
-      // Actualizar aria-expanded
       newButton.setAttribute("aria-expanded", willExpand.toString());
       
-      // Toggle menú
       menu.classList.toggle("hidden");
       
       // Animar íconos
       if (willExpand) {
-        // Mostrar X, ocultar hamburguesa
         newMenuIcon.style.opacity = "0";
         newCloseIcon.style.opacity = "1";
       } else {
-        // Mostrar hamburguesa, ocultar X
         newMenuIcon.style.opacity = "1";
         newCloseIcon.style.opacity = "0";
       }
     });
   }
 
-  // Inicializar al cargar la página
   document.addEventListener('astro:page-load', initMobileMenu);
   
-  // También inicializar en carga inicial (sin view transitions)
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initMobileMenu);
   } else {

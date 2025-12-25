@@ -1,6 +1,6 @@
 ---
 // src/components/astro/CTASection.astro
-import { CheckCircle, Zap, Euro, ArrowRight } from "@lucide/astro";
+import { CircleCheck, Zap, Euro, ArrowRight } from "@lucide/astro";
 
 interface Props {
   title: string;
@@ -58,7 +58,7 @@ const textColorClass = variant === 'default' ? 'text-slate-600' : 'text-blue-100
     <div class="mt-8 text-sm opacity-80">
       <p class="flex items-center justify-center gap-4 flex-wrap">
         <span class="inline-flex items-center gap-1.5">
-          <CheckCircle class="w-4 h-4" />
+          <CircleCheck class="w-4 h-4" />
           Respuesta en menos de 24h
         </span>
         <span class="inline-flex items-center gap-1.5">
@@ -67,7 +67,7 @@ const textColorClass = variant === 'default' ? 'text-slate-600' : 'text-blue-100
         </span>
         <span class="inline-flex items-center gap-1.5">
           <Euro class="w-4 h-4" />
-          Desde 2.200€
+          Desde 1.400€
         </span>
       </p>
     </div>
