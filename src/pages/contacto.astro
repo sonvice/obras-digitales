@@ -3,6 +3,8 @@
 export const prerender = false;
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/astro/ContactForm.astro";
+console.log('🔍 Contacto renderizado en servidor:', new Date().toISOString());
+console.log('🔑 RESEND_API_KEY:', import.meta.env.RESEND_API_KEY ? 'CONFIGURADA' : 'FALTA');
 ---
 
 <BaseLayout
