@@ -1,9 +1,17 @@
 ---
 // src/pages/contacto.astro
+import { actions } from 'astro:actions';
 export const prerender = false;
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/astro/ContactForm.astro";
 import { Video, Calculator, FileText, CircleCheck } from '@lucide/astro';
+const result = Astro.getActionResult(actions.sendContactEmail);
+
+if (result && !result.error) {
+  return Astro.redirect('/contacto?success=true');
+}
+
+const showSuccess = Astro.url.searchParams.get('success') === 'true';
 ---
 
 <BaseLayout
@@ -38,7 +46,7 @@ import { Video, Calculator, FileText, CircleCheck } from '@lucide/astro';
           <h2 class="text-2xl font-bold text-slate-900 mb-6">
             Cuéntanos sobre tu empresa
           </h2>
-          <ContactForm />
+          <ContactForm result={result as any} showSuccess={showSuccess} />
         </div>
 
         <!-- Información adicional -->

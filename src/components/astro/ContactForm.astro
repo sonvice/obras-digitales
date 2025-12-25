@@ -3,16 +3,20 @@
 import { actions, isInputError } from 'astro:actions';
 import { CircleCheck, Video, Sparkles } from '@lucide/astro';
 
-// Obtener el resultado del form submission
-const result = Astro.getActionResult(actions.sendContactEmail);
-
-// ✅ PATRÓN PRG: Redirigir después de éxito para evitar reenvío
-if (result && !result.error) {
-  return Astro.redirect('/contacto?success=true');
+// Recibir props desde la página
+interface Props {
+  result?: {
+    data?: unknown;
+    error?: {
+      code?: string;
+      message?: string;
+      fields?: Record<string, string[]>;
+    };
+  } | null;
+  showSuccess?: boolean;
 }
 
-// Verificar si venimos de un envío exitoso (después del redirect)
-const showSuccess = Astro.url.searchParams.get('success') === 'true';
+const { result, showSuccess = false } = Astro.props;
 
 const zonas = [
   'Barrio de Salamanca',
@@ -62,7 +66,7 @@ const formTimestamp = Date.now().toString();
   id="contact-form"
 >
   
-  {/* <!-- Honeypot: campo trampa para bots --> */}
+  <!-- Honeypot: campo trampa para bots -->
   <div class="absolute -left-[9999px] opacity-0 h-0 overflow-hidden" aria-hidden="true">
     <label for="website">Website (no rellenar)</label>
     <input 
@@ -74,7 +78,6 @@ const formTimestamp = Date.now().toString();
     />
   </div>
   
-  {/* <!-- Timestamp: para verificar tiempo mínimo de llenado --> */}
   <input type="hidden" name="_timestamp" id="_timestamp" value={formTimestamp} />
 
 
@@ -189,7 +192,6 @@ const formTimestamp = Date.now().toString();
     )}
   </div>
 
-  <!-- Privacidad -->
   <div class="flex items-start gap-3">
     <input
       type="checkbox"
@@ -207,7 +209,6 @@ const formTimestamp = Date.now().toString();
     </label>
   </div>
 
-  {/* <!-- Error general --> */}
   {result?.error && !isInputError(result.error) && (
     <div class="bg-red-50 border-2 border-red-200 rounded-lg p-4 text-red-700 text-sm">
       {result.error.message || 'Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.'}
@@ -266,7 +267,7 @@ const formTimestamp = Date.now().toString();
       });
     }
 
-    // Limpiar el parámetro success de la URL después de mostrar (opcional)
+    // Limpiar el parámetro success de la URL
     if (window.location.search.includes('success=true')) {
       window.history.replaceState({}, '', window.location.pathname);
     }
