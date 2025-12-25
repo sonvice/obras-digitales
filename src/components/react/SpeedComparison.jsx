@@ -1,13 +1,15 @@
-// src/components/react/SpeedComparison.jsx
 import { useState, useEffect } from 'react';
 import { Zap, TurtleIcon as Turtle, Check, RefreshCw } from 'lucide-react';
 
-export default function SpeedComparison() {
+export default function SpeedComparison({ headingLevel = 'h3' }) {
   const [slowProgress, setSlowProgress] = useState(0);
   const [fastProgress, setFastProgress] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showFastCheck, setShowFastCheck] = useState(false);
   const [showSlowCheck, setShowSlowCheck] = useState(false);
+
+  // Componente dinámico para el heading
+  const HeadingTag = headingLevel;
 
   const startComparison = () => {
     setSlowProgress(0);
@@ -16,7 +18,6 @@ export default function SpeedComparison() {
     setShowSlowCheck(false);
     setIsAnimating(true);
 
-    // Barra rápida - 1.2s
     const fastInterval = setInterval(() => {
       setFastProgress((prev) => {
         if (prev >= 100) {
@@ -28,7 +29,6 @@ export default function SpeedComparison() {
       });
     }, 10);
 
-    // Barra lenta (competencia) - 8s
     const slowInterval = setInterval(() => {
       setSlowProgress((prev) => {
         if (prev >= 100) {
@@ -54,9 +54,9 @@ export default function SpeedComparison() {
         <div className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full mb-2 border border-white/20">
           <span className="text-xs font-medium text-blue-100">Comparación en tiempo real</span>
         </div>
-        <h3 className="text-xl font-bold text-white mb-1">
+        <HeadingTag className="text-xl font-bold text-white mb-1">
           Tu web vs. La competencia
-        </h3>
+        </HeadingTag>
         <p className="text-blue-200 text-xs">
           Observa la diferencia de velocidad en acción
         </p>
