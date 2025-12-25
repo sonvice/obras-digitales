@@ -1,5 +1,7 @@
 ---
 // src/components/astro/Header.astro
+import { Menu, X }  from '@lucide/astro';
+
 const navLinks = [
   { text: "Servicios", href: "/servicios" },
   { text: "Demo", href: "/demo" },
@@ -27,7 +29,10 @@ const currentPath = Astro.url.pathname;
           >
             {link.text}
             {currentPath === link.href && (
-              <span class="absolute -bottom-[17px] left-0 right-0 h-0.5 bg-blue-600" />
+              <span 
+                class="absolute -bottom-[17px] left-0 right-0 h-0.5 bg-blue-600"
+                style="view-transition-name: active-nav-indicator;"
+              />
             )}
           </a>
         ))}
@@ -43,13 +48,18 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile menu button -->
       <button
         id="mobile-menu-button"
-        class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors"
-        aria-label="Abrir menú"
+        class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors relative"
+        aria-label="Menú"
         aria-expanded="false"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
+        <!-- Ícono hamburguesa -->
+        <span id="menu-icon" class="block transition-opacity duration-200">
+          <Menu class="w-6 h-6" />
+        </span>
+        <!-- Ícono X -->
+        <span id="close-icon" class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200">
+          <X class="w-6 h-6" />
+        </span>
       </button>
     </div>
 
@@ -83,18 +93,45 @@ const currentPath = Astro.url.pathname;
   function initMobileMenu() {
     const button = document.getElementById("mobile-menu-button");
     const menu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
     
-    if (!button || !menu) return;
+    if (!button || !menu || !menuIcon || !closeIcon) return;
     
-    // Remover listeners previos (importante para view transitions)
-    const newButton = button.cloneNode(true);
-    button.parentNode?.replaceChild(newButton, button);
+    // Remover listeners previos clonando el botón
+    const newButton = button.cloneNode(true) as HTMLElement;
+    const parent = button.parentNode;
+    if (parent) {
+      parent.replaceChild(newButton, button);
+    }
+    
+    // Obtener los íconos del nuevo botón
+    const newMenuIcon = newButton.querySelector("#menu-icon") as HTMLElement;
+    const newCloseIcon = newButton.querySelector("#close-icon") as HTMLElement;
+    
+    if (!newMenuIcon || !newCloseIcon) return;
     
     // Añadir nuevo listener
     newButton.addEventListener("click", () => {
       const isExpanded = newButton.getAttribute("aria-expanded") === "true";
-      newButton.setAttribute("aria-expanded", (!isExpanded).toString());
+      const willExpand = !isExpanded;
+      
+      // Actualizar aria-expanded
+      newButton.setAttribute("aria-expanded", willExpand.toString());
+      
+      // Toggle menú
       menu.classList.toggle("hidden");
+      
+      // Animar íconos
+      if (willExpand) {
+        // Mostrar X, ocultar hamburguesa
+        newMenuIcon.style.opacity = "0";
+        newCloseIcon.style.opacity = "1";
+      } else {
+        // Mostrar hamburguesa, ocultar X
+        newMenuIcon.style.opacity = "1";
+        newCloseIcon.style.opacity = "0";
+      }
     });
   }
 
