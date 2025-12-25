@@ -2,7 +2,7 @@
 // src/pages/contacto.astro
 export const prerender = false;
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactForm from "../components/react/ContactForm";
+import ContactForm from "../components/astro/ContactForm.astro";
 ---
 
 <BaseLayout
@@ -37,7 +37,7 @@ import ContactForm from "../components/react/ContactForm";
           <h2 class="text-2xl font-bold text-slate-900 mb-6">
             Cuéntanos sobre tu empresa
           </h2>
-          <ContactForm client:load />
+          <ContactForm/>
         </div>
 
         <!-- Información adicional -->
