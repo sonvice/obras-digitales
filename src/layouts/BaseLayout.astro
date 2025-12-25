@@ -125,23 +125,21 @@ const siteUrl = 'https://obrasdigitales.es';
     <Footer />
     
     <!-- Script para reinicializar componentes después de transiciones -->
-    <script>
-      document.addEventListener('astro:page-load', () => {
-        // Aquí puedes reinicializar scripts que lo necesiten
-        // Por ejemplo: analytics, scroll animaciones, etc.
-      
-      });
+    <!-- Scripts SOLO si transitions habilitado -->
+    {!disableTransitions && (
+      <script>
+        document.addEventListener('astro:page-load', () => {
+          // Reinicializar scripts
+        });
 
-      // Antes de cada navegación
-      document.addEventListener('astro:before-preparation', () => {
-        // Cleanup de scripts si es necesario
-      });
+        document.addEventListener('astro:before-preparation', () => {
+          // Cleanup
+        });
 
-      // Después de cada navegación
-      document.addEventListener('astro:after-swap', () => {
-        // Reiniciar animaciones, scroll to top, etc.
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      });
-    </script>
+        document.addEventListener('astro:after-swap', () => {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        });
+      </script>
+    )}
   </body>
 </html>
