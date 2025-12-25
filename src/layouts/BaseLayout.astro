@@ -24,6 +24,7 @@ const {
   ogImage = '/images/og-default.jpg',
   canonical = Astro.url.href,
   schema = {},
+  disableTransitions = false,
 } = Astro.props;
 
 const fullTitle = `${title} | Obras Digitales Madrid`;
@@ -43,7 +44,7 @@ const siteUrl = 'https://obrasdigitales.es';
     <GoogleAnalytics id="G-HFPLTMFRTF" />
      <AnalyticsEvents />
     <!-- ClientRouter - Habilitando SPA mode -->
-    <ClientRouter />
+    {!disableTransitions && <ClientRouter />}
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
