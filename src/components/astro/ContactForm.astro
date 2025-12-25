@@ -6,6 +6,14 @@ import { CircleCheck, Video, Sparkles } from '@lucide/astro';
 // Obtener el resultado del form submission
 const result = Astro.getActionResult(actions.sendContactEmail);
 
+// ✅ PATRÓN PRG: Redirigir después de éxito para evitar reenvío
+if (result && !result.error) {
+  return Astro.redirect('/contacto?success=true');
+}
+
+// Verificar si venimos de un envío exitoso (después del redirect)
+const showSuccess = Astro.url.searchParams.get('success') === 'true';
+
 const zonas = [
   'Barrio de Salamanca',
   'Chamartín',
@@ -32,7 +40,7 @@ const getFieldError = (field: string): string | undefined => {
 const formTimestamp = Date.now().toString();
 ---
 
-{result?.data && (
+{showSuccess && (
   <div class="bg-green-50 border-2 border-green-200 rounded-2xl p-8 text-center mb-6">
     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
       <CircleCheck class="w-8 h-8 text-green-600" />
@@ -46,6 +54,7 @@ const formTimestamp = Date.now().toString();
   </div>
 )}
 
+{!showSuccess && (
 <form 
   method="POST" 
   action={actions.sendContactEmail} 
@@ -53,7 +62,7 @@ const formTimestamp = Date.now().toString();
   id="contact-form"
 >
   
-  <!-- Honeypot: campo trampa para bots (oculto con CSS, no con hidden) -->
+  {/* <!-- Honeypot: campo trampa para bots --> */}
   <div class="absolute -left-[9999px] opacity-0 h-0 overflow-hidden" aria-hidden="true">
     <label for="website">Website (no rellenar)</label>
     <input 
@@ -65,11 +74,10 @@ const formTimestamp = Date.now().toString();
     />
   </div>
   
+  {/* <!-- Timestamp: para verificar tiempo mínimo de llenado --> */}
   <input type="hidden" name="_timestamp" id="_timestamp" value={formTimestamp} />
 
-  <!-- ========== CAMPOS VISIBLES ========== -->
 
-  <!-- Nombre -->
   <div>
     <label for="nombre" class="block text-sm font-semibold text-slate-700 mb-2">
       Nombre completo *
@@ -88,7 +96,6 @@ const formTimestamp = Date.now().toString();
     )}
   </div>
 
-  <!-- Empresa -->
   <div>
     <label for="empresa" class="block text-sm font-semibold text-slate-700 mb-2">
       Empresa *
@@ -107,7 +114,6 @@ const formTimestamp = Date.now().toString();
     )}
   </div>
 
-  <!-- Email y Teléfono -->
   <div class="grid sm:grid-cols-2 gap-6">
     <div>
       <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">
@@ -146,7 +152,6 @@ const formTimestamp = Date.now().toString();
     </div>
   </div>
 
-  <!-- Zona -->
   <div>
     <label for="zona" class="block text-sm font-semibold text-slate-700 mb-2">
       Zona principal de operación *
@@ -167,7 +172,6 @@ const formTimestamp = Date.now().toString();
     )}
   </div>
 
-  <!-- Mensaje -->
   <div>
     <label for="mensaje" class="block text-sm font-semibold text-slate-700 mb-2">
       Cuéntanos sobre tu empresa (opcional)
@@ -203,14 +207,13 @@ const formTimestamp = Date.now().toString();
     </label>
   </div>
 
-  <!-- Error general -->
+  {/* <!-- Error general --> */}
   {result?.error && !isInputError(result.error) && (
     <div class="bg-red-50 border-2 border-red-200 rounded-lg p-4 text-red-700 text-sm">
       {result.error.message || 'Ha ocurrido un error al enviar el formulario. Por favor, inténtalo de nuevo.'}
     </div>
   )}
 
-  <!-- Submit Button -->
   <button
     type="submit"
     class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
@@ -219,7 +222,6 @@ const formTimestamp = Date.now().toString();
     Solicitar Demo Gratuita
   </button>
 
-  <!-- Beneficios -->
   <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-600">
     <div class="flex items-center gap-2">
       <CircleCheck class="w-4 h-4 text-green-600" />
@@ -235,9 +237,9 @@ const formTimestamp = Date.now().toString();
     </div>
   </div>
 </form>
+)}
 
 <script>
-  // Actualizar timestamp cuando el usuario empieza a interactuar
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
     const timestampInput = document.getElementById('_timestamp') as HTMLInputElement;
@@ -245,7 +247,6 @@ const formTimestamp = Date.now().toString();
     if (form && timestampInput) {
       let timestampSet = false;
       
-      // Actualizar timestamp en la primera interacción
       form.addEventListener('focusin', () => {
         if (!timestampSet) {
           timestampInput.value = Date.now().toString();
@@ -254,7 +255,7 @@ const formTimestamp = Date.now().toString();
       }, { once: true });
     }
 
-    // Deshabilitar botón mientras se envía para evitar doble envío
+    // Deshabilitar botón mientras se envía
     const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
     const contactForm = document.getElementById('contact-form') as HTMLFormElement;
     
@@ -264,11 +265,15 @@ const formTimestamp = Date.now().toString();
         submitBtn.textContent = 'Enviando...';
       });
     }
+
+    // Limpiar el parámetro success de la URL después de mostrar (opcional)
+    if (window.location.search.includes('success=true')) {
+      window.history.replaceState({}, '', window.location.pathname);
+    }
   });
 </script>
 
 <style>
-  /* Asegurar que el honeypot esté completamente oculto */
   [aria-hidden="true"] {
     position: absolute !important;
     left: -9999px !important;
