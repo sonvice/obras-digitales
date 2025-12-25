@@ -5,7 +5,10 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import netlify from '@astrojs/netlify';
+import node from '@astrojs/node';
 import partytown from '@astrojs/partytown';
+
+const useNodeAdapter = process.env.NODE_ADAPTER === 'true';
 
 export default defineConfig({
     site: 'https://obrasdigitales.es',
@@ -16,7 +19,8 @@ export default defineConfig({
             debug: false,
         },
     })],
-    adapter: netlify(),
+       // Node para local, Netlify para producción
+    adapter: useNodeAdapter ? node({ mode: 'standalone' }) : netlify(),
 
     // Optimización de imágenes
     image: {
