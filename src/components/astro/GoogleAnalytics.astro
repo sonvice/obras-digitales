@@ -1,0 +1,55 @@
+---
+// src/components/GoogleAnalytics.astro
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+
+// Solo cargar en producción
+const isProd = import.meta.env.PROD;
+---
+
+{isProd && (
+  <>
+    {/* <!-- Google Analytics con Partytown --> */}
+    <script 
+      type="text/partytown" 
+      async 
+      src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+    ></script>
+    
+    <script 
+      type="text/partytown"
+      define:vars={{ id }}
+    >
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', id);
+    </script>
+
+    {/* <!-- Event tracking para ClientRouter (View Transitions) --> */}
+    <script>
+            declare global {
+        interface Window {
+        gtag: (...args: any[]) => void;
+        dataLayer: any[];
+        }
+    }
+
+    const gtag = window.gtag;
+       {/* Trackear navegaciones con View Transitions */}
+      document.addEventListener('astro:page-load', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'page_view', {
+            page_path: window.location.pathname,
+            page_title: document.title,
+          });
+        }
+      });
+    </script>
+  </>
+)}

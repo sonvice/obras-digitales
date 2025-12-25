@@ -5,15 +5,17 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import netlify from '@astrojs/netlify';
+import partytown from '@astrojs/partytown';
 
 export default defineConfig({
     site: 'https://obrasdigitales.es',
     trailingSlash: 'never', // URLs limpias: /contacto en lugar de /contacto/
-    integrations: [
-        react(),
-        sitemap(),
-        mdx(),
-    ],
+    integrations: [react(), sitemap(), mdx(), partytown({
+        config: {
+            forward: ['dataLayer.push'],
+            debug: false,
+        },
+    })],
     adapter: netlify(),
 
     // Optimización de imágenes

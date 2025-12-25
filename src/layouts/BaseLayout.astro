@@ -4,6 +4,8 @@ import { ClientRouter } from "astro:transitions";
 import '../styles/global.css';
 import Header from '../components/astro/Header.astro';
 import Footer from '../components/astro/Footer.astro';
+import GoogleAnalytics from "../components/astro/GoogleAnalytics.astro";
+import AnalyticsEvents from "../components/astro/AnalyticsEvents.astro";
 
 interface Props {
   title: string;
@@ -38,7 +40,8 @@ const siteUrl = 'https://obrasdigitales.es';
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    
+    <GoogleAnalytics id="G-HFPLTMFRTF" />
+     <AnalyticsEvents />
     <!-- ClientRouter - Habilitando SPA mode -->
     <ClientRouter />
     
@@ -125,7 +128,7 @@ const siteUrl = 'https://obrasdigitales.es';
       document.addEventListener('astro:page-load', () => {
         // Aquí puedes reinicializar scripts que lo necesiten
         // Por ejemplo: analytics, scroll animaciones, etc.
-        console.log('🎨 Página cargada con transiciones');
+      
       });
 
       // Antes de cada navegación

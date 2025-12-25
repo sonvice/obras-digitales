@@ -1,0 +1,151 @@
+---
+// src/components/astro/AnalyticsEvents.astro
+---
+
+<script>
+      declare global {
+    interface Window {
+      gtag: (...args: any[]) => void;
+      dataLayer: any[];
+    }
+  }
+
+  const gtag = window.gtag;
+  // Esperar a que gtag esté disponible
+  function waitForGtag(callback: () => void): void {
+    if (typeof gtag !== 'undefined') {
+      callback();
+    } else {
+      setTimeout(() => waitForGtag(callback), 100);
+    }
+  }
+
+  // ========================================
+  // 1. Trackear clicks en CTA importantes
+  // ========================================
+  document.addEventListener('astro:page-load', () => {
+    
+    // Click en "Solicitar Demo"
+    document.querySelectorAll('[data-track="demo"]').forEach(button => {
+      button.addEventListener('click', () => {
+        waitForGtag(() => {
+          gtag('event', 'click_cta', {
+            event_category: 'CTA',
+            event_label: 'Solicitar Demo',
+            value: 1
+          });
+        });
+      });
+    });
+
+    // Click en "Calcular ROI"
+    document.querySelectorAll('[data-track="calculadora-roi"]').forEach(button => {
+      button.addEventListener('click', () => {
+        waitForGtag(() => {
+          gtag('event', 'click_cta', {
+            event_category: 'CTA',
+            event_label: 'Calculadora ROI',
+            value: 1
+          });
+        });
+      });
+    });
+
+    // Click en "Contacto"
+    document.querySelectorAll('[data-track="contacto"]').forEach(button => {
+      button.addEventListener('click', () => {
+        waitForGtag(() => {
+          gtag('event', 'click_cta', {
+            event_category: 'CTA',
+            event_label: 'Contacto',
+            value: 1
+          });
+        });
+      });
+    });
+
+    // Click en WhatsApp
+    document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        waitForGtag(() => {
+          gtag('event', 'contact', {
+            event_category: 'Communication',
+            event_label: 'WhatsApp',
+            method: 'WhatsApp'
+          });
+        });
+      });
+    });
+
+    // Click en teléfono
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', () => {
+        waitForGtag(() => {
+          gtag('event', 'contact', {
+            event_category: 'Communication',
+            event_label: 'Phone Call',
+            method: 'Phone'
+          });
+        });
+      });
+    });
+
+    // ========================================
+    // 2. Trackear scroll depth
+    // ========================================
+    const scrollTracked: Record<string, boolean> = {
+    '25': false,
+    '50': false,
+    '75': false,
+    '90': false
+    };
+
+    const trackScroll = () => {
+    const scrollPercent = Math.round(
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    );
+
+    Object.keys(scrollTracked).forEach((threshold: string) => {
+        if (scrollPercent >= parseInt(threshold) && !scrollTracked[threshold]) {
+        scrollTracked[threshold] = true;
+        waitForGtag(() => {
+            window.gtag('event', 'scroll', {
+            event_category: 'Engagement',
+            event_label: `Scroll ${threshold}%`,
+            value: parseInt(threshold)
+            });
+        });
+        }
+    });
+    };
+
+    let scrollTimeout: number;
+    window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = window.setTimeout(trackScroll, 150);
+    });
+    // ========================================
+    // 3. Trackear tiempo en página
+    // ========================================
+    const startTime = Date.now();
+    const pagePath = window.location.pathname;
+
+    const trackTimeOnPage = () => {
+      const timeSpent = Math.round((Date.now() - startTime) / 1000);
+      
+      if (timeSpent > 10) {
+        waitForGtag(() => {
+          gtag('event', 'time_on_page', {
+            event_category: 'Engagement',
+            event_label: pagePath,
+            value: timeSpent
+          });
+        });
+      }
+    };
+
+    window.addEventListener('beforeunload', trackTimeOnPage);
+    document.addEventListener('astro:before-preparation', trackTimeOnPage);
+
+  });
+</script>
