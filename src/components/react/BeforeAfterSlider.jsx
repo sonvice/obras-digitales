@@ -10,7 +10,7 @@ export default function BeforeAfterSlider({
   alt = "Antes y después de la reforma" 
 }) {
   return (
-    <div className="relative rounded-xl overflow-hidden shadow-2xl">
+    <div className="relative  shadow-2xl">
       <ReactCompareSlider
         itemOne={
           <ReactCompareSliderImage 

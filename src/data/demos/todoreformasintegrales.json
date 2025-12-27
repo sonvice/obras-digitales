@@ -1,0 +1,246 @@
+{
+  "nombre": "Todo Reformas Integrales",
+  "eslogan": "Más de 40 años transformando hogares en Madrid",
+  "webActual": "todoreformasintegrales.com",
+  "resenasGoogle": 27,
+  "puntuacionGoogle": 4.8,
+  "zona": "Madrid y zona Oeste",
+  "proyectosRealizados": "+500",
+
+  "heroImagen": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80",
+  "serviciosImagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+
+  "sobreNosotros": "Es una empresa con más de 40 años de experiencia que opera en Madrid capital y la zona Oeste. Disponen de un equipo multidisciplinar completo (arquitectos, aparejadores, interioristas y mano de obra cualificada) para ejecutar cualquier tipo de reforma garantizando calidad, el mejor precio y tiempos récord.",
+
+  "stats": [
+    { "valor": "40+", "label": "Años de experiencia" },
+    { "valor": "4.8★", "label": "16 reseñas Google" },
+    { "valor": "+500", "label": "Proyectos realizados" }
+  ],
+
+  "contacto": {
+    "telefono": "911 279 091",
+    "telefonoAdmin": "639 482 302",
+    "email": "info@todoreformasintegrales.com",
+    "direccion": "C/ Juan Duque, 34. 28005 Madrid",
+    "distrito": "Arganzuela - Barrio Imperial"
+  },
+
+  "colores": {
+    "primario": "#1a365d",
+    "secundario": "#3182ce",
+    "acento": "#e53e3e",
+    "fondo": "#0f172a",
+    "fondoClaro": "#f7fafc"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Reforma de cocina premium",
+      "ubicacion": "Pozuelo de Alarcón",
+      "antes": "",
+      "despues": "",
+      "metros": 25,
+      "duracion": "6 semanas"
+    },
+    {
+      "titulo": "Baño spa de lujo",
+      "ubicacion": "Las Rozas",
+      "antes": "",
+      "despues": "",
+      "metros": 12,
+      "duracion": "4 semanas"
+    },
+    {
+      "titulo": "Salón con terraza integrada",
+      "ubicacion": "Majadahonda",
+      "antes": "",
+      "despues": "",
+      "metros": 45,
+      "duracion": "8 semanas"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Transformación completa de viviendas con gestión integral",
+      "icono": "Building2"
+    },
+    {
+      "nombre": "Reformas de Cocinas",
+      "descripcion": "Diseño y ejecución de cocinas modernas",
+      "icono": "Sparkles"
+    },
+    {
+      "nombre": "Reformas de Baños",
+      "descripcion": "Baños de diseño con materiales premium",
+      "icono": "Droplets"
+    },
+    {
+      "nombre": "Fontanería",
+      "descripcion": "Instalaciones con garantía profesional",
+      "icono": "Wrench"
+    },
+    {
+      "nombre": "Electricidad",
+      "descripcion": "Instalaciones seguras y eficientes",
+      "icono": "Plug"
+    },
+    {
+      "nombre": "Climatización",
+      "descripcion": "Calefacción y aire acondicionado",
+      "icono": "ThermometerSun"
+    },
+    {
+      "nombre": "Carpintería",
+      "descripcion": "Puertas y armarios a medida",
+      "icono": "DoorOpen"
+    },
+    {
+      "nombre": "Pintura",
+      "descripcion": "Acabados que transforman espacios",
+      "icono": "PaintBucket"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Reforma integral de vivienda",
+      "descripcion": "Transformación completa de 95m² incluyendo cocina, baños y todas las instalaciones.",
+      "imagen": "/demo/todoreformasintegrales/salon.jpg",
+      "ubicacion": "Majadahonda",
+      "metros": 95,
+      "duracion": "3 meses"
+    },
+    {
+      "titulo": "Cocina de diseño premium",
+      "descripcion": "Cocina moderna con isla central y electrodomésticos integrados.",
+      "imagen": "/demo/todoreformasintegrales/cocina.jpg",
+      "ubicacion": "Pozuelo de Alarcón",
+      "metros": 25,
+      "duracion": "6 sem."
+    },
+    {
+      "titulo": "Baño spa de lujo",
+      "descripcion": "Baño con ducha de obra y grifería de diseño.",
+      "imagen": "/demo/todoreformasintegrales/bano.jpg",
+      "ubicacion": "Las Rozas",
+      "metros": 12,
+      "duracion": "4 sem."
+    },
+    {
+      "titulo": "Local comercial moderno",
+      "descripcion": "Reforma integral de local con distribución diáfana.",
+      "imagen": "",
+      "ubicacion": "Madrid Centro",
+      "metros": 150,
+      "duracion": "2 meses"
+    },
+    {
+      "titulo": "Suite principal con vestidor",
+      "descripcion": "Dormitorio con baño en suite y vestidor a medida.",
+      "imagen": "/demo/todoreformasintegrales/suite.jpg",
+      "ubicacion": "Boadilla del Monte",
+      "metros": 35,
+      "duracion": "5 sem."
+    },
+    {
+      "titulo": "Salón con terraza integrada",
+      "descripcion": "Ampliación del salón con cerramiento de cristal.",
+      "imagen": "",
+      "ubicacion": "Alcorcón",
+      "metros": 45,
+      "duracion": "6 sem."
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Empresa de prestigio con larga trayectoria. Son profesionales de confianza, trabajar bien y además te asesoran en todo lo que pueden. Gran seriedad y compromiso con el trabajo que les encargas. Estoy muy satisfecha! Profesionales recomendables!",
+      "destacado": "alta calidad.",
+      "autor": "Natalia Remón Vila",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Muy contentos con la reforma que nos han realizado,preciso muy buenos y finalizan en los tiempos que acuerdan las obras,sin duda contaremos con ellos para más proyectos",
+      "destacado": "profesionales.",
+      "autor": "Lau Ñ",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Grandes profesionales, son muy eficientes en todo lo que hacen",
+      "destacado": "competitivo.",
+      "autor": "Beach & Arts Hostel",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Hicimos una reforma con ellos y el resultado fue espectacular. La profesionalidad con la que trabajan, la paciencia que tienen y el cumplimiento de los tiempos, que no es fácil en este sector. Jorge nos trató estupendamente, sin duda, en próximas ocasiones recurriré a ellos porque la confianza que nos ha transmitido y el resultado obtenido merecen una alta consideración.",
+      "destacado": "impecable.",
+      "autor": "Matilde masa negreira",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Se me había roto una tabla del parquet y me han propuesto distintas soluciones con distintos presupuestos para adaptarse a mis necesidades.Muy profesionales!",
+      "destacado": "calidad.",
+      "autor": "Miguel Cuende",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Muy contenta, volvería a contratarlos sin duda, cercanos y muy profesionales en su trabajo Muchas gracias!",
+      "destacado": "recomendables.",
+      "autor": "CRISTINA FERNÁNDEZ",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Presupuestos Gratuitos",
+      "descripcion": "Solicite un presupuesto detallado sin compromiso",
+      "icono": "FileText"
+    },
+    {
+      "titulo": "40+ Años de Experiencia",
+      "descripcion": "Equipo profesional con décadas en el sector",
+      "icono": "Award"
+    },
+    {
+      "titulo": "Garantía Total",
+      "descripcion": "Todos nuestros trabajos están garantizados",
+      "icono": "Shield"
+    },
+    {
+      "titulo": "Llaves en Mano",
+      "descripcion": "Nos encargamos de todo, tú solo disfruta",
+      "icono": "KeyRound"
+    }
+  ],
+
+  "zonasServicio": [
+    "Madrid Centro", "Brunete", "Majadahonda", "Fuenlabrada", "Boadilla del Monte",
+    "Villaviciosa de Odón", "Pozuelo de Alarcón", "Las Rozas", 
+    "Alcorcón", "Móstoles", "Leganés", "Navalcarnero"
+  ],
+
+  "empresa": {
+    "razonSocial": "García Badillo e Hijos, S.L.",
+    "experiencia": "40+ años"
+  },
+
+  "cta": {
+    "texto": "Pedir Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=todo-reformas-integrales"
+  },
+
+  "seo": {
+    "titulo": "Todo Reformas Integrales | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Todo Reformas Integrales - Empresa de reformas con 40+ años en Madrid"
+  }
+}

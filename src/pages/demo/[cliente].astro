@@ -1,0 +1,724 @@
+---
+/**
+ * DEMO PERSONALIZADA v8 - Full Dribbble Style
+ * Diseño premium coherente en todas las secciones
+ */
+
+import fs from 'node:fs';
+import path from 'node:path';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BeforeAfterSlider from '../../components/react/BeforeAfterSlider';
+import CalculadoraPresupuesto from '../../components/react/CalculadoraPresupuesto';
+import { 
+  MapPin, Ruler, Clock, Home, FileText, Award, Shield, CircleCheck, 
+  Phone, Mail, ChevronRight, Hammer, PaintBucket, Wrench, Plug, 
+  Droplets, ThermometerSun, DoorOpen, Layers, Building2, Sparkles,
+  HardHat, Palette, Lightbulb, KeyRound, Quote, Star, Users, Smartphone,
+  ArrowRight, ArrowUpRight, Play, Zap
+} from '@lucide/astro';
+
+export async function getStaticPaths() {
+  const demosDir = path.join(process.cwd(), 'src/data/demos');
+  
+  if (!fs.existsSync(demosDir)) {
+    fs.mkdirSync(demosDir, { recursive: true });
+    return [];
+  }
+  
+  const files = fs.readdirSync(demosDir);
+  
+  return files
+    .filter(file => file.endsWith('.json') && !file.startsWith('_'))
+    .map(file => {
+      const clienteId = file.replace('.json', '');
+      const data = JSON.parse(fs.readFileSync(path.join(demosDir, file), 'utf-8'));
+      return {
+        params: { cliente: clienteId },
+        props: { config: data }
+      };
+    });
+}
+
+const { cliente } = Astro.params;
+const { config } = Astro.props;
+
+const colores = config.colores || {
+  primario: '#1e40af',
+  secundario: '#fbbf24',
+  acento: '#ef4444',
+  fondo: '#0f172a',
+  fondoClaro: '#f1f5f9'
+};
+
+const heroBackground = config.heroImagen || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80';
+
+const defaultSliderImages = [
+  { antes: '/demo/todoreformasintegrales/before-after/cocina-antes.webp', despues: '/demo/todoreformasintegrales/before-after/cocina-despues.webp', titulo: 'Reforma de cocina' },
+  { antes: '/demo/todoreformasintegrales/before-after/bano-antes.webp', despues: '/demo/todoreformasintegrales/before-after/bano-despues.webp', titulo: 'Reforma de baño' },
+  { antes: '/demo/todoreformasintegrales/before-after/salon-terraza-antes.webp', despues: '/demo/todoreformasintegrales/before-after/salon-terraza-despues.webp', titulo: 'Reforma de salón' },
+];
+
+const defaultProjectImages = [
+  'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
+  'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80',
+  'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80',
+  'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&q=80',
+  'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+];
+
+const avatarColors = ['#3182ce', '#e53e3e', '#38a169', '#d69e2e', '#805ad5', '#dd6b20'];
+
+const iconosServicios: Record<string, any> = {
+  'Hammer': Hammer, 'PaintBucket': PaintBucket, 'Wrench': Wrench, 'Plug': Plug,
+  'Droplets': Droplets, 'ThermometerSun': ThermometerSun, 'DoorOpen': DoorOpen,
+  'Layers': Layers, 'Building2': Building2, 'Sparkles': Sparkles, 'HardHat': HardHat,
+  'Palette': Palette, 'Lightbulb': Lightbulb, 'KeyRound': KeyRound, 'Home': Home,
+  'Shield': Shield, 'FileText': FileText, 'Award': Award, 'CheckCircle': CircleCheck,
+  'Users': Users, 'Smartphone': Smartphone, 'Zap': Zap,
+};
+
+const slidersData = config.sliders ? config.sliders : config.slider ? [config.slider] : null;
+const testimoniosData = config.testimonios ? config.testimonios : config.testimonioDestacado ? [config.testimonioDestacado] : null;
+
+const schema = { "@type": "WebPage", "name": `Demo Web - ${config.nombre}` };
+---
+
+<BaseLayout
+  title={config.seo?.titulo || `${config.nombre} | Nueva Web Profesional`}
+  description={config.seo?.descripcion || `Demo de web profesional para ${config.nombre}`}
+  schema={schema}
+  disableTransitions={true}
+>
+  <link slot="head" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css" />
+
+  <!-- Banner Demo -->
+  <div class="text-center py-3 px-4 sticky top-0 z-50 backdrop-blur-md" style={`background-color: ${colores.secundario}ee; color: ${colores.fondo};`}>
+    <p class="text-sm font-semibold">
+      🎯 Demo personalizada para <strong>{config.nombre}</strong> — 
+      <a href={config.cta?.urlContacto || "/contacto"} class="underline hover:opacity-80">
+        ¿Te gusta? Hablemos →
+      </a>
+    </p>
+  </div>
+
+  <!-- ======================= HERO ======================= -->
+  <section class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={heroBackground} alt="Fondo" class="w-full h-full object-cover" />
+      <div class="absolute inset-0" style={`background: linear-gradient(160deg, ${colores.fondo}f5 0%, ${colores.primario}e0 40%, ${colores.fondo}f8 100%);`}></div>
+    </div>
+    
+    <!-- Elementos decorativos -->
+    <div class="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-20" style={`background-color: ${colores.secundario};`}></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-10" style={`background-color: ${colores.secundario};`}></div>
+    
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        
+        <!-- Bloque Izquierdo: Título y descripción -->
+        <div class="text-white">
+          {config.empresa?.experiencia && (
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-sm font-medium mb-8 border border-white/20">
+              <div class="w-2 h-2 rounded-full animate-pulse" style={`background-color: ${colores.secundario};`}></div>
+              <span>{config.empresa.experiencia} de experiencia</span>
+            </div>
+          )}
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
+            <span style={`color: ${colores.secundario};`}>{config.nombre}</span>
+          </h1>
+          
+          {config.sobreNosotros && (
+            <p class="text-lg text-white/70 mb-8 leading-relaxed font-light max-w-xl">
+              {config.sobreNosotros}
+            </p>
+          )}
+          
+          {!config.sobreNosotros && config.eslogan && (
+            <p class="text-xl text-white/70 mb-8 font-light">{config.eslogan}</p>
+          )}
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#calculadora" class="group inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold rounded-2xl transition-all shadow-2xl hover:shadow-3xl hover:scale-[1.02] text-lg" style={`background-color: ${colores.secundario}; color: ${colores.fondo};`}>
+              Calcular Presupuesto
+              <ArrowRight class="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a href="#proyectos" class="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md font-semibold rounded-2xl hover:bg-white/20 transition-all border border-white/20 text-lg">
+              <Play class="w-5 h-5" />
+              Ver Proyectos
+            </a>
+          </div>
+        </div>
+        
+        <!-- Bloque Derecho: Stats y contacto -->
+        <div class="text-white space-y-6">
+          <!-- Card de Stats -->
+          <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-8">
+            <div class="grid grid-cols-3 gap-6">
+              {config.stats ? (
+                config.stats.map((stat: {valor: string, label: string}) => (
+                  <div class="text-center">
+                    <div class="text-3xl lg:text-4xl font-bold mb-2" style={`color: ${colores.secundario};`}>{stat.valor}</div>
+                    <div class="text-xs text-white/50 uppercase tracking-wider">{stat.label}</div>
+                  </div>
+                ))
+              ) : (
+                <>
+                  {config.empresa?.experiencia && (
+                    <div class="text-center">
+                      <div class="text-3xl lg:text-4xl font-bold mb-2" style={`color: ${colores.secundario};`}>{config.empresa.experiencia}</div>
+                      <div class="text-xs text-white/50 uppercase tracking-wider">Experiencia</div>
+                    </div>
+                  )}
+                  {config.resenasGoogle && (
+                    <div class="text-center">
+                      <div class="text-3xl lg:text-4xl font-bold mb-2" style={`color: ${colores.secundario};`}>{config.puntuacionGoogle}★</div>
+                      <div class="text-xs text-white/50 uppercase tracking-wider">{config.resenasGoogle} reseñas</div>
+                    </div>
+                  )}
+                  {config.proyectosRealizados && (
+                    <div class="text-center">
+                      <div class="text-3xl lg:text-4xl font-bold mb-2" style={`color: ${colores.secundario};`}>{config.proyectosRealizados}</div>
+                      <div class="text-xs text-white/50 uppercase tracking-wider">Proyectos</div>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+          
+          <!-- Card de Contacto -->
+          {config.contacto && (
+            <div class="bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 p-6 space-y-4">
+              <p class="text-xs text-white/40 uppercase tracking-wider font-medium">Contacto directo</p>
+              
+              <a href={`tel:${config.contacto.telefono?.replace(/\s/g, '')}`} class="group flex items-center gap-4 bg-white/5 px-5 py-4 rounded-2xl hover:bg-white/10 transition-all">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110" style={`background-color: ${colores.secundario}20;`}>
+                  <Phone class="w-6 h-6" style={`color: ${colores.secundario};`} />
+                </div>
+                <div>
+                  <div class="font-semibold text-lg">{config.contacto.telefono}</div>
+                  <div class="text-xs text-white/40">Llámanos ahora</div>
+                </div>
+                <ArrowUpRight class="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-white/50" />
+              </a>
+              
+              <a href={`mailto:${config.contacto.email}`} class="group flex items-center flex-wrap gap-4 bg-white/5 px-5 py-4 rounded-2xl hover:bg-white/10 transition-all">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110" style={`background-color: ${colores.secundario}20;`}>
+                  <Mail class="w-6 h-6" style={`color: ${colores.secundario};`} />
+                </div>
+                <div>
+                  <div class="font-semibold">{config.contacto.email}</div>
+                  <div class="text-xs text-white/40">Escríbenos</div>
+                </div>
+                <ArrowUpRight class="w-5 h-5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-white/50" />
+              </a>
+            </div>
+          )}
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Scroll indicator moderno -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+      <div class="flex flex-col items-center gap-2 text-white/30">
+        <span class="text-xs uppercase tracking-widest">Scroll</span>
+        <div class="w-px h-12 bg-linear-to-b from-white/30 to-transparent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SERVICIOS ======================= -->
+  {config.servicios && config.servicios.length > 0 && (
+    <section class="py-28 lg:py-36 bg-white relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.03]" style={`background-color: ${colores.secundario};`}></div>
+      <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.03]" style={`background-color: ${colores.primario};`}></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase mb-4" style={`color: ${colores.secundario};`}>
+              <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+              Servicios
+            </span>
+            <h2 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.1]">
+              Todo lo que necesitas<br />
+              <span style={`color: ${colores.primario};`}>en un solo lugar</span>
+            </h2>
+          </div>
+          <p class="text-slate-500 max-w-md lg:text-right text-lg">
+            Soluciones integrales con los mejores profesionales para transformar cualquier espacio.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {config.servicios.map((servicio: any, index: number) => {
+            const esObjeto = typeof servicio === 'object';
+            const nombre = esObjeto ? servicio.nombre : servicio;
+            const descripcion = esObjeto ? servicio.descripcion : null;
+            const iconoNombre = esObjeto ? servicio.icono : null;
+            const IconoComponente = iconoNombre ? iconosServicios[iconoNombre] : Hammer;
+            
+            return (
+              <div class="group relative rounded-3xl p-8 transition-all duration-500 cursor-pointer bg-slate-50 hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] overflow-hidden">
+                <!-- Fondo oscuro que aparece en hover -->
+                <div 
+                  class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+                  style={`background: linear-gradient(135deg, ${colores.primario}, ${colores.fondo});`}
+                ></div>
+                
+                <!-- Contenido -->
+                <div class="relative z-10">
+                  <div 
+                    class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-white/20"
+                    style={`background-color: ${colores.secundario}15;`}
+                  >
+                    <IconoComponente class="w-7 h-7 transition-colors duration-300 group-hover:text-white" style={`color: ${colores.secundario};`} />
+                  </div>
+                  
+                  <h3 class="font-bold text-xl mb-3 text-slate-900 transition-colors duration-300 group-hover:text-white">{nombre}</h3>
+                  {descripcion && <p class="text-sm leading-relaxed mb-6 text-slate-500 transition-colors duration-300 group-hover:text-white/70">{descripcion}</p>}
+                  
+                  <div class="flex items-center gap-2 text-sm font-medium text-slate-400 transition-colors duration-300 group-hover:text-white/80">
+                    <span>Más info</span>
+                    <ArrowRight class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+                
+                <!-- Número decorativo -->
+                <div class="absolute top-6 right-6 text-7xl font-bold opacity-[0.05] select-none transition-all duration-300 group-hover:text-white group-hover:opacity-[0.1]" style={`color: ${colores.primario};`}>
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ======================= TRANSFORMACIONES ======================= -->
+  {slidersData && slidersData.length > 0 && (
+    <section id="transformaciones" class="py-28 lg:py-36 relative overflow-hidden" style={`background-color: ${colores.fondoClaro};`}>
+      <div class="absolute top-1/2 left-0 w-[300px] h-[600px] -translate-y-1/2 opacity-[0.03] rounded-r-full" style={`background-color: ${colores.primario};`}></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase mb-4" style={`color: ${colores.secundario};`}>
+              <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+              Transformaciones
+            </span>
+            <h2 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.1]">
+              Antes y<br />
+              <span style={`color: ${colores.primario};`}>Después</span>
+            </h2>
+          </div>
+          <p class="text-slate-500 max-w-md lg:text-right text-lg">
+            Desliza para ver el resultado de nuestros trabajos más destacados.
+          </p>
+        </div>
+        
+        <div class={`grid gap-8 ${slidersData.length === 1 ? 'max-w-4xl mx-auto' : slidersData.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+          {slidersData.map((slider: any, index: number) => {
+            const fallback = defaultSliderImages[index % defaultSliderImages.length];
+            const antes = slider.antes || fallback.antes;
+            const despues = slider.despues || fallback.despues;
+            const titulo = slider.titulo || fallback.titulo;
+            
+            return (
+              <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500">
+                {titulo && (
+                  <div class="px-8 py-6 border-b border-slate-100 flex items-start justify-between">
+                    <div>
+                      <h3 class="font-bold text-slate-900 text-xl mb-1">{titulo}</h3>
+                      {slider.ubicacion && (
+                        <div class="flex items-center gap-2 text-slate-400 text-sm">
+                          <MapPin class="w-4 h-4" />
+                          <span>{slider.ubicacion}</span>
+                        </div>
+                      )}
+                    </div>
+                    <div class="text-4xl font-bold opacity-10" style={`color: ${colores.primario};`}>
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+                  </div>
+                )}
+                
+                <div class="aspect-4/3 relative">
+                  <BeforeAfterSlider 
+                    client:visible
+                    beforeImage={antes}
+                    afterImage={despues}
+                    alt={titulo || `Transformación ${index + 1}`}
+                  />
+                </div>
+                
+                {(slider.metros || slider.duracion) && (
+                  <div class="px-8 py-5 bg-slate-50 flex items-center gap-6">
+                    {slider.metros && (
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style={`background-color: ${colores.secundario}15;`}>
+                          <Ruler class="w-5 h-5" style={`color: ${colores.secundario};`} />
+                        </div>
+                        <div>
+                          <div class="font-bold text-slate-900">{slider.metros} m²</div>
+                          <div class="text-xs text-slate-400">Superficie</div>
+                        </div>
+                      </div>
+                    )}
+                    {slider.duracion && (
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center" style={`background-color: ${colores.secundario}15;`}>
+                          <Clock class="w-5 h-5" style={`color: ${colores.secundario};`} />
+                        </div>
+                        <div>
+                          <div class="font-bold text-slate-900">{slider.duracion}</div>
+                          <div class="text-xs text-slate-400">Duración</div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ======================= PROYECTOS ======================= -->
+  {config.proyectos && config.proyectos.length > 0 && (
+    <section id="proyectos" class="py-28 lg:py-36 bg-white relative overflow-hidden">
+      <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-[0.03]" style={`background-color: ${colores.secundario};`}></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-20">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase mb-4" style={`color: ${colores.secundario};`}>
+              <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+              Portfolio
+            </span>
+            <h2 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.1]">
+              Proyectos<br />
+              <span style={`color: ${colores.primario};`}>Realizados</span>
+            </h2>
+          </div>
+          <p class="text-slate-500 max-w-md lg:text-right text-lg">
+            Cada proyecto es único. Descubre cómo transformamos espacios.
+          </p>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="galeria-proyectos">
+          {config.proyectos.map((proyecto: any, index: number) => {
+            const imagenSrc = proyecto.imagen || defaultProjectImages[index % defaultProjectImages.length];
+            const imagenFull = proyecto.imagenFull || imagenSrc.replace('w=800', 'w=1600');
+            const isLarge = index === 0;
+            
+            return (
+              <a 
+                href={imagenFull} 
+                data-pswp-width="1200" 
+                data-pswp-height="800" 
+                data-cropped="true" 
+                class={`group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${isLarge ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+              >
+                <div class="relative aspect-4/3 overflow-hidden">
+                  <img src={imagenSrc} alt={proyecto.titulo} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                  
+                  <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                  
+                  <div class="absolute inset-0 p-6 flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                      <div class="text-5xl font-bold text-white/10">{String(index + 1).padStart(2, '0')}</div>
+                      <div class="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                        <ArrowUpRight class="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 class="text-white font-bold text-2xl leading-tight mb-2">{proyecto.titulo}</h3>
+                      {proyecto.ubicacion && (
+                        <div class="flex items-center gap-2 text-white/60 text-sm">
+                          <MapPin class="w-4 h-4" />
+                          <span>{proyecto.ubicacion}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  {proyecto.descripcion && <p class="text-slate-500 text-sm mb-5 line-clamp-2">{proyecto.descripcion}</p>}
+                  <div class="flex items-center gap-3">
+                    {proyecto.metros && (
+                      <div class="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-xl">
+                        <Ruler class="w-4 h-4" style={`color: ${colores.primario};`} />
+                        <span class="font-semibold text-slate-700 text-sm">{proyecto.metros} m²</span>
+                      </div>
+                    )}
+                    {proyecto.duracion && (
+                      <div class="flex items-center gap-2 bg-slate-100 px-4 py-2 rounded-xl">
+                        <Clock class="w-4 h-4" style={`color: ${colores.primario};`} />
+                        <span class="font-semibold text-slate-700 text-sm">{proyecto.duracion}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ======================= TESTIMONIOS ======================= -->
+  {testimoniosData && testimoniosData.length > 0 && (
+    <section class="py-28 lg:py-36 relative overflow-hidden" style={`background-color: ${colores.fondoClaro};`}>
+      <div class="absolute top-0  w-[400px] h-[400px] rounded-full opacity-[0.03]" style={`background-color: ${colores.primario};`}></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <span class="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase mb-4 justify-center" style={`color: ${colores.secundario};`}>
+            <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+            Testimonios
+            <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+          </span>
+          <h2 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.1]">
+            Lo que dicen<br />
+            <span style={`color: ${colores.primario};`}>nuestros clientes</span>
+          </h2>
+        </div>
+        
+        <div class={`grid gap-6 ${testimoniosData.length === 1 ? 'max-w-2xl mx-auto' : testimoniosData.length === 2 ? 'md:grid-cols-2 max-w-4xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+          {testimoniosData.map((testimonio: any, index: number) => {
+            const avatarColor = avatarColors[index % avatarColors.length];
+            const inicial = testimonio.autor ? testimonio.autor.charAt(0).toUpperCase() : '?';
+            
+            return (
+              <div class="group relative rounded-3xl p-8 transition-all duration-500 bg-white hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02] overflow-hidden">
+                <!-- Fondo oscuro que aparece en hover -->
+                <div 
+                  class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
+                  style={`background: linear-gradient(135deg, ${colores.primario}, ${colores.fondo});`}
+                ></div>
+                
+                <!-- Contenido -->
+                <div class="relative z-10">
+                  <div class="mb-6">
+                    <div 
+                      class="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:bg-white/20"
+                      style={`background-color: ${colores.secundario}15;`}
+                    >
+                      <Quote class="w-7 h-7 transition-colors duration-300 group-hover:text-white" style={`color: ${colores.secundario};`} />
+                    </div>
+                  </div>
+                  
+                  <p class="leading-relaxed mb-8 text-lg text-slate-600 transition-colors duration-300 group-hover:text-white/90">
+                    {testimonio.texto}
+                    {testimonio.destacado && (
+                      <span class="font-semibold transition-colors duration-300 group-hover:text-white" style={`color: ${colores.secundario};`}> {testimonio.destacado}</span>
+                    )}
+                  </p>
+                  
+                  <div class="flex items-center gap-4">
+                    <div 
+                      class="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-xl transition-all duration-300 group-hover:bg-white/20" 
+                      style={`background-color: ${avatarColor};`}
+                    >
+                      {inicial}
+                    </div>
+                    <div class="flex-1">
+                      <p class="font-bold text-slate-900 transition-colors duration-300 group-hover:text-white">{testimonio.autor}</p>
+                      <p class="text-sm text-slate-400 transition-colors duration-300 group-hover:text-white/60">{testimonio.fuente || 'Cliente'}</p>
+                    </div>
+                    
+                    {testimonio.puntuacion && (
+                      <div class="flex items-center gap-0.5">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            class={`w-4 h-4 transition-colors duration-300 ${i < testimonio.puntuacion ? '' : 'opacity-20'}`} 
+                            style={`color: ${colores.secundario}; fill: ${i < testimonio.puntuacion ? colores.secundario : 'transparent'};`}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                <!-- Comillas decorativas -->
+                <div class="absolute top-6 right-6 text-8xl font-bold opacity-[0.05] select-none transition-all duration-300 group-hover:text-white group-hover:opacity-[0.1]" style={`color: ${colores.primario};`}>
+                  "
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ======================= VENTAJAS ======================= -->
+  {config.ventajas && config.ventajas.length > 0 && (
+    <section class="py-28 lg:py-36 bg-white relative overflow-hidden">
+      <div class="absolute top-1/2 right-0 w-[300px] h-[600px] -translate-y-1/2 opacity-[0.03] rounded-l-full" style={`background-color: ${colores.secundario};`}></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <span class="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase mb-4 justify-center" style={`color: ${colores.secundario};`}>
+            <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+            Ventajas
+            <span class="w-8 h-px" style={`background-color: ${colores.secundario};`}></span>
+          </span>
+          <h2 class="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.1]">
+            ¿Por qué<br />
+            <span style={`color: ${colores.primario};`}>elegirnos?</span>
+          </h2>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {config.ventajas.map((ventaja: {titulo: string, descripcion: string, icono?: string}, index: number) => {
+            const IconoVentaja = ventaja.icono ? iconosServicios[ventaja.icono] || CircleCheck : CircleCheck;
+            return (
+              <div class="group text-center">
+                <div class="relative mx-auto mb-8">
+                  <div class="w-24 h-24 rounded-3xl mx-auto flex items-center justify-center shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl group-hover:rotate-3" style={`background: linear-gradient(135deg, ${colores.primario}, ${colores.secundario});`}>
+                    <IconoVentaja class="w-12 h-12 text-white" />
+                  </div>
+                  <div class="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity" style={`background-color: ${colores.secundario}; color: ${colores.fondo};`}>
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                </div>
+                <h3 class="font-bold text-slate-900 mb-3 text-xl">{ventaja.titulo}</h3>
+                <p class="text-slate-500">{ventaja.descripcion}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ======================= CALCULADORA ======================= -->
+  <section id="calculadora" class="py-28 lg:py-36 text-white relative overflow-hidden" style={`background: linear-gradient(160deg, ${colores.primario} 0%, ${colores.fondo} 100%);`}>
+    <div class="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-20" style={`background-color: ${colores.secundario};`}></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-10" style={`background-color: ${colores.secundario};`}></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase mb-4 justify-center text-white/50">
+          <Zap class="w-4 h-4" />
+          Herramienta
+        </span>
+        <h2 class="text-4xl lg:text-6xl font-bold mb-6 leading-[1.1]">
+          Calculadora de<br />
+          <span style={`color: ${colores.secundario};`}>Presupuestos</span>
+        </h2>
+        <p class="text-xl text-white/60 max-w-2xl mx-auto">Obtén una estimación instantánea para tu proyecto de reforma</p>
+      </div>
+      
+      <div class="bg-white rounded-4xl shadow-2xl p-8 lg:p-12">
+        <CalculadoraPresupuesto client:visible />
+      </div>
+      
+      <div class="flex items-center justify-center gap-6 mt-10 text-white/40 text-sm">
+        <div class="flex items-center gap-2">
+          <CircleCheck class="w-4 h-4" />
+          <span>Sin compromiso</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <CircleCheck class="w-4 h-4" />
+          <span>Resultado inmediato</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <CircleCheck class="w-4 h-4" />
+          <span>100% orientativo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ZONAS ======================= -->
+  {config.zonasServicio && config.zonasServicio.length > 0 && (
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-center gap-3 mb-10">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style={`background-color: ${colores.secundario}15;`}>
+            <MapPin class="w-6 h-6" style={`color: ${colores.secundario};`} />
+          </div>
+          <h3 class="font-bold text-slate-900 text-2xl">Zonas de servicio</h3>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          {config.zonasServicio.map((zona: string) => (
+            <span class="px-6 py-3 bg-slate-50 rounded-2xl text-sm text-slate-700 font-medium hover:bg-slate-100 hover:scale-105 transition-all cursor-default">{zona}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ======================= CTA FINAL ======================= -->
+  <section class="py-32 lg:py-40 text-white relative overflow-hidden" style={`background: linear-gradient(160deg, ${colores.primario} 0%, ${colores.fondo} 100%);`}>
+    <div class="absolute inset-0">
+      <img src={heroBackground} alt="" class="w-full h-full object-cover opacity-10" />
+    </div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-3xl opacity-10" style={`background-color: ${colores.secundario};`}></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-sm font-medium mb-8 border border-white/20">
+        <div class="w-2 h-2 rounded-full animate-pulse" style={`background-color: ${colores.secundario};`}></div>
+        <span>Disponible para nuevos proyectos</span>
+      </div>
+      
+      <h2 class="text-4xl lg:text-6xl font-bold mb-8 leading-[1.1]">
+        ¿Te gusta<br />
+        <span style={`color: ${colores.secundario};`}>lo que ves?</span>
+      </h2>
+      <p class="text-xl text-white/60 mb-12 max-w-2xl mx-auto">Esta podría ser tu nueva web. Agenda una videollamada de 20 minutos sin compromiso.</p>
+      
+      <a href={config.cta?.urlContacto || "/contacto"} class="group inline-flex items-center justify-center gap-3 px-10 py-5 font-bold rounded-2xl transition-all shadow-2xl hover:shadow-3xl hover:scale-[1.02] text-xl" style={`background-color: ${colores.secundario}; color: ${colores.fondo};`}>
+        {config.cta?.texto || "Solicitar Información"}
+        <ArrowRight class="w-6 h-6 transition-transform group-hover:translate-x-1" />
+      </a>
+      
+      <p class="mt-10 text-white/30 text-sm">Respuesta en menos de 24h</p>
+    </div>
+  </section>
+
+  <!-- ======================= FOOTER ======================= -->
+  <div class="py-10 border-t border-slate-800" style={`background-color: ${colores.fondo};`}>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-slate-500 text-sm">
+        Demo creada por <a href="https://obrasdigitales.es" class="font-medium hover:underline" style={`color: ${colores.secundario};`}>Obras Digitales</a>
+      </p>
+      <p class="text-slate-600 text-sm">
+        Webs profesionales para empresas de reformas
+      </p>
+    </div>
+  </div>
+
+  <script>
+    async function initPhotoSwipe() {
+      const { default: PhotoSwipeLightbox } = await import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js');
+      const { default: PhotoSwipe } = await import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js');
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '#galeria-proyectos',
+        children: 'a',
+        pswpModule: PhotoSwipe,
+        bgOpacity: 0.95,
+        showHideAnimationType: 'zoom',
+      });
+      lightbox.init();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPhotoSwipe);
+    } else {
+      initPhotoSwipe();
+    }
+  </script>
+</BaseLayout>

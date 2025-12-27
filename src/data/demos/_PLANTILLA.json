@@ -1,0 +1,136 @@
+{
+  "nombre": "Nombre de la Empresa",
+  "eslogan": "Tu eslogan aquí",
+  "webActual": "suwebactual.com",
+  "resenasGoogle": 15,
+  "puntuacionGoogle": 4.5,
+  "zona": "Madrid",
+  "proyectosRealizados": "+100",
+
+  "heroImagen": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80",
+  "serviciosImagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+
+  "sobreNosotros": "Texto descriptivo de la empresa copiado de su web. Habla sobre su experiencia, equipo, valores y zona de servicio.",
+
+  "stats": [
+    { "valor": "20+", "label": "Años de experiencia" },
+    { "valor": "4.5★", "label": "15 reseñas Google" },
+    { "valor": "+100", "label": "Proyectos realizados" }
+  ],
+
+  "contacto": {
+    "telefono": "912 345 678",
+    "email": "info@empresa.com",
+    "direccion": "Calle Example, 123. Madrid"
+  },
+
+  "colores": {
+    "primario": "#1a365d",
+    "secundario": "#3182ce",
+    "acento": "#e53e3e",
+    "fondo": "#0f172a",
+    "fondoClaro": "#f7fafc"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Reforma de cocina",
+      "ubicacion": "Madrid",
+      "antes": "",
+      "despues": "",
+      "metros": 20,
+      "duracion": "4 semanas"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Transformación completa de viviendas",
+      "icono": "Building2"
+    },
+    {
+      "nombre": "Cocinas",
+      "descripcion": "Diseño y reforma de cocinas",
+      "icono": "Sparkles"
+    },
+    {
+      "nombre": "Baños",
+      "descripcion": "Baños modernos y funcionales",
+      "icono": "Droplets"
+    },
+    {
+      "nombre": "Fontanería",
+      "descripcion": "Instalaciones y reparaciones",
+      "icono": "Wrench"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Reforma integral",
+      "descripcion": "Descripción breve del proyecto",
+      "imagen": "",
+      "ubicacion": "Madrid",
+      "metros": 90,
+      "duracion": "3 meses"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Excelente trabajo, muy profesionales y",
+      "destacado": "puntuales.",
+      "autor": "María García",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Presupuestos Gratuitos",
+      "descripcion": "Sin compromiso",
+      "icono": "FileText"
+    },
+    {
+      "titulo": "Experiencia",
+      "descripcion": "Años en el sector",
+      "icono": "Award"
+    },
+    {
+      "titulo": "Garantía",
+      "descripcion": "En todos los trabajos",
+      "icono": "Shield"
+    },
+    {
+      "titulo": "Llaves en Mano",
+      "descripcion": "Gestión integral",
+      "icono": "KeyRound"
+    }
+  ],
+
+  "zonasServicio": ["Madrid", "Zona Norte", "Zona Sur"],
+
+  "empresa": {
+    "razonSocial": "Razón Social S.L.",
+    "experiencia": "20+ años"
+  },
+
+  "cta": {
+    "texto": "Pedir Presupuesto",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=nombre-empresa"
+  },
+
+  "seo": {
+    "titulo": "Nombre Empresa | Nueva Web Profesional",
+    "descripcion": "Demo de web profesional"
+  },
+
+  "_campos_nuevos": {
+    "sobreNosotros": "Texto de 'Nuestra Empresa' o 'Sobre Nosotros' de su web",
+    "stats": "Array de 3 datos para el hero (reemplaza el de velocidad)",
+    "serviciosImagen": "Imagen de fondo para la sección de servicios",
+    "proyectosRealizados": "Número aproximado de proyectos"
+  }
+}
