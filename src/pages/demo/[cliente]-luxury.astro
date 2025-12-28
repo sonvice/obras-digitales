@@ -1,0 +1,961 @@
+---
+/**
+ * DEMO PERSONALIZADA - LUXURY STYLE
+ * Diseño minimalista y elegante inspirado en Luxury Kitchen
+ * Ideal para cocinas de diseño, baños premium, interiorismo
+ */
+import fs from "node:fs";
+import path from "node:path";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BeforeAfterSlider from "../../components/react/BeforeAfterSlider";
+import CalculadoraPresupuesto from "../../components/react/CalculadoraPresupuesto";
+import {
+    MapPin,
+    Ruler,
+    Clock,
+    Home,
+    FileText,
+    Award,
+    Shield,
+    CircleCheck,
+    Phone,
+    Mail,
+    ChevronRight,
+    Hammer,
+    PaintBucket,
+    Wrench,
+    Plug,
+    Droplets,
+    ThermometerSun,
+    DoorOpen,
+    Layers,
+    Building2,
+    Sparkles,
+    HardHat,
+    Palette,
+    Lightbulb,
+    KeyRound,
+    Quote,
+    Star,
+    Users,
+    Smartphone,
+    ArrowRight,
+    ArrowUpRight,
+    Play,
+    Zap,
+    ChefHat,
+    Bath,
+    Refrigerator,
+    PenTool,
+    CreditCard,
+    DoorClosed,
+} from "@lucide/astro";
+
+export async function getStaticPaths() {
+    const demosDir = path.join(process.cwd(), "src/data/demos");
+
+    if (!fs.existsSync(demosDir)) {
+        fs.mkdirSync(demosDir, { recursive: true });
+        return [];
+    }
+
+    const files = fs.readdirSync(demosDir);
+
+    return files
+        .filter((file) => file.endsWith(".json") && !file.startsWith("_"))
+        .map((file) => {
+            const clienteId = file.replace(".json", "");
+            const data = JSON.parse(
+                fs.readFileSync(path.join(demosDir, file), "utf-8"),
+            );
+            return {
+                params: { cliente: clienteId },
+                props: { config: data },
+            };
+        });
+}
+
+const { cliente } = Astro.params;
+const { config } = Astro.props;
+
+const colores = config.colores || {
+    primario: "#1a1a1a",
+    secundario: "#c9a227",
+    acento: "#8b7355",
+    fondo: "#0d0d0d",
+    fondoClaro: "#fafafa",
+};
+
+const heroBackground =
+    config.heroImagen ||
+    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&q=80";
+
+// Iconos disponibles
+const iconosServicios: Record<string, any> = {
+    Hammer: Hammer,
+    PaintBucket: PaintBucket,
+    Wrench: Wrench,
+    Plug: Plug,
+    Droplets: Droplets,
+    ThermometerSun: ThermometerSun,
+    DoorOpen: DoorOpen,
+    Layers: Layers,
+    Building2: Building2,
+    Sparkles: Sparkles,
+    HardHat: HardHat,
+    Palette: Palette,
+    Lightbulb: Lightbulb,
+    KeyRound: KeyRound,
+    Home: Home,
+    Shield: Shield,
+    FileText: FileText,
+    Award: Award,
+    CheckCircle: CircleCheck,
+    Users: Users,
+    Smartphone: Smartphone,
+    Zap: Zap,
+    ChefHat: ChefHat,
+    Bath: Bath,
+    Refrigerator: Refrigerator,
+    PenTool: PenTool,
+    CreditCard: CreditCard,
+    DoorClosed: DoorClosed,
+    Ruler: Ruler,
+    Star: Star,
+};
+
+// Fallback images
+const defaultSliderImages = [
+    {
+        antes: "/demo/todoreformasintegrales/before-after/cocina-antes.webp",
+        despues:
+            "/demo/todoreformasintegrales/before-after/cocina-despues.webp",
+        titulo: "Reforma de cocina",
+    },
+    {
+        antes: "/demo/todoreformasintegrales/before-after/bano-antes.webp",
+        despues: "/demo/todoreformasintegrales/before-after/bano-despues.webp",
+        titulo: "Reforma de baño",
+    },
+    {
+        antes: "/demo/todoreformasintegrales/before-after/salon-terraza-antes.webp",
+        despues:
+            "/demo/todoreformasintegrales/before-after/salon-terraza-despues.webp",
+        titulo: "Reforma de salón",
+    },
+];
+
+const defaultProjectImages = [
+    "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+    "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+    "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80",
+    "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+];
+
+const slidersData = config.sliders
+    ? config.sliders
+    : config.slider
+      ? [config.slider]
+      : null;
+const testimoniosData = config.testimonios || [];
+const marcas = config.marcas || [];
+
+const schema = { "@type": "WebPage", name: `Demo Web - ${config.nombre}` };
+---
+
+<BaseLayout
+    title={config.seo?.titulo || `${config.nombre} | Nueva Web Profesional`}
+    description={config.seo?.descripcion ||
+        `Demo de web profesional para ${config.nombre}`}
+    schema={schema}
+    disableTransitions={true}
+>
+    <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        slot="head"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
+    <link
+        slot="head"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        slot="head"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
+    />
+
+    <style is:global>
+        .font-serif-luxury {
+            font-family: "Playfair Display", serif;
+        }
+        .tracking-luxury {
+            letter-spacing: 0.25em;
+        }
+        .tracking-wide-luxury {
+            letter-spacing: 0.15em;
+        }
+        @keyframes scrollLine {
+            0% {
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+            50% {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+            51% {
+                transform-origin: bottom;
+            }
+            100% {
+                transform: scaleY(0);
+                transform-origin: bottom;
+            }
+        }
+        .scroll-line {
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+        .image-hover {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .image-hover:hover {
+            transform: scale(1.05);
+        }
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
+        }
+    </style>
+
+    <!-- Banner Demo -->
+    <div
+        class="text-center py-3 px-4 sticky top-0 left-0 right-0 z-50 bg-neutral-900/95 backdrop-blur-sm"
+    >
+        <p class="text-sm text-white">
+            🎯 Demo personalizada para <strong>{config.nombre}</strong> —
+            <a
+                href={config.cta?.urlContacto || "/contacto"}
+                class="underline hover:opacity-80"
+                style={`color: ${colores.secundario};`}
+            >
+                ¿Te gusta? Hablemos →
+            </a>
+        </p>
+    </div>
+
+    <!-- ======================= HERO ======================= -->
+    <section class="relative min-h-screen flex items-center pt-12">
+        <div class="absolute inset-0">
+            <img
+                src={heroBackground}
+                alt={config.nombre}
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="max-w-3xl">
+                <h1
+                    class="font-serif-luxury text-5xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-tight"
+                >
+                    {
+                        config.eslogan?.split(" ").slice(0, 3).join(" ") ||
+                            config.nombre
+                    }
+                    <br />
+                    <span class="italic" style={`color: ${colores.secundario};`}
+                        >{
+                            config.eslogan?.split(" ").slice(3).join(" ") || ""
+                        }</span
+                    >
+                </h1>
+
+                <div class="mt-12 flex flex-col sm:flex-row gap-4">
+                    <a
+                        href="#calculadora"
+                        class="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm tracking-luxury uppercase bg-white text-neutral-900 hover:bg-neutral-100 transition-colors"
+                    >
+                        Calcular Presupuesto
+                        <ArrowRight class="w-4 h-4" />
+                    </a>
+                    <a
+                        href="#proyectos"
+                        class="inline-flex items-center justify-center gap-3 px-8 py-4 text-sm tracking-luxury uppercase border border-white/30 text-white hover:bg-white/10 transition-colors"
+                    >
+                        Ver Proyectos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div
+            class="absolute bottom-12 left-6 lg:left-12 flex flex-col items-center gap-4 text-white"
+        >
+            <div class="w-px h-16 bg-white/30 overflow-hidden">
+                <div class="w-full h-full bg-white scroll-line"></div>
+            </div>
+            <span class="text-xs tracking-luxury uppercase">Scroll</span>
+        </div>
+    </section>
+
+    <!-- ======================= ABOUT ======================= -->
+    <section class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-px bg-neutral-300"></div>
+                        <span
+                            class="text-xs tracking-luxury uppercase text-neutral-500"
+                            >Sobre Nosotros</span
+                        >
+                    </div>
+
+                    <h2
+                        class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-8 text-neutral-900"
+                    >
+                        {config.nombre}
+                    </h2>
+
+                    <p class="text-neutral-600 leading-relaxed text-lg mb-8">
+                        {config.sobreNosotros}
+                    </p>
+
+                    <a
+                        href="#proyectos"
+                        class="inline-flex items-center gap-3 text-sm tracking-luxury uppercase link-underline text-neutral-900"
+                    >
+                        Ver Proyectos
+                        <ArrowRight class="w-4 h-4" />
+                    </a>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="aspect-4/5 overflow-hidden">
+                        <img
+                            src="/demo/biotti/Arma_BlancoLatte.jpg"
+                            alt={config.nombre}
+                            class="w-full h-full object-cover image-hover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= STATS BAR ======================= -->
+    {
+        config.stats && config.stats.length > 0 && (
+            <section class="border-y border-neutral-200 bg-white">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="grid grid-cols-3 divide-x divide-neutral-200">
+                        {config.stats.map(
+                            (stat: { valor: string; label: string }) => (
+                                <div class="py-12 lg:py-16 text-center">
+                                    <div
+                                        class="font-serif-luxury text-4xl lg:text-5xl mb-2"
+                                        style={`color: ${colores.secundario};`}
+                                    >
+                                        {stat.valor}
+                                    </div>
+                                    <div class="text-xs tracking-luxury uppercase text-neutral-500">
+                                        {stat.label}
+                                    </div>
+                                </div>
+                            ),
+                        )}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    <!-- ======================= SERVICIOS ======================= -->
+    {
+        config.servicios && config.servicios.length > 0 && (
+            <section class="py-24 lg:py-32 bg-neutral-50">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-px bg-neutral-300" />
+                                <span class="text-xs tracking-luxury uppercase text-neutral-500">
+                                    Servicios
+                                </span>
+                            </div>
+                            <h2 class="font-serif-luxury text-4xl md:text-5xl leading-[1.1] text-neutral-900">
+                                Todo lo que
+                                <br />
+                                <span class="italic">necesitas</span>
+                            </h2>
+                        </div>
+                        <div class="lg:flex lg:items-end lg:justify-end">
+                            <p class="text-neutral-600 max-w-md">
+                                Soluciones integrales con los mejores
+                                profesionales para transformar cualquier
+                                espacio.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200">
+                        {config.servicios
+                            .slice(0, 6)
+                            .map((servicio: any, index: number) => {
+                                const esObjeto = typeof servicio === "object";
+                                const nombre = esObjeto
+                                    ? servicio.nombre
+                                    : servicio;
+                                const descripcion = esObjeto
+                                    ? servicio.descripcion
+                                    : null;
+                                const iconoNombre = esObjeto
+                                    ? servicio.icono
+                                    : null;
+                                const IconoComponente =
+                                    iconoNombre && iconosServicios[iconoNombre]
+                                        ? iconosServicios[iconoNombre]
+                                        : Hammer;
+
+                                return (
+                                    <div class="bg-white p-8 lg:p-12 group cursor-pointer hover:bg-neutral-900 transition-colors duration-500">
+                                        <div class="flex items-start justify-between mb-8">
+                                            <span class="text-xs text-neutral-400 group-hover:text-neutral-500 transition-colors">
+                                                {String(index + 1).padStart(
+                                                    2,
+                                                    "0",
+                                                )}
+                                            </span>
+                                            <IconoComponente class="w-6 h-6 text-neutral-400 group-hover:text-white transition-colors" />
+                                        </div>
+
+                                        <h3 class="font-serif-luxury text-2xl mb-4 text-neutral-900 group-hover:text-white transition-colors">
+                                            {nombre}
+                                        </h3>
+
+                                        {descripcion && (
+                                            <p class="text-neutral-500 text-sm leading-relaxed group-hover:text-neutral-400 transition-colors">
+                                                {descripcion}
+                                            </p>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    <!-- ======================= TRANSFORMACIONES (SLIDER) ======================= -->
+    {
+        slidersData && slidersData.length > 0 && (
+            <section id="transformaciones" class="py-24 lg:py-32 bg-white">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-px bg-neutral-300" />
+                                <span class="text-xs tracking-luxury uppercase text-neutral-500">
+                                    Transformaciones
+                                </span>
+                            </div>
+                            <h2 class="font-serif-luxury text-4xl md:text-5xl leading-[1.1] text-neutral-900">
+                                Antes y<br />
+                                <span class="italic">Después</span>
+                            </h2>
+                        </div>
+                        <div class="lg:flex lg:items-end lg:justify-end">
+                            <p class="text-neutral-600 max-w-md">
+                                Desliza para ver el resultado de nuestros
+                                trabajos más destacados.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class={`grid gap-8 ${slidersData.length === 1 ? "max-w-3xl mx-auto" : slidersData.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"}`}
+                    >
+                        {slidersData.map((slider: any, index: number) => {
+                            const fallback =
+                                defaultSliderImages[
+                                    index % defaultSliderImages.length
+                                ];
+                            const antes = slider.antes || fallback.antes;
+                            const despues = slider.despues || fallback.despues;
+                            const titulo = slider.titulo || fallback.titulo;
+
+                            return (
+                                <div class="group">
+                                    <div class="aspect-4/3 relative overflow-hidden bg-neutral-100">
+                                        <BeforeAfterSlider
+                                            client:visible
+                                            beforeImage={antes}
+                                            afterImage={despues}
+                                            alt={
+                                                titulo ||
+                                                `Transformación ${index + 1}`
+                                            }
+                                        />
+                                    </div>
+                                    <div class="mt-6 flex items-start justify-between">
+                                        <div>
+                                            <h3 class="font-medium text-neutral-900 text-lg mb-1">
+                                                {titulo}
+                                            </h3>
+                                            {slider.ubicacion && (
+                                                <div class="flex items-center gap-2 text-neutral-500 text-sm">
+                                                    <MapPin class="w-4 h-4" />
+                                                    <span>
+                                                        {slider.ubicacion}
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <span class="text-xs text-neutral-400">
+                                            {String(index + 1).padStart(2, "0")}
+                                        </span>
+                                    </div>
+                                    {(slider.metros || slider.duracion) && (
+                                        <div class="mt-4 flex items-center gap-6 text-sm text-neutral-500">
+                                            {slider.metros && (
+                                                <div class="flex items-center gap-2">
+                                                    <Ruler class="w-4 h-4" />
+                                                    <span>
+                                                        {slider.metros} m²
+                                                    </span>
+                                                </div>
+                                            )}
+                                            {slider.duracion && (
+                                                <div class="flex items-center gap-2">
+                                                    <Clock class="w-4 h-4" />
+                                                    <span>
+                                                        {slider.duracion}
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    <!-- ======================= PROYECTOS ======================= -->
+    {
+        config.proyectos && config.proyectos.length > 0 && (
+            <section id="proyectos" class="py-24 lg:py-32 bg-neutral-50">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="flex items-end justify-between mb-16">
+                        <div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-12 h-px bg-neutral-300" />
+                                <span class="text-xs tracking-luxury uppercase text-neutral-500">
+                                    Portfolio
+                                </span>
+                            </div>
+                            <h2 class="font-serif-luxury text-4xl md:text-5xl leading-[1.1] text-neutral-900">
+                                Nuestros
+                                <br />
+                                <span class="italic">trabajos</span>
+                            </h2>
+                        </div>
+                        <a
+                            href="#contacto"
+                            class="hidden md:inline-flex items-center gap-2 text-sm tracking-luxury uppercase link-underline text-neutral-900"
+                        >
+                            Ver más
+                            <ArrowUpRight class="w-4 h-4" />
+                        </a>
+                    </div>
+
+                    <div
+                        class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+                        id="galeria-proyectos"
+                    >
+                        {config.proyectos
+                            .slice(0, 4)
+                            .map((proyecto: any, index: number) => {
+                                const imagenSrc =
+                                    proyecto.imagen ||
+                                    defaultProjectImages[
+                                        index % defaultProjectImages.length
+                                    ];
+                                const imagenFull =
+                                    proyecto.imagenFull ||
+                                    imagenSrc.replace("w=800", "w=1600");
+                                const isLarge = index === 0 || index === 3;
+
+                                return (
+                                    <a
+                                        href={imagenFull}
+                                        data-pswp-width="1200"
+                                        data-pswp-height="800"
+                                        class={`group cursor-pointer block ${isLarge ? "md:col-span-2 lg:col-span-2" : ""}`}
+                                    >
+                                        <div
+                                            class={`overflow-hidden ${isLarge ? "aspect-video" : "aspect-square"}`}
+                                        >
+                                            <img
+                                                src={imagenSrc}
+                                                alt={proyecto.titulo}
+                                                class="w-full h-full object-cover image-hover"
+                                                loading="lazy"
+                                            />
+                                        </div>
+                                        <div class="mt-4 flex items-start justify-between">
+                                            <div>
+                                                <h3 class="font-medium text-neutral-900 mb-1">
+                                                    {proyecto.titulo}
+                                                </h3>
+                                                <p class="text-sm text-neutral-500">
+                                                    {proyecto.ubicacion}
+                                                </p>
+                                            </div>
+                                            <ArrowUpRight class="w-5 h-5 text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        </div>
+                                    </a>
+                                );
+                            })}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    <!-- ======================= TESTIMONIOS ======================= -->
+    {
+        testimoniosData && testimoniosData.length > 0 && (
+            <section class="py-24 lg:py-32 bg-neutral-900 text-white">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="text-center mb-16">
+                        <h2 class="text-xs tracking-luxury uppercase text-neutral-400 mb-8">
+                            Lo que dicen nuestros clientes
+                        </h2>
+                        <div class="flex items-center justify-center gap-1 mb-4">
+                            <span class="text-xs text-neutral-500">
+                                Reseñas verificadas en Google
+                            </span>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                        {testimoniosData.slice(0, 3).map((testimonio: any) => (
+                            <div class="text-center">
+                                <div class="flex items-center justify-center gap-1 mb-6">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star
+                                            class={`w-4 h-4 ${i < (testimonio.puntuacion || 5) ? "text-white fill-white" : "text-neutral-600"}`}
+                                        />
+                                    ))}
+                                </div>
+                                <p class="text-neutral-300 leading-relaxed mb-6">
+                                    "{testimonio.texto}
+                                    {testimonio.destacado && (
+                                        <span class="text-white font-medium">
+                                            {" "}
+                                            {testimonio.destacado}
+                                        </span>
+                                    )}
+                                    "
+                                </p>
+                                <p class="text-sm text-neutral-500">
+                                    {testimonio.autor}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+    <!-- ======================= MARCAS ======================= -->
+    {
+        marcas.length > 0 && (
+            <section class="py-16 border-b border-neutral-200 bg-white">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <p class="text-center text-xs tracking-luxury uppercase text-neutral-400 mb-12">
+                        Marcas con las que trabajamos
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-16">
+                        {marcas.slice(0, 6).map((marca: string) => (
+                            <span class="text-neutral-400 text-sm tracking-wide-luxury uppercase hover:text-neutral-900 transition-colors cursor-default">
+                                {marca}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    <!-- ======================= CALCULADORA ======================= -->
+    <section id="calculadora" class="py-24 lg:py-32 bg-neutral-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <div class="flex items-center gap-4 mb-6 justify-center">
+                    <div class="w-12 h-px bg-neutral-700"></div>
+                    <span
+                        class="text-xs tracking-luxury uppercase text-neutral-500"
+                        >Herramienta</span
+                    >
+                    <div class="w-12 h-px bg-neutral-700"></div>
+                </div>
+                <h2
+                    class="font-serif-luxury text-4xl md:text-5xl leading-[1.1] mb-6"
+                >
+                    Calculadora de<br />
+                    <span class="italic" style={`color: ${colores.secundario};`}
+                        >Presupuestos</span
+                    >
+                </h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">
+                    Obtén una estimación instantánea para tu proyecto de reforma
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl p-8 lg:p-12">
+                <CalculadoraPresupuesto client:visible />
+            </div>
+
+            <div
+                class="flex flex-wrap items-center justify-center gap-6 mt-10 text-neutral-500 text-sm"
+            >
+                <div class="flex items-center gap-2">
+                    <CircleCheck class="w-4 h-4" />
+                    <span>Sin compromiso</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <CircleCheck class="w-4 h-4" />
+                    <span>Resultado inmediato</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <CircleCheck class="w-4 h-4" />
+                    <span>100% orientativo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= CONTACTO ======================= -->
+    <section id="contacto" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                <div class="aspect-4/5 overflow-hidden">
+                    <img
+                        src={defaultProjectImages[2]}
+                        alt="Contacto"
+                        class="w-full h-full object-cover image-hover"
+                    />
+                </div>
+
+                <div class="flex flex-col justify-center">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-px bg-neutral-300"></div>
+                        <span
+                            class="text-xs tracking-luxury uppercase text-neutral-500"
+                            >Contacto</span
+                        >
+                    </div>
+
+                    <h2
+                        class="font-serif-luxury text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-8 text-neutral-900"
+                    >
+                        Empieza tu<br />
+                        <span class="italic">proyecto</span>
+                    </h2>
+
+                    <p class="text-neutral-600 leading-relaxed mb-12 max-w-md">
+                        Visítanos en nuestro showroom o contáctanos para una
+                        consulta personalizada. Haremos realidad el espacio que
+                        siempre soñaste.
+                    </p>
+
+                    <div class="space-y-6 mb-12">
+                        {
+                            config.contacto?.telefono && (
+                                <a
+                                    href={`tel:${config.contacto.telefono.replace(/\s/g, "")}`}
+                                    class="flex items-center gap-4 group"
+                                >
+                                    <div class="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center group-hover:bg-neutral-900 group-hover:border-neutral-900 transition-colors">
+                                        <Phone class="w-5 h-5 text-neutral-600 group-hover:text-white transition-colors" />
+                                    </div>
+                                    <div>
+                                        <p class="text-xs tracking-luxury uppercase text-neutral-500 mb-1">
+                                            Teléfono
+                                        </p>
+                                        <p class="font-medium text-neutral-900">
+                                            {config.contacto.telefono}
+                                        </p>
+                                    </div>
+                                </a>
+                            )
+                        }
+
+                        {
+                            config.contacto?.email && (
+                                <a
+                                    href={`mailto:${config.contacto.email}`}
+                                    class="flex items-center gap-4 group"
+                                >
+                                    <div class="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center group-hover:bg-neutral-900 group-hover:border-neutral-900 transition-colors">
+                                        <Mail class="w-5 h-5 text-neutral-600 group-hover:text-white transition-colors" />
+                                    </div>
+                                    <div>
+                                        <p class="text-xs tracking-luxury uppercase text-neutral-500 mb-1">
+                                            Email
+                                        </p>
+                                        <p class="font-medium text-neutral-900">
+                                            {config.contacto.email}
+                                        </p>
+                                    </div>
+                                </a>
+                            )
+                        }
+
+                        {
+                            config.contacto?.direccion && (
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center">
+                                        <MapPin class="w-5 h-5 text-neutral-600" />
+                                    </div>
+                                    <div>
+                                        <p class="text-xs tracking-luxury uppercase text-neutral-500 mb-1">
+                                            Dirección
+                                        </p>
+                                        <p class="font-medium text-neutral-900">
+                                            {config.contacto.direccion}
+                                        </p>
+                                    </div>
+                                </div>
+                            )
+                        }
+
+                        {
+                            config.horario && (
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full border border-neutral-200 flex items-center justify-center">
+                                        <Clock class="w-5 h-5 text-neutral-600" />
+                                    </div>
+                                    <div>
+                                        <p class="text-xs tracking-luxury uppercase text-neutral-500 mb-1">
+                                            Horario
+                                        </p>
+                                        <p class="font-medium text-neutral-900 text-sm">
+                                            L-V: {config.horario.semana} | S:{" "}
+                                            {config.horario.sabado}
+                                        </p>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+
+                    <a
+                        href={config.cta?.urlContacto || "#"}
+                        class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-neutral-900 text-white text-sm tracking-luxury uppercase hover:bg-neutral-800 transition-colors w-full md:w-auto"
+                    >
+                        {config.cta?.texto || "Contactar"}
+                        <ArrowRight class="w-4 h-4" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================= ZONAS ======================= -->
+    {
+        config.zonasServicio && config.zonasServicio.length > 0 && (
+            <section class="py-16 bg-neutral-50 border-t border-neutral-200">
+                <div class="max-w-7xl mx-auto px-6 lg:px-12">
+                    <div class="flex items-center justify-center gap-3 mb-8">
+                        <MapPin class="w-5 h-5 text-neutral-400" />
+                        <span class="text-xs tracking-luxury uppercase text-neutral-500">
+                            Zonas de servicio
+                        </span>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        {config.zonasServicio.map((zona: string) => (
+                            <span class="px-5 py-2 bg-white border border-neutral-200 text-sm text-neutral-600 hover:border-neutral-900 hover:text-neutral-900 transition-colors cursor-default">
+                                {zona}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer class="py-8 border-t border-neutral-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div
+                class="flex flex-col md:flex-row items-center justify-between gap-4"
+            >
+                <p class="text-xs text-neutral-500">
+                    © {new Date().getFullYear()}
+                    {config.nombre}. Demo creada por
+                    <a
+                        href="https://obrasdigitales.es"
+                        class="text-neutral-900 hover:underline ml-1"
+                        >Obras Digitales</a
+                    >
+                </p>
+                <p class="text-xs text-neutral-400">
+                    Diseño exclusivo para {config.nombre}
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        async function initPhotoSwipe() {
+            const { default: PhotoSwipeLightbox } =
+                await import("https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe-lightbox.esm.min.js");
+            const { default: PhotoSwipe } =
+                await import("https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js");
+            const lightbox = new PhotoSwipeLightbox({
+                gallery: "#galeria-proyectos",
+                children: "a",
+                pswpModule: PhotoSwipe,
+                bgOpacity: 0.95,
+                showHideAnimationType: "zoom",
+            });
+            lightbox.init();
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initPhotoSwipe);
+        } else {
+            initPhotoSwipe();
+        }
+    </script>
+</BaseLayout>
+
+<style is:global>
+    .pswp__img {
+        object-fit: cover;
+    }
+</style>

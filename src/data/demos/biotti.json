@@ -1,0 +1,243 @@
+{
+  "nombre": "Biotti",
+  "eslogan": "Cocinas y baños de diseño desde 1985",
+  "webActual": "biotti.es",
+  "resenasGoogle": 28,
+  "puntuacionGoogle": 4.8,
+  "zona": "Madrid - Barrio Salamanca",
+  "proyectosRealizados": "+1000",
+
+  "heroImagen": "/demo/biotti/GrisNoche.jpg",
+
+  "sobreNosotros": "Biotti nace en 1985 como estudio de mobiliario de cocina y baño. En 1987 ampliamos servicios creando la división de reformas integrales y arquitectura interior. Hoy trabajamos para particulares, decoradores, arquitectos y constructoras. Disponemos de las marcas más prestigiosas: Dica (nacional), Gatto (diseño italiano) y Schüller (fabricación alemana).",
+
+  "stats": [
+    { "valor": "38+", "label": "Años de experiencia" },
+    { "valor": "4.8★", "label": "Valoración Google" },
+    { "valor": "+1000", "label": "Proyectos realizados" }
+  ],
+
+  "contacto": {
+    "telefono": "91 413 94 92",
+    "email": "info@biotti.es",
+    "direccion": "Corazón de María, 35 - 28002 Madrid"
+  },
+
+  "colores": {
+    "primario": "#1a1a1a",
+    "secundario": "#c9a227",
+    "acento": "#8b7355",
+    "fondo": "#0d0d0d",
+    "fondoClaro": "#fafafa"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Cocina Dica minimalista",
+      "ubicacion": "Barrio Salamanca",
+      "antes": "",
+      "despues": "",
+      "metros": 25,
+      "duracion": "4 semanas"
+    },
+    {
+      "titulo": "Baño de diseño Fiora",
+      "ubicacion": "Chamartín",
+      "antes": "",
+      "despues": "",
+      "metros": 12,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Cocina Gatto premium",
+      "ubicacion": "La Moraleja",
+      "antes": "",
+      "despues": "",
+      "metros": 35,
+      "duracion": "6 semanas"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Cocinas de Diseño",
+      "descripcion": "Mobiliario Dica, Gatto y Schüller con diseño personalizado",
+      "icono": "ChefHat"
+    },
+    {
+      "nombre": "Baños de Lujo",
+      "descripcion": "Diseño y equipamiento con las mejores marcas como Fiora",
+      "icono": "Bath"
+    },
+    {
+      "nombre": "Armarios a Medida",
+      "descripcion": "Soluciones de almacenamiento personalizadas",
+      "icono": "DoorClosed"
+    },
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Gestión completa de tu proyecto de principio a fin",
+      "icono": "Building2"
+    },
+    {
+      "nombre": "Electrodomésticos",
+      "descripcion": "Neff, Siemens, Gaggenau, Bosch, AEG y más",
+      "icono": "Refrigerator"
+    },
+    {
+      "nombre": "Arquitectura Interior",
+      "descripcion": "Diseño de espacios con profesionales especializados",
+      "icono": "Ruler"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Cocina Dica Serie 45",
+      "descripcion": "Diseño minimalista con isla central y electrodomésticos Neff integrados.",
+      "imagen": "/demo/biotti/GrisFenix.jpg",
+      "ubicacion": "Salamanca",
+      "metros": 28,
+      "duracion": "5 semanas"
+    },
+    {
+      "titulo": "Baño principal Fiora",
+      "descripcion": "Reforma completa con plato de ducha a medida y mueble suspendido.",
+      "imagen": "/demo/biotti/Kube_Gris.jpg",
+      "ubicacion": "Chamartín",
+      "metros": 14,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Cocina Gatto italiana",
+      "descripcion": "Cocina de diseño italiano con acabados lacados y Gaggenau.",
+      "imagen": "/demo/biotti/AlondraMIRobleFume.jpg",
+      "ubicacion": "La Moraleja",
+      "metros": 40,
+      "duracion": "8 semanas"
+    },
+    {
+      "titulo": "Reforma integral vivienda",
+      "descripcion": "Cocina, dos baños y armarios empotrados en todo el piso.",
+      "imagen": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "ubicacion": "Retiro",
+      "metros": 120,
+      "duracion": "3 meses"
+    },
+    {
+      "titulo": "Cocina abierta al salón",
+      "descripcion": "Integración de espacios con península y zona de office.",
+      "imagen": "/demo/biotti/Arkadia_BlancoNataIsla.jpg",
+      "ubicacion": "Pozuelo",
+      "metros": 32,
+      "duracion": "6 semanas"
+    },
+    {
+      "titulo": "Baño de invitados",
+      "descripcion": "Diseño compacto con ducha y lavabo suspendido Fiora.",
+      "imagen": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
+      "ubicacion": "Arturo Soria",
+      "metros": 6,
+      "duracion": "2 semanas"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Son unos grandes profesionales tanto para decoración y reformas como para ayudarte con la elección de la mejor distribución. Respetan los tiempos y el presupuesto pactados. Muy contenta con el",
+      "destacado": "resultado.",
+      "autor": "María L.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "He hecho la cocina ahora con esta empresa y he quedado encantada con el trato y profesionalidad de todo el equipo. Honestamente",
+      "destacado": "recomendables.",
+      "autor": "Cliente satisfecha",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Compramos una cocina Dica con electrodomésticos incluidos y el trato fue excelente desde el primer momento. Estamos muy agradecidos por el resultado",
+      "destacado": "final.",
+      "autor": "Carlos y Ana",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Después de una reforma integral de baños y cocina hemos quedado encantados. Magnífico trato profesional y",
+      "destacado": "humano.",
+      "autor": "Pedro G.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Excelente equipo tanto en tienda como montadores. Te dan mil ideas de formas y acabados adaptando todo a tus necesidades. Fantástica",
+      "destacado": "calidad/precio.",
+      "autor": "Laura M.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Estupendos profesionales. Excelente resultado. Son serios, profesionales y respetaron totalmente lo pactado. Los recomiendo",
+      "destacado": "totalmente.",
+      "autor": "Javier R.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "38 Años de Experiencia",
+      "descripcion": "Desde 1985 diseñando cocinas y baños en Madrid",
+      "icono": "Award"
+    },
+    {
+      "titulo": "Marcas Premium",
+      "descripcion": "Dica, Gatto, Schüller, Fiora, Neff, Gaggenau",
+      "icono": "Star"
+    },
+    {
+      "titulo": "Diseño Personalizado",
+      "descripcion": "Cada proyecto es único y a medida del cliente",
+      "icono": "PenTool"
+    },
+    {
+      "titulo": "Financiación",
+      "descripcion": "Las mejores condiciones para tu proyecto",
+      "icono": "CreditCard"
+    }
+  ],
+
+  "marcas": [
+    "Dica", "Gatto", "Schüller", "Fiora", "Neff", "Siemens", "Gaggenau", "Bosch", "AEG", "Electrolux"
+  ],
+
+  "zonasServicio": [
+    "Salamanca", "Chamartín", "Retiro", "Chamberí",
+    "La Moraleja", "Pozuelo", "Arturo Soria", "El Viso",
+    "Mirasierra", "Aravaca"
+  ],
+
+  "empresa": {
+    "razonSocial": "Biotti, S.L.",
+    "experiencia": "38+ años"
+  },
+
+  "horario": {
+    "semana": "10:30 - 19:00",
+    "sabado": "10:30 - 13:30",
+    "domingo": "Cerrado"
+  },
+
+  "cta": {
+    "texto": "Reservar Cita en Showroom",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=biotti"
+  },
+
+  "seo": {
+    "titulo": "Biotti | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Biotti - Cocinas y baños de diseño en Madrid desde 1985"
+  }
+}
