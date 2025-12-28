@@ -1,0 +1,245 @@
+{
+  "nombre": "Reformas Rubio",
+  "eslogan": "Especialistas en comunidades de vecinos en Madrid",
+  "webActual": "reformasrubio.es",
+  "resenasGoogle": 32,
+  "puntuacionGoogle": 4.4,
+  "zona": "Móstoles y zona Sur de Madrid",
+  "proyectosRealizados": "+500",
+
+  "heroImagen": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80",
+
+  "sobreNosotros": "Somos especialistas en realizar trabajos para comunidades de vecinos, nos avalan más de 15 años de experiencia en el sector. Contamos con más de 25 operarios en plantilla: albañiles, fontaneros, pintores, electricistas y técnicos para llevar a cabo su obra de principio a fin. Más de 500 instalaciones completas de sustitución de tuberías en comunidades de vecinos nos hacen ser empresa puntera en el sector.",
+
+  "stats": [
+    { "valor": "15+", "label": "Años de experiencia" },
+    { "valor": "+500", "label": "Instalaciones realizadas" },
+    { "valor": "+25", "label": "Operarios en plantilla" }
+  ],
+
+  "contacto": {
+    "telefono": "622 65 44 32",
+    "telefonoSecundario": "687 641 286",
+    "telefonoFijo": "91 070 62 56",
+    "email": "reformasrubiomadrid@gmail.com",
+    "direccion": "C/ Puerto de Guadarrama, 41 Nave 20, 28935 Móstoles, Madrid"
+  },
+
+  "colores": {
+    "primario": "#161616",
+    "secundario": "#d99125",
+    "acento": "#e74c3c",
+    "fondo": "#0c2340",
+    "fondoClaro": "#f0f4f8"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Sustitución de bajantes",
+      "ubicacion": "Comunidad en Móstoles",
+      "antes": "",
+      "despues": "",
+      "metros": 120,
+      "duracion": "2 semanas"
+    },
+    {
+      "titulo": "Reforma de portal",
+      "ubicacion": "Leganés",
+      "antes": "",
+      "despues": "",
+      "metros": 45,
+      "duracion": "10 días"
+    },
+    {
+      "titulo": "Instalación de calefacción",
+      "ubicacion": "Alcorcón",
+      "antes": "",
+      "despues": "",
+      "metros": 80,
+      "duracion": "1 semana"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Tuberías y Bajantes",
+      "descripcion": "Sustitución completa de tuberías horizontales, bajantes y ascendentes en comunidades",
+      "icono": "Droplets"
+    },
+    {
+      "nombre": "Trabajos Verticales",
+      "descripcion": "Instalaciones por fachada evitando obras en interiores de viviendas",
+      "icono": "Building2"
+    },
+    {
+      "nombre": "Desatrancos",
+      "descripcion": "Servicio de desatascos urgentes con equipos especializados",
+      "icono": "Wrench"
+    },
+    {
+      "nombre": "Averías Urgentes 24h",
+      "descripcion": "Reparaciones urgentes en menos de 24 horas",
+      "icono": "Zap"
+    },
+    {
+      "nombre": "Desamiantado (Uralita)",
+      "descripcion": "Retirada de amianto con certificaciones y protocolos oficiales",
+      "icono": "Shield"
+    },
+    {
+      "nombre": "Calefacción y Clima",
+      "descripcion": "Instalación y mantenimiento de sistemas de calefacción y aire",
+      "icono": "ThermometerSun"
+    },
+    {
+      "nombre": "Reformas de Portales",
+      "descripcion": "Renovación integral de zonas comunes en edificios",
+      "icono": "DoorOpen"
+    },
+    {
+      "nombre": "Grupos de Presión",
+      "descripcion": "Instalación y mantenimiento de grupos de presión y baterías",
+      "icono": "Layers"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Sustitución de bajantes completa",
+      "descripcion": "Cambio integral de bajantes en comunidad de 8 plantas con mínima afectación a vecinos.",
+      "imagen": "/demo/reformasrubio/bajantes-y-ascendentes-en-madrid.jpg",
+      "ubicacion": "Móstoles",
+      "metros": 150,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Reforma de portal y escalera",
+      "descripcion": "Renovación completa de portal, escalera y zonas comunes del edificio.",
+      "imagen": "/demo/reformasrubio/reformas-de-portales-madrid.jpg",
+      "ubicacion": "Leganés",
+      "metros": 80,
+      "duracion": "2 semanas"
+    },
+    {
+      "titulo": "Instalación tuberías por fachada",
+      "descripcion": "Trabajos verticales para nueva instalación sin obras en viviendas.",
+      "imagen": "/demo/reformasrubio/tuberias-horizontales.jpg",
+      "ubicacion": "Fuenlabrada",
+      "metros": 200,
+      "duracion": "4 semanas"
+    },
+    {
+      "titulo": "Trabajos auxiliares en Madrid",
+      "descripcion": "En fontanería reformas rubio contamos con los mejores profesionales de cada sector.",
+      "imagen": "/demo/reformasrubio/trabajos-auxiliares.jpg",
+      "ubicacion": "Madrid",
+      "metros": 100,
+      "duracion": "1 semana"
+    },
+    {
+      "titulo": "Sistema de calefacción PVC",
+      "descripcion": "Instalación de calefacción centralizada para comunidad de vecinos.",
+      "imagen": "/demo/reformasrubio/calefaccion-pvc-en-madrid.jpg",
+      "ubicacion": "Alcorcón",
+      "metros": 300,
+      "duracion": "1 mes"
+    },
+    {
+      "titulo": "Colectores y arquetas",
+      "descripcion": "Reparación y sustitución de colectores subterráneos en parking comunitario.",
+      "imagen": "/demo/reformasrubio/colectores-en-madrid.jpg",
+      "ubicacion": "Villaviciosa de Odón",
+      "metros": 50,
+      "duracion": "10 días"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Muy contentos con los trabajos realizados. Teníamos un grave problema de rotura en la tubería subterránea y gracias a Juan Vicente nos dio una solución rápida. En dos días teníamos agua toda la comunidad. Muy",
+      "destacado": "recomendable.",
+      "autor": "Comunidad Pza. España",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Trabajo impecable. Realizaron la nueva instalación del agua con eficacia, rapidez, buen trato y limpieza. Muy",
+      "destacado": "profesionales.",
+      "autor": "María L.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Rapidez en la asistencia. Muy buena actuación en la reparación por parte del equipo técnico. Solucionaron la avería en tiempo",
+      "destacado": "récord.",
+      "autor": "Pedro S.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Me han hecho trabajos de albañilería y fontanería y todo ha quedado muy bien. Destacar el trabajo del equipo, muy",
+      "destacado": "profesionales.",
+      "autor": "Vecino 3º Derecha",
+      "fuente": "Trustlocal",
+      "puntuacion": 4
+    },
+    {
+      "texto": "Reforma completa de mi casa. Cumplieron plazos y el resultado final superó las expectativas. Totalmente",
+      "destacado": "satisfecho.",
+      "autor": "Carlos M.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Empresa seria que ajusta presupuestos. Tuvieron la deferencia de ajustar el coste sin perder calidad. Un valor",
+      "destacado": "seguro.",
+      "autor": "Administrador Fincas",
+      "fuente": "Trustlocal",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Especialistas en Comunidades",
+      "descripcion": "Más de 500 instalaciones en comunidades de vecinos",
+      "icono": "Building2"
+    },
+    {
+      "titulo": "Urgencias 24h",
+      "descripcion": "Reparaciones urgentes en menos de 24 horas",
+      "icono": "Zap"
+    },
+    {
+      "titulo": "Equipo Propio",
+      "descripcion": "Más de 25 operarios cualificados en plantilla",
+      "icono": "Users"
+    },
+    {
+      "titulo": "Certificaciones",
+      "descripcion": "Habilitados para retirada de amianto y trabajos verticales",
+      "icono": "Award"
+    }
+  ],
+
+  "zonasServicio": [
+    "Móstoles", "Leganés", "Fuenlabrada", "Getafe", "Alcorcón",
+    "Villaviciosa de Odón", "Boadilla del Monte", "Pozuelo de Alarcón",
+    "Navalcarnero", "Madrid Centro"
+  ],
+
+  "empresa": {
+    "razonSocial": "Fontanería Reformas Rubio, S.L.",
+    "experiencia": "15+ años"
+  },
+
+  "cta": {
+    "texto": "Solicitar Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=reformas-rubio"
+  },
+
+  "seo": {
+    "titulo": "Reformas Rubio | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Reformas Rubio - Especialistas en comunidades de vecinos en Madrid"
+  }
+}
