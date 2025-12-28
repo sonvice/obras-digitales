@@ -1,0 +1,244 @@
+{
+  "nombre": "Mavisan",
+  "eslogan": "Especialistas en instalación de suelos en Madrid",
+  "webActual": "mavisan.com",
+  "resenasGoogle": 45,
+  "puntuacionGoogle": 4.6,
+  "zona": "Arganda del Rey y toda España",
+  "proyectosRealizados": "+500K m²",
+
+  "heroImagen": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
+
+  "sobreNosotros": "Mavisan Servicios Integrales fue fundada en 2017 con el objetivo de marcar un antes y un después en los servicios integrales de viviendas. Contamos con profesionales con más de 20 años de experiencia en el sector. Más de 500.000 m² de suelos instalados por todo el territorio nacional nos avalan. Trabajamos con las mejores marcas: Quick Step, Pergo, Parador, Egger y Finfloor.",
+
+  "stats": [
+    { "valor": "20+", "label": "Años de experiencia" },
+    { "valor": "+500K", "label": "m² de suelos instalados" },
+    { "valor": "4.6★", "label": "Valoración clientes" }
+  ],
+
+  "contacto": {
+    "telefono": "638 255 076",
+    "telefonoSecundario": "636 992 463",
+    "email": "reformas@mavisan.com",
+    "direccion": "C/ Cóndor, 68, 28500 Arganda del Rey, Madrid"
+  },
+
+  "colores": {
+    "primario": "#101010",
+    "secundario": "#CE7F61",
+    "acento": "#e74c3c",
+    "fondo": "#0d2818",
+    "fondoClaro": "#f5f7f5"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Instalación suelo laminado",
+      "ubicacion": "Madrid Centro",
+      "antes": "",
+      "despues": "",
+      "metros": 85,
+      "duracion": "2 días"
+    },
+    {
+      "titulo": "Suelo vinílico en cocina",
+      "ubicacion": "Arganda del Rey",
+      "antes": "",
+      "despues": "",
+      "metros": 25,
+      "duracion": "1 día"
+    },
+    {
+      "titulo": "Tarima flotante premium",
+      "ubicacion": "Vallecas",
+      "antes": "",
+      "despues": "",
+      "metros": 110,
+      "duracion": "3 días"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Suelos Laminados",
+      "descripcion": "Venta e instalación de suelos laminados de las mejores marcas",
+      "icono": "Layers"
+    },
+    {
+      "nombre": "Suelos de Vinilo",
+      "descripcion": "Suelos PVC y vinílicos para todo tipo de estancias",
+      "icono": "Sparkles"
+    },
+    {
+      "nombre": "Suelos de Madera",
+      "descripcion": "Tarimas y parquet de madera natural con acabados premium",
+      "icono": "Home"
+    },
+    {
+      "nombre": "Suelos Porcelánicos",
+      "descripcion": "Cerámica y porcelánico de alta resistencia",
+      "icono": "Layers"
+    },
+    {
+      "nombre": "Suelos Radiantes",
+      "descripcion": "Instalación de sistemas de calefacción por suelo radiante",
+      "icono": "ThermometerSun"
+    },
+    {
+      "nombre": "Lijado y Barnizado",
+      "descripcion": "Restauración y mantenimiento de suelos de madera",
+      "icono": "Sparkles"
+    },
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Cocinas, baños y viviendas completas",
+      "icono": "Building2"
+    },
+    {
+      "nombre": "Pintura y Albañilería",
+      "descripcion": "Servicios complementarios para tu reforma",
+      "icono": "PaintBucket"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Suelo laminado Quick Step",
+      "descripcion": "Instalación de 120m² de suelo laminado AC5 en vivienda unifamiliar.",
+      "imagen": "/demo/mavisan/32x-roble-baikal-or-sv-room.webp",
+      "ubicacion": "Arganda del Rey",
+      "metros": 120,
+      "duracion": "3 días"
+    },
+    {
+      "titulo": "Vinilo en local comercial",
+      "descripcion": "Suelo vinílico de alto tránsito para tienda de ropa.",
+      "imagen": "",
+      "ubicacion": "Madrid Centro",
+      "metros": 200,
+      "duracion": "2 días"
+    },
+    {
+      "titulo": "Tarima de madera natural",
+      "descripcion": "Parquet de roble con acabado mate para salón y dormitorios.",
+      "imagen": "/demo/mavisan/08x-fresno-tango-gorbea-su-sv-room.webp",
+      "ubicacion": "Rivas-Vaciamadrid",
+      "metros": 95,
+      "duracion": "4 días"
+    },
+    {
+      "titulo": "Reforma integral + suelo",
+      "descripcion": "Reforma completa de vivienda con instalación de suelo laminado.",
+      "imagen": "/demo/mavisan/pizzara-negra-galaxy.webp",
+      "ubicacion": "Vallecas",
+      "metros": 80,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Suelo radiante + porcelánico",
+      "descripcion": "Sistema de calefacción por suelo radiante con acabado cerámico.",
+      "imagen": "",
+      "ubicacion": "Torrejón de Ardoz",
+      "metros": 150,
+      "duracion": "2 semanas"
+    },
+    {
+      "titulo": "Lijado y barnizado parquet",
+      "descripcion": "Restauración de parquet antiguo en edificio histórico.",
+      "imagen": "/demo/mavisan/roble-desierto-marron-oscuro-cepillado.webp",
+      "ubicacion": "Chamartín",
+      "metros": 180,
+      "duracion": "5 días"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Lo primero el asesoramiento inicial ha sido estupendo y luego el trabajo hecho ha quedado genial. Recalcar la profesionalidad de los trabajadores. Respecto a calidad-precio muy",
+      "destacado": "buenos.",
+      "autor": "Alicia Cuevas",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Grandes profesionales. Sin duda volvería a trabajar con ellos. Buena atención, gestión, resultados",
+      "destacado": "fantásticos.",
+      "autor": "Vero Megar",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Contraté a esta empresa para poner suelo laminado, cambiar puertas, pintar y hacer un cambio de distribución. No puedo estar más contento con el",
+      "destacado": "resultado.",
+      "autor": "Ramiro",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "He puesto tarima y un separador de ambientes. Es una empresa formada por grandes profesionales. El color del suelo me lo recomendaron ellos y se ha quedado",
+      "destacado": "inmejorable.",
+      "autor": "Cliente satisfecho",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Muy contento con el trabajo realizado. Rápido, honestos, limpios y bien de precio. Muy recomendable, sin duda",
+      "destacado": "repetiría.",
+      "autor": "Cliente Madrid",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Excelente Servicio, mi cocina quedó como nueva. He recomendado a mi hermano para reformar su",
+      "destacado": "casa.",
+      "autor": "María García",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Especialistas en Suelos",
+      "descripcion": "Más de 500.000 m² instalados en toda España",
+      "icono": "Layers"
+    },
+    {
+      "titulo": "Mejores Marcas",
+      "descripcion": "Quick Step, Pergo, Parador, Egger, Finfloor",
+      "icono": "Award"
+    },
+    {
+      "titulo": "20+ Años Experiencia",
+      "descripcion": "Profesionales altamente cualificados",
+      "icono": "Users"
+    },
+    {
+      "titulo": "Toda España",
+      "descripcion": "Trabajamos en toda la península ibérica",
+      "icono": "MapPin"
+    }
+  ],
+
+  "zonasServicio": [
+    "Arganda del Rey", "Madrid Centro", "Vallecas", "Rivas-Vaciamadrid",
+    "Torrejón de Ardoz", "Coslada", "San Fernando de Henares", "Alcalá de Henares",
+    "Fuenlabrada", "Leganés", "Getafe", "Alcobendas"
+  ],
+
+  "empresa": {
+    "razonSocial": "Mavisan Servicios Integrales, S.L.",
+    "experiencia": "20+ años"
+  },
+
+  "cta": {
+    "texto": "Pedir Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=mavisan"
+  },
+
+  "seo": {
+    "titulo": "Mavisan | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Mavisan - Especialistas en instalación de suelos en Madrid"
+  }
+}
