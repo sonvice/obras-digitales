@@ -1,0 +1,244 @@
+{
+  "nombre": "Muserma",
+  "eslogan": "Gestión integral de reparaciones y reformas desde 1994",
+  "webActual": "muserma.com",
+  "resenasGoogle": 15,
+  "puntuacionGoogle": 4.2,
+  "zona": "Majadahonda, Pozuelo, Las Rozas y Madrid",
+  "proyectosRealizados": "+200.000",
+
+  "heroImagen": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80",
+
+  "sobreNosotros": "MUSERMA, S.L. se crea en el año 1994 con el objetivo principal de ofrecer un servicio de Gestión Integral de Reparaciones y Reformas dentro de la Comunidad de Madrid. Más de 100 profesionales y más de 200.000 expedientes tramitados nos avalan. Trabajamos con compañías de seguros, comunidades de propietarios, administradores de fincas y particulares.",
+
+  "stats": [
+    { "valor": "30+", "label": "Años de experiencia" },
+    { "valor": "+200K", "label": "Expedientes tramitados" },
+    { "valor": "+100", "label": "Profesionales en plantilla" }
+  ],
+
+  "contacto": {
+    "telefono": "915 335 626",
+    "telefonoUrgencias": "659 932 744",
+    "email": "info@muserma.com",
+    "direccion": "Avda. Reina Victoria, 5 - Madrid 28003"
+  },
+
+  "colores": {
+    "primario": "#2c5282",
+    "secundario": "#ed8936",
+    "acento": "#e53e3e",
+    "fondo": "#1a365d",
+    "fondoClaro": "#f7fafc"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Reforma integral de vivienda",
+      "ubicacion": "Majadahonda",
+      "antes": "",
+      "despues": "",
+      "metros": 95,
+      "duracion": "6 semanas"
+    },
+    {
+      "titulo": "Reparación de siniestro",
+      "ubicacion": "Pozuelo de Alarcón",
+      "antes": "",
+      "despues": "",
+      "metros": 60,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Reforma de local comercial",
+      "ubicacion": "Las Rozas",
+      "antes": "",
+      "despues": "",
+      "metros": 120,
+      "duracion": "1 mes"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Fontanería",
+      "descripcion": "Instalaciones, reparaciones y mantenimiento de fontanería",
+      "icono": "Droplets"
+    },
+    {
+      "nombre": "Albañilería",
+      "descripcion": "Obras, reformas y reparaciones de albañilería",
+      "icono": "Hammer"
+    },
+    {
+      "nombre": "Pintura",
+      "descripcion": "Pintura interior y exterior con acabados profesionales",
+      "icono": "PaintBucket"
+    },
+    {
+      "nombre": "Electricidad",
+      "descripcion": "Instalaciones eléctricas y reparación de averías",
+      "icono": "Plug"
+    },
+    {
+      "nombre": "Climatización",
+      "descripcion": "Instalación y reparación de aire acondicionado y calefacción",
+      "icono": "ThermometerSun"
+    },
+    {
+      "nombre": "Fachadas y Tejados",
+      "descripcion": "Reparación y mantenimiento de cubiertas y fachadas",
+      "icono": "Building2"
+    },
+    {
+      "nombre": "Parquet y Suelos",
+      "descripcion": "Instalación y restauración de todo tipo de suelos",
+      "icono": "Layers"
+    },
+    {
+      "nombre": "Cerrajería",
+      "descripcion": "Cerrajería de hierro, aluminio y PVC",
+      "icono": "KeyRound"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Reforma integral de piso",
+      "descripcion": "Renovación completa de vivienda incluyendo cocina, baños e instalaciones.",
+      "imagen": "",
+      "ubicacion": "Majadahonda",
+      "metros": 110,
+      "duracion": "2 meses"
+    },
+    {
+      "titulo": "Reparación por inundación",
+      "descripcion": "Gestión completa de siniestro con compañía de seguros.",
+      "imagen": "",
+      "ubicacion": "Pozuelo de Alarcón",
+      "metros": 85,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Reforma de oficinas",
+      "descripcion": "Adaptación de espacio de trabajo con distribución moderna.",
+      "imagen": "",
+      "ubicacion": "Madrid Centro",
+      "metros": 200,
+      "duracion": "1 mes"
+    },
+    {
+      "titulo": "Rehabilitación de fachada",
+      "descripcion": "Reparación y pintura de fachada en edificio residencial.",
+      "imagen": "",
+      "ubicacion": "Las Rozas",
+      "metros": 400,
+      "duracion": "6 semanas"
+    },
+    {
+      "titulo": "Reforma de local comercial",
+      "descripcion": "Acondicionamiento de local para apertura de negocio.",
+      "imagen": "",
+      "ubicacion": "Majadahonda",
+      "metros": 150,
+      "duracion": "5 semanas"
+    },
+    {
+      "titulo": "Reparación tras incendio",
+      "descripcion": "Restauración completa de vivienda afectada por fuego.",
+      "imagen": "",
+      "ubicacion": "Madrid",
+      "metros": 90,
+      "duracion": "2 meses"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Excelente servicio. Gestionaron todo el siniestro con nuestra aseguradora sin que tuviéramos que preocuparnos de nada. Muy",
+      "destacado": "profesionales.",
+      "autor": "Carmen Rodríguez",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Llevamos años trabajando con Muserma para el mantenimiento de nuestra comunidad. Siempre cumplen plazos y son muy",
+      "destacado": "eficaces.",
+      "autor": "Admón. Fincas López",
+      "fuente": "Cliente directo",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Reforma integral de mi piso en Majadahonda. El resultado superó expectativas y el precio fue muy",
+      "destacado": "competitivo.",
+      "autor": "Miguel Ángel S.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Tuvimos una inundación y en menos de 24h ya estaban trabajando. Coordinaron todo con el seguro. Servicio",
+      "destacado": "impecable.",
+      "autor": "Laura Martínez",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Contratamos la reforma de nuestra oficina. Cumplieron el plazo acordado y el acabado fue",
+      "destacado": "excelente.",
+      "autor": "Despacho Abogados MG",
+      "fuente": "Cliente directo",
+      "puntuacion": 4
+    },
+    {
+      "texto": "Respuesta rápida para una urgencia de fontanería. Llegaron en menos de 2 horas y solucionaron el problema. Muy",
+      "destacado": "recomendables.",
+      "autor": "Antonio García",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Servicio 24 Horas",
+      "descripcion": "Atención de urgencias las 24 horas del día",
+      "icono": "Zap"
+    },
+    {
+      "titulo": "+100 Profesionales",
+      "descripcion": "Equipo propio de técnicos cualificados",
+      "icono": "Users"
+    },
+    {
+      "titulo": "Póliza RC 300.000€",
+      "descripcion": "Máxima garantía en todos los trabajos",
+      "icono": "Shield"
+    },
+    {
+      "titulo": "Gestión de Seguros",
+      "descripcion": "Tramitamos directamente con tu aseguradora",
+      "icono": "FileText"
+    }
+  ],
+
+  "zonasServicio": [
+    "Majadahonda", "Pozuelo de Alarcón", "Las Rozas", "Boadilla del Monte",
+    "Madrid Centro", "Aravaca", "Somosaguas", "Moncloa",
+    "Chamartín", "Tetuán"
+  ],
+
+  "empresa": {
+    "razonSocial": "Muserma, S.L.",
+    "experiencia": "30+ años"
+  },
+
+  "cta": {
+    "texto": "Solicitar Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=muserma"
+  },
+
+  "seo": {
+    "titulo": "Muserma | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Muserma - Gestión integral de reformas en Madrid desde 1994"
+  }
+}
