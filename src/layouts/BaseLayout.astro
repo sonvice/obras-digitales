@@ -13,9 +13,14 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   schema?: object;
-  // Nuevas props para control de transiciones
   disableTransitions?: boolean;
   transitionName?: string;
+  // Nuevas props para SEO avanzado
+  keywords?: string;
+  articleSchema?: object;
+  faqSchema?: object;
+  serviceSchema?: object;
+  noindex?: boolean;
 }
 
 const {
@@ -25,10 +30,124 @@ const {
   canonical = Astro.url.href,
   schema = {},
   disableTransitions = false,
+  keywords = "diseño web reformas, web empresas reformas Madrid, página web constructoras",
+  articleSchema,
+  faqSchema,
+  serviceSchema,
+  noindex = false,
 } = Astro.props;
 
-const fullTitle = `${title} | Obras Digitales Madrid`;
+const fullTitle = `${title} | Obras Digitales`;
 const siteUrl = 'https://obrasdigitales.es';
+
+// Schema Organization (aparece en Knowledge Panel)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Obras Digitales",
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/logo-obras-digitales.png`,
+  "description": "Agencia de diseño web especializada en empresas de reformas y construcción en Madrid",
+  "foundingDate": "2025",
+  "founder": {
+    "@type": "Person",
+    "name": "Wilson Muñoz"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+34-651-754-276",
+    "contactType": "sales",
+    "availableLanguage": ["Spanish"]
+  },
+  "sameAs": [
+    "https://linkedin.com/company/obras-digitales"
+  ]
+};
+
+// Schema LocalBusiness mejorado
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Obras Digitales - Diseño Web para Reformas",
+  "image": `${siteUrl}/images/og-default.jpg`,
+  "description": "Diseño web especializado para empresas de reformas, constructoras e instaladores en Madrid. Webs rápidas con calculadora de presupuestos y SEO local.",
+  "url": siteUrl,
+  "telephone": "+34651754276",
+  "email": "hola@obrasdigitales.es",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Madrid",
+    "addressLocality": "Madrid",
+    "addressRegion": "Comunidad de Madrid",
+    "postalCode": "28017",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.416775",
+    "longitude": "-3.703790"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Madrid"
+    },
+    {
+      "@type": "State",
+      "name": "Comunidad de Madrid"
+    }
+  ],
+  "serviceType": [
+    "Diseño web para empresas de reformas",
+    "SEO local para constructoras",
+    "Desarrollo web para instaladores",
+    "Páginas web para reformistas"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Diseño Web para Reformas",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web Profesional para Reformas",
+          "description": "Diseño web completo con calculadora de presupuestos, galería antes/después y SEO local"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO Local para Empresas de Reformas",
+          "description": "Posicionamiento en Google para búsquedas locales de reformas en Madrid"
+        }
+      }
+    ]
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  },
+  ...schema
+};
+
+// BreadcrumbList schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": siteUrl
+    }
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -37,63 +156,80 @@ const siteUrl = 'https://obrasdigitales.es';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- SEO Básico -->
+    <!-- SEO Básico Mejorado -->
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <link rel="canonical" href={canonical} />
+    
+    <!-- Robots -->
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    )}
+    
+    <!-- Google Site Verification (añade tu código) -->
     <GoogleAnalytics id="G-HFPLTMFRTF" />
-     <AnalyticsEvents />
+    <AnalyticsEvents />
+    
     <!-- ClientRouter - Habilitando SPA mode -->
     {!disableTransitions && <ClientRouter />}
     
-    <!-- Open Graph -->
+    <!-- Open Graph Mejorado -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Obras Digitales - Diseño web para empresas de reformas" />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Obras Digitales" />
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@obrasdigitales" />
+    <meta name="twitter:creator" content="@obrasdigitales" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
     
-    <!-- Geo Tags (Madrid) -->
-    <meta name="geo.region" content="ES-M" />
-    <meta name="geo.placename" content="Madrid" />
+    <!-- Geo Tags (Madrid) - SEO Local -->
+    <meta name="geo.region" content="ES-MD" />
+    <meta name="geo.placename" content="Madrid, España" />
     <meta name="geo.position" content="40.416775;-3.703790" />
     <meta name="ICBM" content="40.416775, -3.703790" />
     
-    <!-- Schema.org LocalBusiness -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Obras Digitales Madrid",
-      "description": "Desarrollo web especializado para empresas de reformas y construcción en Madrid",
-      "url": siteUrl,
-      "telephone": "+34651754276",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Madrid",
-        "addressRegion": "Comunidad de Madrid",
-        "addressCountry": "ES"
-      },
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "40.416775",
-          "longitude": "-3.703790"
-        },
-        "geoRadius": "50000"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/obras-digitales",
-      ],
-      ...schema
-    })} />
+    <!-- Idioma y región -->
+    <meta http-equiv="content-language" content="es-ES" />
+    <link rel="alternate" hreflang="es-ES" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    
+    <!-- Schema.org - Organization -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    
+    <!-- Schema.org - LocalBusiness -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    
+    <!-- Schema.org - Breadcrumb -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    
+    <!-- Schema.org - FAQ (si existe) -->
+    {faqSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
+    
+    <!-- Schema.org - Service (si existe) -->
+    {serviceSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    )}
+    
+    <!-- Schema.org - Article (si existe) -->
+    {articleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    )}
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -104,36 +240,36 @@ const siteUrl = 'https://obrasdigitales.es';
     
     <!-- Web Performance -->
     <meta name="theme-color" content="#1e40af" />
+    <meta name="color-scheme" content="light" />
     
-    <!-- Preconnect a dominios externos para mejorar performance -->
+    <!-- Preconnect a dominios externos -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  
     
     <slot name="head" />
   </head>
   
   <body class="antialiased bg-slate-50 text-slate-900">
-    <!-- Header con nombre de transición único -->
+    <!-- Skip to content (accesibilidad) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-lg z-50">
+      Saltar al contenido principal
+    </a>
+    
     <Header />
     
-    <!-- Main content con transición -->
-    <main >
+    <main id="main-content">
       <slot />
     </main>
     
-    <!-- Footer persistente entre navegaciones -->
     <Footer />
     
-    <!-- Script para reinicializar componentes después de transiciones -->
-    <!-- Scripts SOLO si transitions habilitado -->
     {!disableTransitions && (
       <script>
         document.addEventListener('astro:page-load', () => {
-          // Reinicializar scripts
-        });
-
-        document.addEventListener('astro:before-preparation', () => {
-          // Cleanup
+          // Reinicializar scripts después de navegación
         });
 
         document.addEventListener('astro:after-swap', () => {
