@@ -1,0 +1,249 @@
+{
+  "nombre": "Reformas IMR",
+  "eslogan": "Reformas integrales en Madrid con garantía total",
+  "webActual": "reformasimr.es",
+  "resenasGoogle": 30,
+  "puntuacionGoogle": 4.9,
+  "zona": "Madrid - Ciudad Lineal",
+  "proyectosRealizados": "+500",
+
+  "heroImagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+
+  "sobreNosotros": "IMR es tu empresa de reformas integrales en Madrid. Contamos con un equipo multidisciplinar de arquitectos, albañiles, interioristas y expertos en diversas áreas para que la reforma de tu vivienda o lugar de trabajo cumpla y supere todas tus expectativas. Presupuesto gratuito y garantía total en todos nuestros trabajos.",
+
+  "stats": [
+    { "valor": "4.9★", "label": "Valoración Google" },
+    { "valor": "+500", "label": "Proyectos realizados" },
+    { "valor": "100%", "label": "Garantía total" }
+  ],
+
+  "contacto": {
+    "telefono": "910 60 50 19",
+    "email": "info@reformasimr.es",
+    "direccion": "C. de Vital Aza, 48, 28017 Madrid"
+  },
+
+  "colores": {
+    "primario": "#1e3a5f",
+    "secundario": "#f59e0b",
+    "acento": "#10b981",
+    "fondo": "#0f172a",
+    "fondoClaro": "#f8fafc"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Reforma integral de piso",
+      "ubicacion": "Centro de Madrid",
+      "antes": "",
+      "despues": "",
+      "metros": 85,
+      "duracion": "6 semanas"
+    },
+    {
+      "titulo": "Reforma de cocina completa",
+      "ubicacion": "Ciudad Lineal",
+      "antes": "",
+      "despues": "",
+      "metros": 18,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Reforma de baño moderno",
+      "ubicacion": "Salamanca",
+      "antes": "",
+      "despues": "",
+      "metros": 8,
+      "duracion": "2 semanas"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Transformación completa de viviendas, pisos y locales con garantía total",
+      "icono": "Home"
+    },
+    {
+      "nombre": "Reformas de Cocinas",
+      "descripcion": "Diseño y ejecución de cocinas modernas y funcionales",
+      "icono": "ChefHat"
+    },
+    {
+      "nombre": "Reformas de Baños",
+      "descripcion": "Cambio de bañera por plato de ducha, reformas completas de baño",
+      "icono": "Bath"
+    },
+    {
+      "nombre": "Pintura y Acabados",
+      "descripcion": "Pintura interior y exterior, alisado de paredes, acabados premium",
+      "icono": "PaintBucket"
+    },
+    {
+      "nombre": "Fontanería",
+      "descripcion": "Instalaciones nuevas, reparaciones y cambio de tuberías",
+      "icono": "Droplets"
+    },
+    {
+      "nombre": "Electricidad",
+      "descripcion": "Instalaciones eléctricas, puntos de luz y cuadros eléctricos",
+      "icono": "Plug"
+    },
+    {
+      "nombre": "Albañilería",
+      "descripcion": "Tirar tabiques, levantar paredes, solados y alicatados",
+      "icono": "Hammer"
+    },
+    {
+      "nombre": "Locales y Oficinas",
+      "descripcion": "Reformas de espacios comerciales y de trabajo",
+      "icono": "Building2"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Reforma integral de piso",
+      "descripcion": "Transformación completa de vivienda con espacios abiertos, cocina nueva y dos baños reformados.",
+      "imagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "ubicacion": "Centro de Madrid",
+      "metros": 95,
+      "duracion": "8 semanas"
+    },
+    {
+      "titulo": "Cocina con isla central",
+      "descripcion": "Cocina moderna con isla central, nuevos muebles, puntos de luz y electrodomésticos integrados.",
+      "imagen": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+      "ubicacion": "Ciudad Lineal",
+      "metros": 22,
+      "duracion": "4 semanas"
+    },
+    {
+      "titulo": "Baño completo moderno",
+      "descripcion": "Cambio de bañera por plato de ducha, mueble suspendido y mampara de cristal.",
+      "imagen": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
+      "ubicacion": "Salamanca",
+      "metros": 7,
+      "duracion": "10 días"
+    },
+    {
+      "titulo": "Reforma salón-cocina abierta",
+      "descripcion": "Eliminación de tabiques para crear espacio diáfano salón-cocina con barra americana.",
+      "imagen": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "ubicacion": "Chamberí",
+      "metros": 45,
+      "duracion": "5 semanas"
+    },
+    {
+      "titulo": "Pintura y suelos completos",
+      "descripcion": "Alisado de paredes, pintura completa y cambio de suelos en todo el piso.",
+      "imagen": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "ubicacion": "Retiro",
+      "metros": 80,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Reforma de local comercial",
+      "descripcion": "Adaptación de local para negocio con nueva distribución, instalaciones y acabados.",
+      "imagen": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "ubicacion": "Arganzuela",
+      "metros": 120,
+      "duracion": "6 semanas"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Nos han reformado la cocina completa e instalado los nuevos muebles, nuevos puntos de luz, una gran isla central. Ha quedado realmente bonita y",
+      "destacado": "moderna.",
+      "autor": "Silvio G.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Muy recomendable. Ha quedado muy bonita la reforma integral del piso. Recomendación 100% muy serios y lo hicieron en el tiempo indicado. Les doy 5 estrellas porque no se pueden",
+      "destacado": "más.",
+      "autor": "Cliente satisfecho",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Son una empresa de reformas de confianza total, hemos reformado con ellos salón y cocina y hemos quedado muy",
+      "destacado": "contentos.",
+      "autor": "Martín C.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Pedí un presupuesto de reforma general para un piso en el centro de Madrid y desde la primera llamada me atendieron muy bien. La obra integral ha quedado genial. Muy",
+      "destacado": "profesionales.",
+      "autor": "Ana M.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Han terminado cuando me dijeron y me han hecho cosas gratis que ni siquiera estaban en el presupuesto. Muy bien",
+      "destacado": "todo.",
+      "autor": "Carlos R.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Rápidos y muy eficaces, pensaba que tardarían más y fueron muy rápidos, el resultado es justo lo que les pedí. 0",
+      "destacado": "pegas.",
+      "autor": "Alejandro U.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Presupuesto Gratuito",
+      "descripcion": "Te visitamos y te damos presupuesto detallado sin compromiso",
+      "icono": "FileText"
+    },
+    {
+      "titulo": "Garantía Total",
+      "descripcion": "Todos nuestros trabajos tienen garantía completa",
+      "icono": "Shield"
+    },
+    {
+      "titulo": "Cumplimos Plazos",
+      "descripcion": "Entregamos en el tiempo acordado o antes",
+      "icono": "Clock"
+    },
+    {
+      "titulo": "Equipo Profesional",
+      "descripcion": "Arquitectos, albañiles e interioristas especializados",
+      "icono": "Users"
+    }
+  ],
+
+  "zonasServicio": [
+    "Ciudad Lineal", "Centro", "Salamanca", "Chamberí",
+    "Retiro", "Chamartín", "Arganzuela", "Moncloa",
+    "Hortaleza", "Fuencarral", "Latina", "Carabanchel"
+  ],
+
+  "empresa": {
+    "razonSocial": "Reformas IMR",
+    "experiencia": "Años de experiencia"
+  },
+
+  "horario": {
+    "semana": "9:00 - 19:00",
+    "sabado": "10:00 - 14:00",
+    "domingo": "Cerrado"
+  },
+
+  "cta": {
+    "texto": "Pedir Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=reformasimr"
+  },
+
+  "seo": {
+    "titulo": "Reformas IMR | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Reformas IMR - Reformas integrales en Madrid con garantía total"
+  }
+}
