@@ -1,0 +1,253 @@
+{
+  "nombre": "Esteban Sanz Reformas",
+  "eslogan": "Reformas integrales en Moratalaz con garantía de 1 año",
+  "webActual": "reformas-obras-proyectos-madrid.es",
+  "resenasGoogle": 9,
+  "puntuacionGoogle": 4.7,
+  "zona": "Moratalaz - Valdebernardo - Vallecas",
+  "proyectosRealizados": "+200",
+
+  "heroImagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+
+  "sobreNosotros": "Esteban Sanz Proyectos, Obras y Reformas es una empresa especializada en reformas integrales en Moratalaz, Valdebernardo y Vallecas. Contamos con un equipo de profesionales cualificados para cada oficio y gran experiencia. Ofrecemos 1 año de garantía en todos nuestros trabajos y atención personalizada desde el inicio hasta el final de la obra. Somos instaladores oficiales de gas y distribuidores de ventanas Kömmerling.",
+
+  "stats": [
+    { "valor": "4.7★", "label": "Valoración Google" },
+    { "valor": "1 año", "label": "Garantía total" },
+    { "valor": "+200", "label": "Proyectos realizados" }
+  ],
+
+  "contacto": {
+    "telefono": "913 28 29 02",
+    "email": "info@reformasestebansanz.com",
+    "direccion": "Av. Dr. García Tapia, 161, 28030 Madrid"
+  },
+
+  "colores": {
+    "primario": "#2563eb",
+    "secundario": "#f97316",
+    "acento": "#10b981",
+    "fondo": "#1e293b",
+    "fondoClaro": "#f8fafc"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Reforma integral vivienda",
+      "ubicacion": "Camino de los Vinateros",
+      "antes": "",
+      "despues": "",
+      "metros": 75,
+      "duracion": "6 semanas"
+    },
+    {
+      "titulo": "Reforma integral cocina",
+      "ubicacion": "Moratalaz",
+      "antes": "",
+      "despues": "",
+      "metros": 14,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Cambio bañera por plato de ducha",
+      "ubicacion": "Valdebernardo",
+      "antes": "",
+      "despues": "",
+      "metros": 6,
+      "duracion": "1 semana"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Viviendas, oficinas, locales y colegios con equipo profesional completo",
+      "icono": "Home"
+    },
+    {
+      "nombre": "Ventanas PVC Kömmerling",
+      "descripcion": "Cerramientos y ventanas de alto aislamiento térmico, distribuidores oficiales",
+      "icono": "DoorOpen"
+    },
+    {
+      "nombre": "Instalaciones de Gas",
+      "descripcion": "Instaladores oficiales de gas natural para comunidades y particulares",
+      "icono": "Zap"
+    },
+    {
+      "nombre": "Reformas de Baños",
+      "descripcion": "Cambio de bañera por plato de ducha, mamparas y reformas completas",
+      "icono": "Bath"
+    },
+    {
+      "nombre": "Reformas de Cocinas",
+      "descripcion": "Diseño y ejecución de cocinas modernas y funcionales",
+      "icono": "ChefHat"
+    },
+    {
+      "nombre": "Suelos Tarima y Parquet",
+      "descripcion": "Instalación de tarima flotante y parquet de calidad",
+      "icono": "Layers"
+    },
+    {
+      "nombre": "Puertas de Acceso",
+      "descripcion": "Instalación de puertas de entrada y seguridad",
+      "icono": "DoorClosed"
+    },
+    {
+      "nombre": "Rehabilitación de Chalets",
+      "descripcion": "Obras de rehabilitación y ampliación integral",
+      "icono": "Building2"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Reforma integral vivienda",
+      "descripcion": "Reforma completa de piso con nueva distribución, cocina, baño y suelos.",
+      "imagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "ubicacion": "Camino de los Vinateros",
+      "metros": 80,
+      "duracion": "7 semanas"
+    },
+    {
+      "titulo": "Reforma integral cocina",
+      "descripcion": "Cocina completamente renovada con nuevos muebles, electrodomésticos e iluminación.",
+      "imagen": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+      "ubicacion": "Moratalaz",
+      "metros": 16,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Rehabilitación chalet Las Rozas",
+      "descripcion": "Obra de rehabilitación y ampliación integral en chalet unifamiliar.",
+      "imagen": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "ubicacion": "Las Rozas",
+      "metros": 180,
+      "duracion": "4 meses"
+    },
+    {
+      "titulo": "Cambio bañera por ducha",
+      "descripcion": "Instalación de plato de ducha 120x70 con mampara y reforma de baño completa.",
+      "imagen": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
+      "ubicacion": "Valdebernardo",
+      "metros": 5,
+      "duracion": "5 días"
+    },
+    {
+      "titulo": "Cerramientos PVC Kömmerling",
+      "descripcion": "Instalación de ventanas de alto aislamiento térmico en toda la vivienda.",
+      "imagen": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "ubicacion": "Moratalaz",
+      "metros": 65,
+      "duracion": "1 semana"
+    },
+    {
+      "titulo": "Reforma integral piso",
+      "descripcion": "Piso reformado completamente: electricidad, fontanería, suelos, pintura y carpintería.",
+      "imagen": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "ubicacion": "José Bergamín",
+      "metros": 70,
+      "duracion": "6 semanas"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Muy profesionales y cumplieron con todo lo acordado. La reforma de mi piso quedó perfecta y en el tiempo",
+      "destacado": "estimado.",
+      "autor": "Mario S.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Buena empresa para reformas. Realizaron la reforma de mi cocina y quedé muy contenta con el",
+      "destacado": "resultado.",
+      "autor": "Eva M.",
+      "fuente": "Google Maps",
+      "puntuacion": 4
+    },
+    {
+      "texto": "Excelente trabajo en la reforma integral de mi vivienda. Muy recomendables por su seriedad y",
+      "destacado": "profesionalidad.",
+      "autor": "Guadalupe S.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Les contraté para cambiar las ventanas por Kömmerling y el resultado es espectacular. Se nota mucho el aislamiento",
+      "destacado": "térmico.",
+      "autor": "Adolfo C.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Hicieron la reforma del baño rápido y bien. Muy contentos con el cambio de bañera por plato de",
+      "destacado": "ducha.",
+      "autor": "Cliente satisfecho",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Buena atención desde el principio. Te asesoran bien y cumplen lo que",
+      "destacado": "prometen.",
+      "autor": "Vecino Moratalaz",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "1 Año de Garantía",
+      "descripcion": "Todos nuestros trabajos tienen un año de garantía completa",
+      "icono": "Shield"
+    },
+    {
+      "titulo": "Instaladores de Gas",
+      "descripcion": "Empresa instaladora oficial de gas natural",
+      "icono": "Zap"
+    },
+    {
+      "titulo": "Ventanas Kömmerling",
+      "descripcion": "Distribuidores oficiales de ventanas PVC de alta calidad",
+      "icono": "Award"
+    },
+    {
+      "titulo": "Equipo Completo",
+      "descripcion": "Profesionales cualificados para cada oficio",
+      "icono": "Users"
+    }
+  ],
+
+  "marcas": [
+    "Kömmerling"
+  ],
+
+  "zonasServicio": [
+    "Moratalaz", "Valdebernardo", "Vallecas", "Vicálvaro",
+    "Puente de Vallecas", "Villa de Vallecas", "San Blas",
+    "Ciudad Lineal", "Las Rozas", "Centro Madrid"
+  ],
+
+  "empresa": {
+    "razonSocial": "Esteban Sanz Proyectos, Obras y Reformas",
+    "experiencia": "Años de experiencia"
+  },
+
+  "horario": {
+    "semana": "10:00 - 14:00 / 17:30 - 20:00",
+    "sabado": "Cerrado",
+    "domingo": "Cerrado"
+  },
+
+  "cta": {
+    "texto": "Pedir Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=estebansanz"
+  },
+
+  "seo": {
+    "titulo": "Esteban Sanz Reformas | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para Esteban Sanz - Reformas integrales en Moratalaz con 1 año de garantía"
+  }
+}
