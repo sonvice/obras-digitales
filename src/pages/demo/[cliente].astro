@@ -54,9 +54,9 @@ const colores = config.colores || {
 const heroBackground = config.heroImagen || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80';
 
 const defaultSliderImages = [
-  { antes: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80', despues: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80', titulo: 'Reforma de cocina' },
-  { antes: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80', despues: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80', titulo: 'Reforma de baño' },
-  { antes: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80', despues: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80', titulo: 'Reforma de salón' },
+  { antes: '/demo/todoreformasintegrales/before-after/cocina-antes.webp', despues: '/demo/todoreformasintegrales/before-after/cocina-despues.webp', titulo: 'Reforma de cocina' },
+  { antes: '/demo/todoreformasintegrales/before-after/bano-antes.webp', despues: '/demo/todoreformasintegrales/before-after/bano-despues.webp', titulo: 'Reforma de baño' },
+  { antes: '/demo/todoreformasintegrales/before-after/salon-terraza-antes.webp', despues: '/demo/todoreformasintegrales/before-after/salon-terraza-despues.webp', titulo: 'Reforma de salón' },
 ];
 
 const defaultProjectImages = [
@@ -225,7 +225,7 @@ const schema = { "@type": "WebPage", "name": `Demo Web - ${config.nombre}` };
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
       <div class="flex flex-col items-center gap-2 text-white/30">
         <span class="text-xs uppercase tracking-widest">Scroll</span>
-        <div class="w-px h-12 bg-gradient-to-b from-white/30 to-transparent"></div>
+        <div class="w-px h-12 bg-linear-to-b from-white/30 to-transparent"></div>
       </div>
     </div>
   </section>
@@ -347,7 +347,7 @@ const schema = { "@type": "WebPage", "name": `Demo Web - ${config.nombre}` };
                   </div>
                 )}
                 
-                <div class="aspect-[4/3] relative">
+                <div class="aspect-4/3 relative">
                   <BeforeAfterSlider 
                     client:visible
                     beforeImage={antes}
@@ -426,10 +426,10 @@ const schema = { "@type": "WebPage", "name": `Demo Web - ${config.nombre}` };
                 data-cropped="true" 
                 class={`group block bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${isLarge ? 'sm:col-span-2 lg:col-span-1' : ''}`}
               >
-                <div class="relative aspect-[4/3] overflow-hidden">
+                <div class="relative aspect-4/3 overflow-hidden">
                   <img src={imagenSrc} alt={proyecto.titulo} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                   
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+                  <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                   
                   <div class="absolute inset-0 p-6 flex flex-col justify-between">
                     <div class="flex justify-between items-start">
