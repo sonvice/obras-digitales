@@ -1,0 +1,327 @@
+{
+  "nombre": "GMC Reformas",
+  "eslogan": "Empresa de Reformas y Obra Nueva en Madrid",
+  "webActual": "gmcreformas.com",
+  "resenasGoogle": 30,
+  "puntuacionGoogle": 4.9,
+  "zona": "Hortaleza - Canillas - Madrid",
+  "proyectosRealizados": "+100",
+
+  "heroImagen": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+
+  "sobreNosotros": "GMC Reformas es una empresa especializada en la realización de trabajos de obra nueva y reformas en Madrid. Somos un equipo que combina juventud y experiencia en el sector de la construcción. Nuestro principal objetivo es satisfacer las expectativas de cada cliente dando un servicio personalizado y de calidad. Ponemos a tu disposición un completo equipo de profesionales tanto en el apartado técnico como en la ejecución de los diferentes capítulos de la obra. Contamos con showroom de cocinas y baños en Canillas.",
+
+  "stats": [
+    { "valor": "4.9★", "label": "Valoración Google" },
+    { "valor": "30+", "label": "Reseñas verificadas" },
+    { "valor": "+100", "label": "Proyectos realizados" }
+  ],
+
+  "contacto": {
+    "telefono": "912 77 68 46",
+    "telefonoMovil": "627 51 58 11",
+    "email": "info@gmcreformas.com",
+    "direccion": "C de Canillas, 117, Local 13, 28043 Madrid"
+  },
+
+  "colores": {
+    "primario": "#1a365d",
+    "secundario": "#c9a227",
+    "acento": "#2c5282",
+    "fondo": "#1a202c",
+    "fondoClaro": "#f7fafc"
+  },
+
+  "sliders": [
+    {
+      "titulo": "Reforma integral vivienda",
+      "ubicacion": "Barrio Salamanca",
+      "antes": "",
+      "despues": "",
+      "metros": 80,
+      "duracion": "8 semanas"
+    },
+    {
+      "titulo": "Reforma integral cocina",
+      "ubicacion": "Hortaleza",
+      "antes": "",
+      "despues": "",
+      "metros": 16,
+      "duracion": "3 semanas"
+    },
+    {
+      "titulo": "Reforma integral chalet",
+      "ubicacion": "Becerril de la Sierra",
+      "antes": "",
+      "despues": "",
+      "metros": 180,
+      "duracion": "4 meses"
+    }
+  ],
+
+  "ofertas": [
+    {
+      "titulo": "Reforma 1 dormitorio",
+      "descripcion": "Vivienda tipo de un dormitorio, un cuarto de baño, salón, cocina y recibidor",
+      "metros": 36,
+      "metrosConstruidos": 44,
+      "precio": "29.950 €",
+      "incluye": "Demoliciones, albañilería, alicatados y solados, pintura, fontanería, calefacción, electricidad y gas, carpintería de madera, aluminio y cristalería"
+    },
+    {
+      "titulo": "Reforma 2 dormitorios",
+      "descripcion": "Vivienda tipo de dos dormitorios, un cuarto de baño, salón, cocina y recibidor",
+      "metros": 52,
+      "metrosConstruidos": 66,
+      "precio": "34.950 €",
+      "incluye": "Demoliciones, albañilería, alicatados y solados, pintura, fontanería, calefacción, electricidad y gas, carpintería de madera, aluminio y cristalería"
+    },
+    {
+      "titulo": "Reforma 3 dormitorios",
+      "descripcion": "Vivienda tipo de tres dormitorios, dos cuartos de baño, salón, cocina, distribuidor, tendedero y recibidor",
+      "metros": 82,
+      "metrosConstruidos": 95,
+      "precio": "47.500 €",
+      "incluye": "Demoliciones, albañilería, alicatados y solados, pintura, fontanería, calefacción, electricidad y gas, carpintería de madera, aluminio y cristalería"
+    }
+  ],
+
+  "servicios": [
+    {
+      "nombre": "Reformas Integrales",
+      "descripcion": "Viviendas, chalets, locales y oficinas con equipo técnico completo",
+      "icono": "Home"
+    },
+    {
+      "nombre": "Reformas de Cocinas",
+      "descripcion": "Diseño, mobiliario y ejecución de cocinas a medida con showroom propio",
+      "icono": "ChefHat"
+    },
+    {
+      "nombre": "Reformas de Baños",
+      "descripcion": "Diseño y reforma completa de baños con las mejores marcas",
+      "icono": "Bath"
+    },
+    {
+      "nombre": "Instalaciones Eléctricas",
+      "descripcion": "Instalación eléctrica completa, iluminación LED y domótica",
+      "icono": "Zap"
+    },
+    {
+      "nombre": "Climatización",
+      "descripcion": "Aire acondicionado, calefacción, calderas y aerotermia",
+      "icono": "Thermometer"
+    },
+    {
+      "nombre": "Fontanería y Saneamiento",
+      "descripcion": "Instalaciones completas de fontanería, ACS y calefacción",
+      "icono": "Droplet"
+    },
+    {
+      "nombre": "Carpintería de Madera",
+      "descripcion": "Puertas, armarios, tarima, parquet y rodapiés",
+      "icono": "DoorClosed"
+    },
+    {
+      "nombre": "Carpintería Aluminio/PVC",
+      "descripcion": "Ventanas, cerramientos y mamparas con RPT",
+      "icono": "DoorOpen"
+    },
+    {
+      "nombre": "Albañilería y Demoliciones",
+      "descripcion": "Tabiquería, alicatados, solados, pladur y falsos techos",
+      "icono": "Hammer"
+    },
+    {
+      "nombre": "Pintura y Acabados",
+      "descripcion": "Pintado de paramentos, alisado de paredes, lacas y barnices",
+      "icono": "Paintbrush"
+    },
+    {
+      "nombre": "Instalaciones de Gas",
+      "descripcion": "Instalación completa de gas, calderas y calentadores",
+      "icono": "Flame"
+    },
+    {
+      "nombre": "Rehabilitación de Chalets",
+      "descripcion": "Obras integrales de rehabilitación y ampliación de chalets",
+      "icono": "Building2"
+    }
+  ],
+
+  "proyectos": [
+    {
+      "titulo": "Reforma Integral Oliva",
+      "descripcion": "Reforma integral con terraza, albañilería, instalaciones, suelo, carpintería metálica y mobiliario de jardín.",
+      "imagen": "https://gmcreformas.com/wp-content/uploads/2023/03/reforma-integral-matisse-oliva-valencia-terraza-albanileria-instalacion-suelo-carpinteria-metalica-mobiliario-jardin-cristaleria-510x382.jpg",
+      "ubicacion": "Oliva, Valencia",
+      "metros": 120,
+      "duracion": "3 meses"
+    },
+    {
+      "titulo": "Reforma Integral Montpelier",
+      "descripcion": "Reforma integral con instalación de suelo parquet, calefacción, climatización, iluminación y carpintería metálica.",
+      "imagen": "https://gmcreformas.com/wp-content/uploads/2023/03/Reforma-integral-montpelier-moratalaz-madrid-salon-instalacion-suelo-parquet-calefaccion-climatizacion-iluminacion-carpinteria-metalica-510x382.jpg",
+      "ubicacion": "Moratalaz, Madrid",
+      "metros": 85,
+      "duracion": "8 semanas"
+    },
+    {
+      "titulo": "Reforma Integral Barrio Salamanca",
+      "descripcion": "Reforma integral de vivienda en el exclusivo Barrio de Salamanca.",
+      "imagen": "https://gmcreformas.com/wp-content/uploads/2022/08/reforma-integral-juan-bravo-510x382.jpg",
+      "ubicacion": "Barrio Salamanca, Madrid",
+      "metros": 110,
+      "duracion": "10 semanas"
+    },
+    {
+      "titulo": "Reforma Integral Avenida de América",
+      "descripcion": "Reforma con carpintería de aluminio, carpintería de madera, calefacción, rodapiés y pintura.",
+      "imagen": "https://gmcreformas.com/wp-content/uploads/2022/08/reforma-integral-lopez-de-hoyos-carpinteria-de-aluminio-carpinteria-de-madera-calefaccion-rodapies-pintura-510x382.jpg",
+      "ubicacion": "Avenida de América, Madrid",
+      "metros": 90,
+      "duracion": "8 semanas"
+    },
+    {
+      "titulo": "Reforma Integral Quismondo Toledo",
+      "descripcion": "Reforma integral de chalet unifamiliar en Toledo.",
+      "imagen": "https://gmcreformas.com/wp-content/uploads/2022/07/reforma-integral-chalet-quismondo-510x382.jpg",
+      "ubicacion": "Quismondo, Toledo",
+      "metros": 200,
+      "duracion": "4 meses"
+    },
+    {
+      "titulo": "Reforma Integral Becerril de la Sierra",
+      "descripcion": "Reforma con iluminación, carpintería de aluminio, calefacción, pintura, carpintería de madera e instalación de suelo.",
+      "imagen": "https://gmcreformas.com/wp-content/uploads/2022/07/reforma-integral-chalet-becerril-de-la-sierra-iluminacion-carpinteria-de-aluminio-calefaccion-pintura-carpinteria-de-madera-instalacion-de-suelo-510x382.jpg",
+      "ubicacion": "Becerril de la Sierra, Madrid",
+      "metros": 180,
+      "duracion": "4 meses"
+    }
+  ],
+
+  "testimonios": [
+    {
+      "texto": "Fue una decisión muy acertada ponernos en manos de Borja. La ejecución de todos los trabajos fue tal y como se había planificado llegando incluso a terminar un poco",
+      "destacado": "antes.",
+      "autor": "Patricia N.",
+      "fuente": "Google Maps",
+      "puntuacion": 4
+    },
+    {
+      "texto": "Desde el principio fue muy formal, nos hizo una visita para ver in situ lo que queríamos hacer. Cumplió los plazos marcados y estuvo siempre pendiente de satisfacer nuestras",
+      "destacado": "peticiones.",
+      "autor": "Marta",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "El presupuesto de inicio nos pareció razonable, y tras ver el resultado de los trabajos creo que ha sido un",
+      "destacado": "acierto.",
+      "autor": "María V.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Buscábamos seriedad y profesionalidad para la reforma de nuestra casa y hemos acertado plenamente. Han cumplido con todo lo presupuestado sin sorpresas",
+      "destacado": "desagradables.",
+      "autor": "Tomás M.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Borja entendió perfectamente nuestras necesidades y estamos completamente satisfechos con el resultado",
+      "destacado": "final.",
+      "autor": "Francisco R.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    },
+    {
+      "texto": "Se ha encargado de la reforma integral de nuestra vivienda de una forma profesional y cercana, lo que ha facilitado la comunicación durante todo el",
+      "destacado": "proceso.",
+      "autor": "Daniel G.",
+      "fuente": "Google Maps",
+      "puntuacion": 5
+    }
+  ],
+
+  "ventajas": [
+    {
+      "titulo": "Showroom de Cocinas",
+      "descripcion": "Exposición propia de cocinas y baños para visualizar acabados",
+      "icono": "Store"
+    },
+    {
+      "titulo": "Presupuesto Detallado",
+      "descripcion": "Presupuesto por partidas sin sorpresas ni costes ocultos",
+      "icono": "FileText"
+    },
+    {
+      "titulo": "Dirección de Obra",
+      "descripcion": "Seguimiento diario por personal técnico cualificado",
+      "icono": "HardHat"
+    },
+    {
+      "titulo": "Equipo Profesional",
+      "descripcion": "Combinamos juventud y experiencia en cada proyecto",
+      "icono": "Users"
+    }
+  ],
+
+  "marcas": [
+    "Porcelanosa",
+    "Roca",
+    "Grohe",
+    "Baxi",
+    "Saunier Duval",
+    "Junkers",
+    "Vaillant",
+    "Mitsubishi",
+    "Daikin",
+    "Marazzi",
+    "Pamesa",
+    "Jung",
+    "Schneider Electric",
+    "Simon",
+    "Finsa",
+    "Grespania",
+    "Tau Cerámica",
+    "Puertas Herrero"
+  ],
+
+  "zonasServicio": [
+    "Hortaleza", "Canillas", "Chamartín", "Salamanca",
+    "Retiro", "Moncloa", "Ciudad Lineal", "San Blas",
+    "Moratalaz", "Centro Madrid", "Las Rozas", "Pozuelo",
+    "Majadahonda", "Alcobendas", "Comunidad de Madrid"
+  ],
+
+  "empresa": {
+    "razonSocial": "Gallango Madrid Construcciones y Reformas S.L.",
+    "cif": "Registro Mercantil de Madrid: Tomo 40078, Folio: 61",
+    "experiencia": "Años de experiencia"
+  },
+
+  "horario": {
+    "semana": "09:00 - 19:00",
+    "sabado": "Cerrado",
+    "domingo": "Cerrado"
+  },
+
+  "extras": {
+    "showroom": true,
+    "showroomDireccion": "C de Canillas, 117, Local 14, 28043 Madrid",
+    "webCocinas": "cocinas.gmcreformas.com",
+    "responsabilidadSocial": "Colaboran con Plan International"
+  },
+
+  "cta": {
+    "texto": "Pedir Presupuesto Gratis",
+    "urlContacto": "https://obrasdigitales.es/contacto?ref=gmcreformas"
+  },
+
+  "seo": {
+    "titulo": "GMC Reformas | Tu Nueva Web Profesional",
+    "descripcion": "Demo de web profesional para GMC Reformas - Reformas integrales en Madrid con showroom de cocinas y baños"
+  }
+}
