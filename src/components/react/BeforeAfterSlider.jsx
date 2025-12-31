@@ -10,7 +10,7 @@ export default function BeforeAfterSlider({
   alt = "Antes y después de la reforma" 
 }) {
   return (
-    <div className="relative  shadow-2xl">
+    <div className="relative">
       <ReactCompareSlider
         itemOne={
           <ReactCompareSliderImage 

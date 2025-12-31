@@ -5,6 +5,7 @@ import CalculadoraPresupuesto from "../components/react/CalculadoraPresupuesto";
 import BeforeAfterSlider from "../components/react/BeforeAfterSlider";
 import SpeedComparison from "../components/react/SpeedComparison";
 import CTASection from "../components/astro/CTASection.astro";
+import { ArrowBigUp } from "lucide-react";
 ---
 
 <BaseLayout
@@ -69,7 +70,7 @@ import CTASection from "../components/astro/CTASection.astro";
   </section>
 
   <!-- Demo 2: Slider -->
-  <section class="py-20 bg-slate-50">
+  <section class="py-20 bg-slate-50 bg-texture">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <div
@@ -95,9 +96,9 @@ import CTASection from "../components/astro/CTASection.astro";
           alt="Reforma de cocina - Antes y después"
         />
       </div>
-        <p class="text-center text-slate-500 mt-4">
-          ☝️ Desliza la barra para ver la transformación
-        </p>
+         <p class="flex justify-center gap-2 items-center text-sm text-center text-slate-500 mt-4 pb-4">
+              <ArrowBigUp /> <span>Prueba el slider: desliza para ver el antes y después</span>
+          </p>
       </div>
 
       <div
