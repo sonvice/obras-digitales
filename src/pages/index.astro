@@ -4,7 +4,8 @@ import "../styles/global.css";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SpeedComparison from '../components/react/SpeedComparison';
 import BeforeAfterSlider from '../components/react/BeforeAfterSlider';
-import {  CircleX, CircleCheck, ArrowBigUp } from '@lucide/astro';
+import {  CircleX, CircleCheck, ArrowBigUp,Image } from '@lucide/astro';
+import { Calculator, CheckCircle2, Search, Star, Zap } from "lucide-react";
 
 // Schema WebSite con SearchAction
 const websiteSchema = {
@@ -176,20 +177,19 @@ const keywords = "diseño web empresas reformas, página web empresa reformas, w
     </div>
   </section>
 
-  <!-- ======================= CLIENTES OBJETIVO ======================= -->
-  <section class="py-12 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-center text-slate-500 text-sm mb-6">Diseño web especializado para:</p>
-      <div class="flex flex-wrap justify-center gap-3 lg:gap-6">
-        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium">Empresas de reformas integrales</span>
-        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium">Constructoras</span>
-        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium">Reformas de cocinas y baños</span>
-        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium">Instaladores de gas y fontanería</span>
-        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium">Interioristas</span>
-        <span class="px-4 py-2 bg-slate-100 rounded-full text-slate-700 text-sm font-medium">Arquitectos</span>
-      </div>
+<!-- ======================= CLIENTES OBJETIVO ======================= -->
+<section class="py-12 bg-slate-50 bg-texture">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-slate-500 text-sm font-medium mb-6 uppercase tracking-wider">Diseño web especializado para:</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      {['Empresas de reformas integrales', 'Constructoras', 'Reformas de cocinas y baños', 'Instaladores de gas y fontanería', 'Interioristas', 'Arquitectos'].map((item) => (
+        <span class="px-5 py-2.5 bg-white rounded-full text-slate-700 text-sm font-medium shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all cursor-default">
+          {item}
+        </span>
+      ))}
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ======================= PROBLEMA ======================= -->
   <section class="py-20 bg-white" id="problema">
@@ -326,37 +326,42 @@ const keywords = "diseño web empresas reformas, página web empresa reformas, w
     </div>
   </section>
 
-  <!-- ======================= RESULTADOS ======================= -->
-  <section class="py-20 bg-white" id="resultados">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          Resultados de webs para empresas de reformas
-        </h2>
-        <p class="text-xl text-slate-600">
-          Lo que consiguen las empresas de reformas con una web profesional
-        </p>
+<!-- ======================= RESULTADOS ======================= -->
+<section class="py-24 bg-linear-to-br from-slate-50 to-slate-100" id="resultados">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div class="section-label mb-4 mx-auto inline-flex">
+        <span>Resultados</span>
       </div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+        Lo que consiguen nuestros clientes
+      </h2>
+      <p class="text-xl text-slate-600">
+        Resultados reales de empresas de reformas con webs profesionales
+      </p>
+    </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center p-8 bg-blue-50 rounded-2xl">
-          <div class="text-5xl font-bold text-blue-600 mb-2">+180%</div>
-          <p class="text-slate-700 font-medium">Más contactos cualificados</p>
-          <p class="text-sm text-slate-500 mt-2">Clientes que ya conocen tu rango de precios</p>
-        </div>
-        <div class="text-center p-8 bg-green-50 rounded-2xl">
-          <div class="text-5xl font-bold text-green-600 mb-2">-60%</div>
-          <p class="text-slate-700 font-medium">Menos visitas inútiles</p>
-          <p class="text-sm text-slate-500 mt-2">La calculadora filtra presupuestos bajos</p>
-        </div>
-        <div class="text-center p-8 bg-yellow-50 rounded-2xl">
-          <div class="text-5xl font-bold text-yellow-600 mb-2">100%</div>
-          <p class="text-slate-700 font-medium">Optimizada para Google</p>
-          <p class="text-sm text-slate-500 mt-2">SEO local configurado desde el día 1</p>
-        </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="stat-card p-8 rounded-2xl card-hover">
+        <div class="text-5xl lg:text-6xl font-bold text-blue-600 mb-3">+180%</div>
+        <p class="text-lg font-semibold text-slate-900 mb-2">Más contactos cualificados</p>
+        <p class="text-slate-500">Clientes que ya conocen tu rango de precios antes de contactarte</p>
+      </div>
+      
+      <div class="stat-card p-8 rounded-2xl card-hover">
+        <div class="text-5xl lg:text-6xl font-bold text-green-600 mb-3">-60%</div>
+        <p class="text-lg font-semibold text-slate-900 mb-2">Menos visitas inútiles</p>
+        <p class="text-slate-500">La calculadora filtra automáticamente presupuestos bajos</p>
+      </div>
+      
+      <div class="stat-card p-8 rounded-2xl card-hover">
+        <div class="text-5xl lg:text-6xl font-bold text-amber-600 mb-3">100%</div>
+        <p class="text-lg font-semibold text-slate-900 mb-2">Optimizada para Google</p>
+        <p class="text-slate-500">SEO local configurado desde el primer día de lanzamiento</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ======================= SERVICIOS ======================= -->
   <section class="py-20 bg-slate-900 text-white bg-brick-pattern" id="servicios">
@@ -423,116 +428,183 @@ const keywords = "diseño web empresas reformas, página web empresa reformas, w
   </section>
 
   <!-- ======================= FAQ ======================= -->
-  <section class="py-20 bg-slate-50" id="preguntas-frecuentes">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          Preguntas frecuentes sobre webs para reformas
-        </h2>
-        <p class="text-xl text-slate-600">
-          Todo lo que necesitas saber antes de crear la web de tu empresa
-        </p>
+<section class="py-24 bg-white" id="preguntas-frecuentes">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div class="section-label mb-4 mx-auto inline-flex">
+        <span>FAQ</span>
       </div>
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+        Preguntas frecuentes
+      </h2>
+      <p class="text-xl text-slate-600">
+        Todo lo que necesitas saber antes de crear la web de tu empresa
+      </p>
+    </div>
 
-      <div class="space-y-4">
-        <details class="bg-white rounded-xl p-6 shadow-sm group" open>
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto cuesta una página web para una empresa de reformas?</h3>
-            <svg class="w-5 h-5 text-slate-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="mt-4 text-slate-600">
-            <p>El precio de una web profesional para empresas de reformas varía entre <strong>1.400€ y 2.000€</strong> dependiendo de las funcionalidades:</p>
-            <ul class="mt-3 space-y-2 ml-4">
-              <li>• <strong>Web básica (1.400€)</strong>: Diseño responsive, 5-7 páginas, formulario de contacto, SEO básico</li>
-              <li>• <strong>Web profesional (2.000€)</strong>: Todo lo anterior + calculadora de presupuestos + galería antes/después + testimonios Google + blog</li>
-            </ul>
-            <p class="mt-3">La inversión se recupera con 1-2 obras conseguidas a través de la web.</p>
+    <div class="space-y-4">
+      <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden" open>
+        <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto cuesta una página web para una empresa de reformas?</h3>
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
+            <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
-        </details>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>El precio de una web profesional para empresas de reformas varía entre <strong>1.400€ y 2.000€</strong> dependiendo de las funcionalidades:</p>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-start gap-2">
+              <CheckCircle2 />
+              <span><strong>Web básica (1.400€)</strong>: Diseño responsive, 5-7 páginas, formulario de contacto, SEO básico</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <CheckCircle2 />
+              <span><strong>Web profesional (2.000€)</strong>: Todo lo anterior + calculadora de presupuestos + galería antes/después + testimonios Google + blog</span>
+            </li>
+          </ul>
+          <p class="mt-4 p-4 bg-blue-50 rounded-xl text-blue-800 border border-blue-200">
+            💡 La inversión se recupera con 1-2 obras conseguidas a través de la web.
+          </p>
+        </div>
+      </details>
 
-        <details class="bg-white rounded-xl p-6 shadow-sm group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-bold text-slate-900 pr-4">¿Por qué mi empresa de reformas necesita una web rápida?</h3>
-            <svg class="w-5 h-5 text-slate-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="mt-4 text-slate-600">
-            <p>El <strong>53% de los usuarios abandonan</strong> una web que tarda más de 3 segundos en cargar. Para empresas de reformas, esto es crítico porque:</p>
-            <ul class="mt-3 space-y-2 ml-4">
-              <li>• El <strong>70% de búsquedas</strong> de reformas se hacen desde móvil</li>
-              <li>• Google <strong>penaliza webs lentas</strong> en los resultados de búsqueda</li>
-              <li>• Una web rápida aumenta las conversiones hasta un <strong>300%</strong></li>
-            </ul>
-            <p class="mt-3">Nuestras webs cargan en 1.2 segundos. La media del sector está en 6-8 segundos.</p>
+      <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
+        <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Por qué mi empresa de reformas necesita una web rápida?</h3>
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
+            <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
-        </details>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>El <strong>53% de los usuarios abandonan</strong> una web que tarda más de 3 segundos en cargar. Para empresas de reformas, esto es crítico porque:</p>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-start gap-2">
+              <Zap  />
+              <span>El <strong>70% de búsquedas</strong> de reformas se hacen desde móvil</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Zap />
+              <span>Google <strong>penaliza webs lentas</strong> en los resultados de búsqueda</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <Zap/>
+              <span>Una web rápida aumenta las conversiones hasta un <strong>300%</strong></span>
+            </li>
+          </ul>
+          <p class="mt-4">Nuestras webs cargan en <strong class="text-blue-600">1.2 segundos</strong>. La media del sector está en 6-8 segundos.</p>
+        </div>
+      </details>
 
-        <details class="bg-white rounded-xl p-6 shadow-sm group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-bold text-slate-900 pr-4">¿Qué debe incluir la web de una empresa de reformas?</h3>
-            <svg class="w-5 h-5 text-slate-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="mt-4 text-slate-600">
-            <p>Una web efectiva para empresas de reformas debe incluir:</p>
-            <ul class="mt-3 space-y-2 ml-4">
-              <li>• <strong>Galería de proyectos</strong> con fotos antes/después (genera confianza)</li>
-              <li>• <strong>Calculadora de presupuestos</strong> que filtra clientes sin presupuesto</li>
-              <li>• <strong>Testimonios verificados</strong> de Google Maps</li>
-              <li>• <strong>Página de servicios</strong> detallada (cocinas, baños, integrales)</li>
-              <li>• <strong>SEO local</strong> para aparecer en "reformas + tu zona"</li>
-              <li>• <strong>Diseño responsive</strong> optimizado para móvil</li>
-            </ul>
+      <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
+        <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Qué debe incluir la web de una empresa de reformas?</h3>
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
+            <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
-        </details>
-
-        <details class="bg-white rounded-xl p-6 shadow-sm group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto tiempo se tarda en crear una web para reformas?</h3>
-            <svg class="w-5 h-5 text-slate-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="mt-4 text-slate-600">
-            <p>Una web profesional se desarrolla en <strong>2-4 semanas</strong>:</p>
-            <ul class="mt-3 space-y-2 ml-4">
-              <li>• <strong>Semana 1</strong>: Diseño y estructura (tú apruebas el diseño)</li>
-              <li>• <strong>Semana 2</strong>: Desarrollo técnico y optimización</li>
-              <li>• <strong>Semana 3</strong>: Carga de contenidos (tus fotos y textos)</li>
-              <li>• <strong>Semana 4</strong>: SEO, pruebas y lanzamiento</li>
-            </ul>
-            <p class="mt-3">Incluye formación para que puedas actualizar contenidos tú mismo.</p>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>Una web efectiva para empresas de reformas debe incluir:</p>
+          <div class="mt-4 grid sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-slate-200">
+              <Image />
+              <span><strong>Galería de proyectos</strong> con fotos antes/después</span>
+            </div>
+            <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-slate-200">
+              <Calculator />
+              <span><strong>Calculadora</strong> que filtra clientes</span>
+            </div>
+            <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-slate-200">
+              <Star />
+              <span><strong>Testimonios</strong> verificados de Google</span>
+            </div>
+            <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-slate-200">
+              <Search />
+              <span><strong>SEO local</strong> para tu zona</span>
+            </div>
           </div>
-        </details>
+        </div>
+      </details>
 
-        <details class="bg-white rounded-xl p-6 shadow-sm group">
-          <summary class="flex justify-between items-center cursor-pointer list-none">
-            <h3 class="text-lg font-bold text-slate-900 pr-4">¿Es mejor WordPress o una web a medida para reformas?</h3>
-            <svg class="w-5 h-5 text-slate-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </summary>
-          <div class="mt-4 text-slate-600">
-            <p>Para empresas de reformas, una <strong>web a medida es superior</strong>:</p>
-            <div class="mt-3 grid md:grid-cols-2 gap-4">
-              <div class="bg-red-50 p-4 rounded-lg">
-                <p class="font-bold text-red-700 mb-2">WordPress</p>
-                <ul class="text-sm space-y-1">
-                  <li class="flex gap-1"><CircleX/> <span>Carga en 5-8 segundos</span></li>
-                  <li class="flex gap-1"><CircleX/> <span>Vulnerable a hackeos</span></li>
-                  <li class="flex gap-1"><CircleX/><span>Requiere actualizaciones constantes</span></li>
-                  <li class="flex gap-1"><CircleX/> <span>Plugins que se rompen</span></li>
-                </ul>
+      <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
+        <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto tiempo se tarda en crear una web para reformas?</h3>
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
+            <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>Una web profesional se desarrolla en <strong>2-4 semanas</strong>:</p>
+          <div class="mt-4 space-y-3">
+            <div class="flex items-center gap-4 p-3 bg-white rounded-lg border border-slate-200">
+              <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600">1</div>
+              <div>
+                <p class="font-semibold text-slate-900">Semana 1</p>
+                <p class="text-sm">Diseño y estructura (tú apruebas el diseño)</p>
               </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <p class="font-bold text-green-700 mb-2">Web a medida (Astro + Panel WP)</p>
-                <ul class="text-sm space-y-1">
-                  <li class="flex gap-1"><CircleCheck/> <span>Carga en 1-2 segundos</span></li>
-                  <li class="flex gap-1"><CircleCheck/> <span>Mucho más segura</span></li>
-                  <li class="flex gap-1"><CircleCheck/> <span>Sin mantenimiento de plugins</span></li>
-                  <li class="flex gap-1"><CircleCheck/> <span>Mejor posicionamiento en Google</span></li>
-                </ul>
+            </div>
+            <div class="flex items-center gap-4 p-3 bg-white rounded-lg border border-slate-200">
+              <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600">2</div>
+              <div>
+                <p class="font-semibold text-slate-900">Semana 2</p>
+                <p class="text-sm">Desarrollo técnico y optimización</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-3 bg-white rounded-lg border border-slate-200">
+              <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600">3</div>
+              <div>
+                <p class="font-semibold text-slate-900">Semana 3</p>
+                <p class="text-sm">Carga de contenidos (tus fotos y textos)</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 p-3 bg-white rounded-lg border border-slate-200">
+              <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center font-bold text-green-600">4</div>
+              <div>
+                <p class="font-semibold text-slate-900">Semana 4</p>
+                <p class="text-sm">SEO, pruebas y lanzamiento 🚀</p>
               </div>
             </div>
           </div>
-        </details>
-      </div>
+        </div>
+      </details>
+
+      <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
+        <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Es mejor WordPress o una web a medida para reformas?</h3>
+          <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
+            <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600">
+          <p>Para empresas de reformas, una <strong>web a medida es superior</strong>:</p>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <div class="bg-red-50 p-5 rounded-xl border border-red-200">
+              <p class="font-bold text-red-700 mb-3 flex items-center gap-2">
+                <CircleX class="w-5 h-5" /> WordPress
+              </p>
+              <ul class="text-sm space-y-2 text-red-700">
+                <li class="flex gap-2"><CircleX class="w-4 h-4 shrink-0 mt-0.5"/> <span>Carga en 5-8 segundos</span></li>
+                <li class="flex gap-2"><CircleX class="w-4 h-4 shrink-0 mt-0.5"/> <span>Vulnerable a hackeos</span></li>
+                <li class="flex gap-2"><CircleX class="w-4 h-4 shrink-0 mt-0.5"/><span>Requiere actualizaciones constantes</span></li>
+                <li class="flex gap-2"><CircleX class="w-4 h-4 shrink-0 mt-0.5"/> <span>Plugins que se rompen</span></li>
+              </ul>
+            </div>
+            <div class="bg-green-50 p-5 rounded-xl border border-green-200">
+              <p class="font-bold text-green-700 mb-3 flex items-center gap-2">
+                <CircleCheck class="w-5 h-5" /> Web a medida
+              </p>
+              <ul class="text-sm space-y-2 text-green-700">
+                <li class="flex gap-2"><CircleCheck class="w-4 h-4 shrink-0 mt-0.5"/> <span>Carga en 1-2 segundos</span></li>
+                <li class="flex gap-2"><CircleCheck class="w-4 h-4 shrink-0 mt-0.5"/> <span>Mucho más segura</span></li>
+                <li class="flex gap-2"><CircleCheck class="w-4 h-4 shrink-0 mt-0.5"/> <span>Sin mantenimiento de plugins</span></li>
+                <li class="flex gap-2"><CircleCheck class="w-4 h-4 shrink-0 mt-0.5"/> <span>Mejor posicionamiento en Google</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ======================= CTA FINAL ======================= -->
   <section class="py-20 bg-linear-to-br from-blue-600 to-blue-900 text-white">
