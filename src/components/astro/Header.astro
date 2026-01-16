@@ -52,14 +52,15 @@ const currentPath = Astro.url.pathname;
         class="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors relative"
         aria-label="Menú"
         aria-expanded="false"
+        aria-controls="mobile-menu"
       >
         <!-- Ícono hamburguesa -->
         <span id="menu-icon" class="block transition-opacity duration-200">
-          <Menu class="w-6 h-6" />
+          <Menu class="w-6 h-6" aria-hidden="true" />
         </span>
         <!-- Ícono X -->
         <span id="close-icon" class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200">
-          <X class="w-6 h-6" />
+          <X class="w-6 h-6" aria-hidden="true" />
         </span>
       </button>
     </div>
