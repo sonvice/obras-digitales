@@ -1,42 +1,72 @@
 ---
-// src/pages/servicios.astro
+// src/pages/servicios.astro - VERSIÓN CORREGIDA B2B
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/astro/CTASection.astro";
 import FAQSection from "../components/astro/FAQSection.astro";
 import PricingWithSlider from "../components/react/PricingWithSlider.jsx";
 import { Calculator, Zap, MapPin } from "@lucide/astro";
 
+// Schema MEJORADO con más información B2B
 const schema = {
+  "@context": "https://schema.org",
   "@type": "ItemList",
+  "name": "Servicios de diseño web para empresas de reformas",
+  "description": "Sistema completo de captación digital para empresas de reformas y constructoras en Madrid",
   itemListElement: [
     {
       "@type": "Service",
       position: 1,
-      name: "Calculadora de Presupuestos Inteligente",
-      description: "Sistema de filtrado automático de leads sin presupuesto",
+      name: "Calculadora de Presupuestos para Web de Reformas",
+      description: "Sistema de filtrado automático de leads sin presupuesto. Captura email antes de mostrar precio. Reduce visitas inútiles un 60%.",
+      provider: {
+        "@type": "Organization",
+        "name": "Obras Digitales"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Empresas de reformas y constructoras"
+      }
     },
     {
       "@type": "Service",
       position: 2,
-      name: "Diseño Web Ultra-Rápido",
-      description: "Webs que cargan en menos de 1.2 segundos",
+      name: "Diseño Web Ultra-Rápido para Empresas de Reformas",
+      description: "Webs que cargan en menos de 1.2 segundos. Tecnología moderna sin WordPress tradicional. Supera al 95% de la competencia.",
+      provider: {
+        "@type": "Organization",
+        "name": "Obras Digitales"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Empresas de reformas y constructoras"
+      }
     },
     {
       "@type": "Service",
       position: 3,
-      name: "SEO Local Avanzado",
-      description: "Landing pages automáticas por cada barrio de Madrid",
+      name: "SEO Local para Empresas de Reformas Madrid",
+      description: "Landing pages automáticas por cada barrio de Madrid. Aparece cuando buscan 'empresa de reformas [tu zona]'. Tráfico orgánico gratuito.",
+      provider: {
+        "@type": "Organization",
+        "name": "Obras Digitales"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Empresas de reformas y constructoras"
+      }
     },
   ],
 };
+
+const keywords = "servicios diseño web empresas reformas Madrid, calculadora presupuestos web reformas, desarrollo web constructoras, SEO local empresas reformas, web rápida empresa reformas, sistema captación clientes reformas, alternativa habitissimo web propia, marketing digital empresas construcción Madrid, landing pages reformas por zonas";
 ---
 
 <BaseLayout
-  title="Servicios de Desarrollo Web para Empresas de Reformas"
-  description="Sistema completo de captación digital para constructoras y reformistas en Madrid. Calculadora de presupuestos, webs ultra-rápidas y SEO local. Desde 1.400€."
+  title="Servicios Web para Empresas de Reformas | Sistema Completo desde 1.400€"
+  description="Sistema completo de captación digital para empresas de reformas en Madrid: calculadora que filtra clientes, webs ultra-rápidas (1.2s) y SEO local automático. Deja de depender de Habitissimo. Desde 1.400€."
   schema={schema}
+  keywords={keywords}
 >
-  <!-- Hero -->
   <section
     class="relative overflow-hidden bg-linear-to-br from-blue-600 to-blue-900 text-white py-20"
   >
@@ -46,12 +76,11 @@ const schema = {
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h1 class="text-4xl lg:text-5xl font-bold mb-6">
-        El "Motor de Captación de Obras"
+        Sistema completo para conseguir clientes sin Habitissimo
       </h1>
       <p class="text-xl text-blue-100 max-w-3xl mx-auto">
-        Un sistema web completo que <strong
-          >filtra curiosos automáticamente</strong
-        > y te entrega leads cualificados con presupuesto claro.
+        <strong>Diseño web profesional para empresas de reformas</strong> que filtra curiosos automáticamente 
+        y te entrega leads cualificados con presupuesto claro. Tecnología de alto rendimiento adaptada al sector construcción.
       </p>
     </div>
   </section>
@@ -156,10 +185,10 @@ const schema = {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          Cómo funciona el sistema
+          Cómo funciona el sistema de captación
         </h2>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-          3 componentes que trabajan juntos para multiplicar tu captación
+          3 componentes que trabajan juntos para multiplicar tus leads cualificados
         </p>
       </div>
 
@@ -176,14 +205,12 @@ const schema = {
               class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4"
               id="calculadora"
             >
-              Calculadora de Presupuestos Inteligente
+              Calculadora de Presupuestos que Filtra Automáticamente
             </h3>
             <p class="text-slate-600 mb-6 text-lg leading-relaxed">
-              El cliente introduce tipo de reforma, metros cuadrados y nivel de
-              calidad.
-              <strong
-                >Obtiene un rango realista solo después de dar su email</strong
-              >.
+              Tu cliente potencial introduce tipo de reforma, metros cuadrados y nivel de calidad.
+              <strong>Obtiene un rango realista solo después de dar su email</strong>.
+              Sabes qué espera pagar <em>antes</em> de perder 2 horas visitándolo.
             </p>
             <div class="space-y-3">
               <div class="flex items-start gap-3">
@@ -198,7 +225,7 @@ const schema = {
                     clip-rule="evenodd"></path>
                 </svg>
                 <p class="text-slate-600">
-                  Captura email antes de mostrar precio
+                  <strong>Captura email antes</strong> de mostrar precio (lead garantizado)
                 </p>
               </div>
               <div class="flex items-start gap-3">
@@ -213,7 +240,7 @@ const schema = {
                     clip-rule="evenodd"></path>
                 </svg>
                 <p class="text-slate-600">
-                  Filtra clientes sin presupuesto adecuado
+                  <strong>Filtra clientes</strong> sin presupuesto adecuado (ahorra gasolina)
                 </p>
               </div>
               <div class="flex items-start gap-3">
@@ -228,7 +255,7 @@ const schema = {
                     clip-rule="evenodd"></path>
                 </svg>
                 <p class="text-slate-600">
-                  Sabes qué espera pagar antes de visitarlo
+                  <strong>Reduce -60%</strong> visitas a obras que no salen
                 </p>
               </div>
             </div>
@@ -273,19 +300,22 @@ const schema = {
             </div>
             <div class="space-y-3">
               <div class="flex justify-between items-center">
-                <span class="text-slate-600">Tu web actual</span>
+                <span class="text-slate-600">Tu web actual (WordPress)</span>
                 <span class="font-mono text-red-600">8.2s</span>
               </div>
               <div class="h-2 bg-red-100 rounded-full overflow-hidden">
                 <div class="h-full bg-red-500 w-full"></div>
               </div>
               <div class="flex justify-between items-center">
-                <span class="text-slate-600">Tu nueva web</span>
+                <span class="text-slate-600">Tu nueva web (moderna)</span>
                 <span class="font-mono text-green-600">1.2s</span>
               </div>
               <div class="h-2 bg-green-100 rounded-full overflow-hidden">
                 <div class="h-full bg-green-500 w-[15%]"></div>
               </div>
+              <p class="text-xs text-slate-500 pt-2">
+                Velocidad = mejor posición en Google = más clientes
+              </p>
             </div>
           </div>
           <div class="order-1 lg:order-2">
@@ -298,12 +328,12 @@ const schema = {
               class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4"
               id="velocidad"
             >
-              Velocidad Extrema (1.2 segundos)
+              Velocidad Extrema: 1.2 segundos vs 8 segundos
             </h3>
             <p class="text-slate-600 mb-6 text-lg leading-relaxed">
-              Sistema optimizado: <strong
-                >carga instantánea sin peso innecesario</strong
-              >. Tu web será 7 veces más rápida que la competencia.
+              Sistema optimizado con tecnología moderna (no WordPress tradicional): 
+              <strong>carga instantánea sin peso innecesario</strong>.
+              Tu web será 7 veces más rápida que tu competencia.
             </p>
             <div class="space-y-3">
               <div class="flex items-start gap-3">
@@ -317,7 +347,7 @@ const schema = {
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd"></path>
                 </svg>
-                <p class="text-slate-600">Google PageSpeed: 100/100 puntos</p>
+                <p class="text-slate-600"><strong>Google PageSpeed: 100/100</strong> puntos (tu competencia: 40-60)</p>
               </div>
               <div class="flex items-start gap-3">
                 <svg
@@ -330,7 +360,7 @@ const schema = {
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd"></path>
                 </svg>
-                <p class="text-slate-600">Mejor posicionamiento en Google</p>
+                <p class="text-slate-600"><strong>Mejor posicionamiento</strong> en Google (la velocidad es factor de ranking)</p>
               </div>
               <div class="flex items-start gap-3">
                 <svg
@@ -343,7 +373,7 @@ const schema = {
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd"></path>
                 </svg>
-                <p class="text-slate-600">-47% menos rebote en móvil</p>
+                <p class="text-slate-600"><strong>-47% menos rebote</strong> en móvil = más contactos</p>
               </div>
             </div>
           </div>
@@ -361,13 +391,12 @@ const schema = {
               class="text-2xl lg:text-3xl font-bold text-slate-900 mb-4"
               id="seo"
             >
-              SEO Local Avanzado
+              SEO Local: Aparece en cada barrio que trabajas
             </h3>
             <p class="text-slate-600 mb-6 text-lg leading-relaxed">
-              Landing pages automáticas para cada barrio de Madrid.
-              <strong
-                >Apareces en Google cuando buscan "reformas en [tu zona]"</strong
-              >.
+              Landing pages automáticas para cada barrio donde operas.
+              <strong>Apareces en Google cuando buscan "empresa de reformas [tu zona]"</strong>.
+              Tráfico orgánico (gratis) en vez de pagar 40€ por lead en Habitissimo.
             </p>
             <div class="space-y-3">
               <div class="flex items-start gap-3">
@@ -381,21 +410,8 @@ const schema = {
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd"></path>
                 </svg>
-                <p class="text-slate-600">50+ landing pages por zona</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg
-                  class="w-6 h-6 text-green-600 shrink-0 mt-0.5"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"></path>
-                </svg>
                 <p class="text-slate-600">
-                  Contenido optimizado automáticamente
+                  <strong>50+ landing pages</strong> por zona generadas automáticamente
                 </p>
               </div>
               <div class="flex items-start gap-3">
@@ -409,7 +425,24 @@ const schema = {
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd"></path>
                 </svg>
-                <p class="text-slate-600">Tráfico orgánico cualificado</p>
+                <p class="text-slate-600">
+                  <strong>Contenido optimizado</strong> para cada barrio sin trabajo manual
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-green-600 shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                <p class="text-slate-600">
+                  <strong>Tráfico orgánico cualificado</strong> (coste: 0€ por lead)
+                </p>
               </div>
             </div>
           </div>
@@ -429,11 +462,14 @@ const schema = {
             </div>
             <div class="mt-6 pt-6 border-t border-slate-700">
               <div class="text-xs text-slate-400 mb-2">
-                Posiciones en Google
+                Ejemplo: Posiciones en Google
               </div>
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 mb-2">
                 <div class="text-2xl font-bold text-green-400">#3</div>
-                <div class="text-sm">"reformas Barrio Salamanca"</div>
+                <div class="text-sm">"empresa reformas Barrio Salamanca"</div>
+              </div>
+              <div class="text-xs text-slate-500">
+                Leads orgánicos vs pagar 40€ en Habitissimo
               </div>
             </div>
           </div>
@@ -442,16 +478,16 @@ const schema = {
     </div>
   </section>
 
-  <!-- Reemplaza la sección "Tecnología" actual por esta -->
+  <!-- Tecnología -->
   <section class="py-20 bg-white" id="wordpress">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          ¿Qué hace diferente nuestro sistema?
+          Tecnología profesional sin la complejidad de WordPress
         </h2>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-          Tecnología de empresas como NASA y Microsoft, adaptada para empresas
-          de reformas
+          El sistema que usan empresas como NASA y Microsoft, adaptado para empresas
+          de reformas. Velocidad + Panel fácil.
         </p>
       </div>
 
@@ -477,7 +513,7 @@ const schema = {
           </div>
           <h3 class="font-bold text-slate-900 mb-2">Carga Instantánea</h3>
           <p class="text-sm text-slate-600">
-            HTML puro sin código innecesario. Tu web carga en 1.2 segundos.
+            HTML puro sin código innecesario. Tu web carga en 1.2 segundos vs 8s de WordPress.
           </p>
         </div>
 
@@ -503,7 +539,7 @@ const schema = {
           </div>
           <h3 class="font-bold text-slate-900 mb-2">Panel Fácil</h3>
           <p class="text-sm text-slate-600">
-            WordPress que ya conoces. Sube proyectos como en Instagram.
+            Gestor de contenidos intuitivo. Sube tus proyectos como en Instagram.
           </p>
         </div>
 
@@ -529,7 +565,7 @@ const schema = {
           </div>
           <h3 class="font-bold text-slate-900 mb-2">Interactividad</h3>
           <p class="text-sm text-slate-600">
-            Calculadoras y sliders que mantienen al usuario enganchado.
+            Calculadoras y sliders que mantienen al usuario enganchado en tu web.
           </p>
         </div>
 
@@ -554,7 +590,7 @@ const schema = {
           </div>
           <h3 class="font-bold text-slate-900 mb-2">SEO Avanzado</h3>
           <p class="text-sm text-slate-600">
-            Aparecer en Google cuando buscan "reformas en tu zona".
+            Configurado para aparecer en Google cuando buscan reformas en tu zona.
           </p>
         </div>
       </div>
@@ -565,10 +601,9 @@ const schema = {
   <PricingWithSlider client:load />
   <FAQSection />
 
-  <!-- CTA Final -->
   <CTASection
-    title="¿Listo para dejar de perder dinero en visitas inútiles?"
-    description="Agenda una demo de 30 minutos y te muestro el sistema funcionando con datos reales de empresas de reformas en Madrid."
+    title="¿Listo para dejar de depender de Habitissimo?"
+    description="Agenda una demo de 30 minutos. Te muestro el sistema funcionando con datos reales: calculadora + landing pages automáticas + panel de gestión."
     buttonText="Solicitar Demo Personalizada"
     buttonHref="/contacto"
   />

@@ -1,53 +1,52 @@
 {
-
   "faqs": [
     {
-      "pregunta": "¿Cuánto tarda el desarrollo?",
-      "respuesta": "El desarrollo completo toma entre 2 y 3 semanas desde el briefing inicial hasta el lanzamiento. Esto incluye: setup técnico, diseño personalizado, configuración de WordPress, creación de las landing pages SEO y formación para que gestiones el contenido."
+      "pregunta": "¿Cuánto cuesta una web para mi empresa de reformas?",
+      "respuesta": "El precio varía entre 1.400€ y 2.000€ según funcionalidades: (1) Web básica 1.400€: diseño responsive, 5-7 páginas, formulario de contacto, SEO local básico, galería de proyectos. (2) Web profesional 2.000€: todo lo anterior + calculadora de presupuestos que filtra clientes sin presupuesto, galería antes/después interactiva, testimonios de Google Maps, blog optimizado. El mantenimiento va de 70€ a 120€/mes (hosting, actualizaciones de seguridad, soporte técnico). La inversión se recupera con 1-2 obras conseguidas a través de la web. Es mucho más rentable que pagar 40€ por lead compartido en Habitissimo (960€-1.200€/mes)."
     },
     {
-      "pregunta": "¿Puedo gestionar el contenido yo mismo?",
-      "respuesta": "Sí, completamente. Usamos WordPress como panel de control para que subas fotos y proyectos como lo harías en Instagram. No necesitas conocimientos técnicos. Incluimos una sesión de formación de 1 hora donde te enseñamos todo."
+      "pregunta": "¿Cómo me ayuda una web a conseguir clientes sin depender de Habitissimo?",
+      "respuesta": "Una web profesional con SEO local te posiciona en Google cuando clientes potenciales buscan 'empresa de reformas [tu zona]'. La calculadora de presupuestos filtra automáticamente clientes sin presupuesto real, ahorrándote 2-3 horas en visitas inútiles por semana. A diferencia de Habitissimo donde pagas 40€ por un lead compartido con 4 competidores (guerra de precios), tu web genera leads exclusivos a coste cero. El ROI típico es de 3-4x en el primer año: inviertes 2.480€ (web + mantenimiento año 1) y generas 8.000-12.000€ en obras nuevas."
     },
     {
-      "pregunta": "¿Qué pasa si mi sector no es reformas?",
-      "respuesta": "El sistema funciona para cualquier servicio B2C con ticket medio superior a 10.000€. Lo hemos adaptado para: piscinas, jardines, instalación de aire acondicionado, reformas de fachadas, y más. Si tu servicio requiere visitas comerciales costosas, el sistema te ayudará."
+      "pregunta": "¿Por qué mi empresa de reformas necesita una web rápida?",
+      "respuesta": "El 53% de usuarios abandonan webs que tardan más de 3 segundos en cargar. Esto es crítico porque: (1) El 70% de clientes potenciales buscan desde móvil mientras están en el metro o esperando. (2) Google penaliza webs lentas en resultados de búsqueda locales - si tu web tarda 8 segundos, aparecerás en página 3-4 mientras tu competencia con web rápida está en página 1. (3) Una web rápida (1-2 segundos) aumenta conversiones hasta 300% vs WordPress tradicional (6-8 segundos). En términos de negocio: más velocidad = mejor posición en Google = más contactos cualificados al mes = más obras cerradas."
     },
     {
-      "pregunta": "¿Cuánto cuesta el mantenimiento mensual?",
-      "respuesta": "Entre 90€ y 150€/mes dependiendo del plan. Incluye: hosting del frontend y backend, soporte técnico prioritario, actualizaciones de seguridad, informe mensual de leads capturados y garantía de uptime del 99.9%."
+      "pregunta": "¿Qué debe incluir la web de mi empresa para captar clientes cualificados?",
+      "respuesta": "Una web efectiva debe incluir: (1) Calculadora de presupuestos online - el cliente introduce metros y tipo de reforma, obtiene rango de precio solo después de dar su email. Esto te ahorra visitas a clientes con presupuestos de 5.000€ cuando tu mínimo es 30.000€. (2) Galería de proyectos con fotos antes/después - demuestra calidad sin palabras, genera confianza inmediata. (3) Testimonios verificados de Google Maps - prueba social que valida tu trabajo. (4) Formulario de contacto optimizado con campos que califican el lead (tipo de obra, presupuesto estimado, urgencia). (5) SEO local configurado para aparecer cuando buscan 'empresa de reformas [tu barrio]'. La calculadora es clave para reducir -60% las visitas inútiles."
     },
     {
-      "pregunta": "¿Necesito contratar hosting aparte?",
-      "respuesta": "No, el hosting está incluido en la cuota mensual. Tu web estará en servidores de alta velocidad y tu panel WordPress en un servidor optimizado. No tienes que preocuparte por aspectos técnicos."
+      "pregunta": "¿Cuánto tiempo tarda en estar lista mi web de reformas?",
+      "respuesta": "Una web profesional se desarrolla en 2-4 semanas: Semana 1 - Diseño y estructura visual (tú apruebas mockups con tus colores de marca). Semana 2 - Desarrollo técnico, implementación de calculadora y optimización de velocidad. Semana 3 - Carga de contenidos: tus proyectos, fotos antes/después, textos de servicios. Semana 4 - Configuración SEO local, Google Maps, Search Console, pruebas finales y lanzamiento. Incluye 2 horas de formación en videollamada para que puedas actualizar proyectos tú mismo sin pagar a nadie. Si tienes prisa, podemos acelerar a 10-14 días naturales con desarrollo intensivo."
     },
     {
-      "pregunta": "¿Puedo cancelar el mantenimiento?",
-      "respuesta": "Sí, no hay permanencia obligatoria. Si cancelas el mantenimiento, la web dejará de estar online ya que el hosting está incluido en la cuota. Puedes pausar y reactivar cuando quieras."
+      "pregunta": "¿Es mejor WordPress o una web a medida para mi empresa de reformas?",
+      "respuesta": "Para empresas de reformas, una web a medida con tecnología moderna es muy superior: WordPress tradicional - carga en 5-8 segundos, vulnerable a hackeos (70% de webs hackeadas son WordPress), requiere actualizaciones constantes de plugins, se rompen plugins con actualizaciones, PageSpeed 40-60/100. Web moderna (Astro/Next.js) - carga en 1-2 segundos (7x más rápida), mucho más segura (sin vulnerabilidades de plugins), panel de gestión fácil pero sin complejidad innecesaria, no necesita actualizaciones constantes, PageSpeed 95-100/100, mejor posicionamiento en Google. Para tu negocio esto significa: web moderna = mejor posición en Google = más contactos = más obras. La diferencia de velocidad se traduce en +300% más conversiones."
     },
     {
-      "pregunta": "¿Cómo se diferencia de una web WordPress normal?",
-      "respuesta": "Una web WordPress tradicional tarda 5-8 segundos en cargar. La nuestra carga en 1.2 segundos gracias a tecnología de nueva generación que genera código ultra-optimizado. Esto significa mejor SEO, menos rebote y más conversiones. Además, incluyes la calculadora de presupuestos que filtra leads automáticamente."
+      "pregunta": "¿Incluye la web hosting y dominio o hay que pagarlo aparte?",
+      "respuesta": "El precio de 1.400-2.000€ incluye el desarrollo completo pero NO incluye hosting ni dominio (estos son gastos recurrentes anuales). Opciones: (1) Nosotros gestionamos todo - 70-120€/mes según tráfico y funcionalidades, incluye hosting premium ultrarrápido, dominio .es, certificado SSL, copias de seguridad diarias, actualizaciones de seguridad, soporte técnico. (2) Tú contratas hosting - te recomendamos proveedores y te ayudamos a configurarlo, ahorras en mensualidad pero tendrás que gestionar renovaciones. La mayoría de clientes prefieren opción 1 por comodidad: olvídate de tecnicismos y concéntrate en tu negocio de reformas."
     },
     {
-      "pregunta": "¿Funciona en móvil?",
-      "respuesta": "Sí, está 100% optimizado para móvil. De hecho, el 73% de las búsquedas de reformas se hacen desde el teléfono. Por eso nos obsesionamos con la velocidad de carga en redes 4G."
+      "pregunta": "¿Puedo actualizar contenidos yo mismo o necesito pagar cada vez?",
+      "respuesta": "Puedes actualizar tú mismo: proyectos nuevos, fotos antes/después, textos de servicios, testimonios de clientes, artículos de blog. Incluimos 2 horas de formación en videollamada donde te enseñamos a usar el panel de gestión (es intuitivo, como subir fotos a Instagram). Para tareas técnicas (cambiar estructura, añadir nuevas funcionalidades, modificar calculadora) sí necesitarías contactarnos pero el 90% de actualizaciones diarias las haces tú sin coste. Esto te da independencia total y velocidad: terminas una obra el viernes, subes fotos el sábado, están online el domingo. Sin esperar a nadie."
     },
     {
-      "pregunta": "¿Incluye certificado SSL y seguridad?",
-      "respuesta": "Sí, todo incluido. Certificado SSL automático, protección DDoS, backups diarios y actualizaciones de seguridad. Tu web estará siempre protegida."
+      "pregunta": "¿La web funciona bien en móvil? La mayoría de mis clientes buscan desde el teléfono",
+      "respuesta": "Exacto, el 70% de búsquedas de reformas se hacen desde móvil. Por eso diseñamos 100% responsive mobile-first: primero diseñamos la versión móvil (la más importante) y luego adaptamos a tablet y ordenador. En móvil la calculadora funciona perfecta con el dedo, las galerías se deslizan suave, los formularios tienen teclados optimizados (teclado numérico para teléfono, etc.), las imágenes se adaptan al tamaño de pantalla sin perder calidad, los botones son grandes y fáciles de tocar. Google prioriza webs mobile-friendly en búsquedas desde móvil - si tu web no funciona bien en móvil, no aparecerás aunque sea perfecta en ordenador."
     },
     {
-      "pregunta": "¿Puedo ver ejemplos reales antes de contratar?",
-      "respuesta": "Sí, agenda una demo y te mostramos el sistema funcionando en vivo. También puedes probar todas las funcionalidades en nuestra página /demo. Si eres early adopter, aparecerás como caso de estudio oficial."
+      "pregunta": "¿Qué pasa si no me gusta el diseño inicial?",
+      "respuesta": "Incluimos 2 rondas de revisiones sin coste adicional. Proceso: (1) Semana 1 - te enviamos mockups (diseños visuales) con tu logo y colores, los revisas y nos das feedback. (2) Hacemos ajustes según tus comentarios (cambiar colores, mover secciones, cambiar fotos, etc.). (3) Segunda revisión - refinamos detalles finales. (4) Apruebas y pasamos a desarrollo. Si después de 2 rondas quieres cambios grandes (ej: cambiar estructura completa), cobramos 150€/hora de diseño adicional. Pero el 95% de clientes quedan satisfechos en las 2 rondas incluidas porque les enviamos referencias previas de lo que vamos a hacer."
     },
     {
-      "pregunta": "¿Qué pasa con el SEO de mi web actual?",
-      "respuesta": "Si ya tienes una web con posicionamiento, hacemos una migración cuidadosa con redirecciones 301 para no perder tu SEO. Si es tu primera web, empezamos a posicionar desde cero con las landing pages locales."
+      "pregunta": "¿La web incluye SEO local? ¿Apareceré en Google?",
+      "respuesta": "Sí, incluimos configuración SEO local base: (1) Alta en Google Business Profile (Google Maps) para que aparezcas en búsquedas locales. (2) Schema markup (datos estructurados) para que Google entienda que eres empresa de reformas en Madrid. (3) Optimización on-page: títulos, descripciones, headings con keywords locales. (4) Google Search Console configurado para monitorizar posiciones. (5) Sitemap XML enviado a Google. (6) Velocidad optimizada (factor de ranking). Posiciones realistas: mes 1-2 página 3-5, mes 3-4 página 2-3, mes 5-6 página 1-2 para keywords locales no competidas. Para keywords muy competidas ('reformas Madrid') necesitarías SEO avanzado adicional (contenido regular, backlinks) que se cotiza aparte."
     },
     {
-      "pregunta": "¿Puedo añadir un blog después?",
-      "respuesta": "Sí, puedes añadir un blog en cualquier momento. Se gestiona desde el mismo WordPress. El blog te ayudará a posicionar para más keywords y generar contenido educativo que atraiga clientes."
+      "pregunta": "¿Ofrecen garantía si la web tiene problemas técnicos?",
+      "respuesta": "Sí, 3 meses de garantía en desarrollo: cualquier error de código, bug funcional, o problema técnico lo arreglamos sin coste. Ejemplos cubiertos: calculadora que da resultado incorrecto, formulario que no envía emails, galería que no funciona en Safari, web caída por error de código. NO cubiertos: cambios de diseño ('quiero el botón azul en vez de verde'), nuevas funcionalidades ('quiero añadir chat en vivo'), problemas de contenido ('quiero cambiar este texto'). Después de los 3 meses, si contratas mantenimiento (70-120€/mes) incluye soporte técnico ilimitado para resolver cualquier incidencia en menos de 24h laborables."
     }
   ]
 }

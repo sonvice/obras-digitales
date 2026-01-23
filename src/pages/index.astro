@@ -12,7 +12,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "name": "Obras Digitales",
   "url": "https://obrasdigitales.es",
-  "description": "Diseño web especializado para empresas de reformas y construcción en Madrid",
+  "description": "Diseño web especializado para empresas de reformas y construcción en Madrid. Alternativa profesional a Habitissimo.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://obrasdigitales.es/buscar?q={search_term_string}",
@@ -20,17 +20,33 @@ const websiteSchema = {
   }
 };
 
-// Schema FAQPage - Aparece en Google como FAQ rich snippet
+// Schema FAQPage - CORREGIDO: Preguntas de EMPRESARIOS, no de clientes finales
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto cuesta una página web para una empresa de reformas?",
+      "name": "¿Cuánto cuesta una página web para mi empresa de reformas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El precio de una web profesional para empresas de reformas varía entre 1.400€ y 2.000€ dependiendo de las funcionalidades. Incluye diseño responsive, calculadora de presupuestos online, galería de proyectos antes/después, testimonios de Google y optimización SEO local para aparecer en búsquedas como 'reformas en Madrid'."
+        "text": "El precio de una web profesional para empresas de reformas varía entre 1.400€ y 2.000€ dependiendo de las funcionalidades. Incluye diseño responsive, calculadora de presupuestos que filtra clientes, galería antes/después, integración con Google Maps, y optimización SEO local. La inversión se recupera con 1-2 obras conseguidas. Es una alternativa más rentable que pagar 40€ por lead en Habitissimo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo una web me ayuda a conseguir clientes sin depender de Habitissimo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una web profesional con SEO local te posiciona en Google cuando empresarios buscan servicios de reformas en tu zona. La calculadora de presupuestos filtra automáticamente clientes sin presupuesto real, ahorrándote visitas inútiles. A diferencia de Habitissimo donde pagas 40€ por un lead compartido con 4 competidores, tu web genera leads exclusivos a coste cero. El ROI típico es de 3-4x en el primer año."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué debe incluir la web de mi empresa de reformas para captar clientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una web efectiva debe incluir: calculadora de presupuestos online que filtra clientes por presupuesto antes de que te contacten, galería de proyectos con fotos antes/después para demostrar calidad, testimonios verificados de Google Maps para generar confianza, formulario de contacto optimizado para conversión, y SEO local para aparecer cuando buscan 'empresa de reformas [tu zona]'. La calculadora es clave para evitar visitas a clientes sin presupuesto."
       }
     },
     {
@@ -38,65 +54,56 @@ const faqSchema = {
       "name": "¿Por qué mi empresa de reformas necesita una web rápida?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El 53% de los usuarios abandonan una web que tarda más de 3 segundos en cargar. Para empresas de reformas, esto significa perder clientes potenciales que buscan presupuesto desde el móvil. Una web rápida (menos de 2 segundos) mejora el posicionamiento en Google y aumenta las conversiones de visitas a contactos hasta un 300%."
+        "text": "El 53% de usuarios abandonan webs que tardan más de 3 segundos. Para empresas de reformas esto es crítico porque el 70% de clientes potenciales buscan desde móvil. Google penaliza webs lentas en resultados de búsqueda locales. Una web rápida (1-2 segundos) aumenta conversiones hasta 300% comparado con WordPress tradicional (6-8 segundos). Esto se traduce en más contactos cualificados por mes."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué debe incluir la web de una empresa de reformas?",
+      "name": "¿Cuánto tiempo tarda en estar lista mi web de reformas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Una web efectiva para empresas de reformas debe incluir: galería de proyectos con fotos antes/después, calculadora de presupuestos online que filtra clientes, testimonios verificados de Google, formulario de contacto optimizado, página de servicios detallada (cocinas, baños, integrales), y SEO local para aparecer en Google Maps y búsquedas locales."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto tiempo se tarda en crear una web para mi empresa de reformas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Una web profesional para empresas de reformas se desarrolla en 2-4 semanas. Incluye: diseño personalizado con los colores de tu marca, desarrollo técnico optimizado para velocidad, carga de tus proyectos y fotos, configuración de SEO local, y formación para que puedas actualizar contenidos."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es mejor WordPress o una web a medida para mi empresa de reformas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Para empresas de reformas, una web a medida con tecnología moderna (Astro, Next.js) es muy superior a WordPress. WordPress suele cargar en 5-8 segundos, es vulnerable a hackeos y requiere mantenimiento constante. Una web moderna carga en 1-2 segundos, es más segura, no necesita actualizaciones de plugins y posiciona mejor en Google."
+        "text": "Una web profesional se desarrolla en 2-4 semanas: Semana 1 (diseño y estructura, tú apruebas mockups), Semana 2 (desarrollo técnico y calculadora), Semana 3 (carga de tus proyectos y contenidos), Semana 4 (configuración SEO local, Google Maps, y lanzamiento). Incluye formación para que puedas actualizar proyectos tú mismo."
       }
     }
   ]
 };
 
-// Schema Service - Define tus servicios
+// Schema Service - CORREGIDO: Enfatiza el servicio B2B
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Diseño Web para Empresas de Reformas",
+  "serviceType": "Diseño Web Profesional para Empresas de Reformas y Constructoras",
   "provider": {
     "@type": "LocalBusiness",
     "name": "Obras Digitales",
-    "url": "https://obrasdigitales.es"
+    "url": "https://obrasdigitales.es",
+    "description": "Agencia especializada en desarrollo web para empresas de reformas, construcción e instaladores en Madrid"
   },
   "areaServed": {
     "@type": "City",
     "name": "Madrid"
   },
-  "description": "Diseño y desarrollo de páginas web profesionales para empresas de reformas, constructoras e instaladores. Incluye calculadora de presupuestos, galería antes/después y SEO local.",
+  "description": "Diseño y desarrollo de páginas web profesionales para empresas de reformas y constructoras. Sistema completo con calculadora de presupuestos que filtra clientes, galería antes/después y SEO local. Alternativa rentable a portales como Habitissimo.",
+  "audience": {
+    "@type": "BusinessAudience",
+    "name": "Empresas de reformas, constructoras, instaladores"
+  },
   "offers": {
     "@type": "Offer",
     "priceRange": "€€",
-    "priceCurrency": "EUR"
+    "priceCurrency": "EUR",
+    "price": "1400-2000",
+    "description": "Web profesional desde 1.400€. Incluye calculadora, SEO local y formación"
   }
 };
 
-// Keywords objetivo
-const keywords = "diseño web empresas reformas Madrid, página web empresa reformas, web para reformistas Madrid, diseño web constructoras, página web reformas integrales, web empresa construcción, diseño web instaladores, SEO reformas Madrid, diseño web reformas baños, diseño web reformas cocinas, web empresa reformas barrio salamanca, web empresa reformas chamartín, posicionamiento web reformas, marketing digital reformas Madrid, web rápida reformas, calculadora presupuestos online reformas";
+// Keywords CORREGIDAS - Solo B2B, eliminar todas las B2C
+const keywords = "diseño web empresas reformas Madrid, página web empresa reformas, web para constructoras Madrid, diseño web profesional reformistas, marketing digital empresas reformas, captación clientes reformas online, alternativa habitissimo, calculadora presupuestos web reformas, web empresa construcción Madrid, conseguir clientes reformas sin habitissimo, posicionamiento web empresas reformas, diseño web instaladores Madrid, SEO local empresas reformas, agencia web sector construcción";
 ---
 
 <BaseLayout
-  title="Diseño Web Reformas Madrid"
-  description="Webs ultra-rápidas para empresas de reformas en Madrid. Calculadora de presupuestos + Galería antes/después + SEO local. Clientes cualificados, no curiosos. ¡Pide demo!"
+  title="Diseño Web para Empresas de Reformas Madrid | Webs Rápidas desde 1.400€"
+  description="Diseño web especializado para empresas de reformas en Madrid. Webs ultra-rápidas con calculadora que filtra clientes sin presupuesto. Deja de pagar por leads de Habitissimo. Desde 1.400€."
   schema={websiteSchema}
   faqSchema={faqSchema}
   serviceSchema={serviceSchema}
@@ -104,7 +111,6 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
   ogImage="/images/og-default.jpg"
 >
 
-  <!-- ======================= HERO ======================= -->
   <section class="relative overflow-hidden bg-linear-to-br from-blue-600 via-blue-700 to-blue-900 text-white">
     <div class="absolute inset-0 bg-[url('/images/cimientos-web-bg@x2.webp')] bg-cover bg-no-repeat opacity-10"></div>
     
@@ -116,17 +122,16 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
             </svg>
-            <span>Especialistas en Webs para Reformas</span>
+            <span>Especialistas en Webs para Empresas de Reformas</span>
           </div>
           
-          <!-- H1 con keyword principal -->
           <h1 class="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-            <span class="text-yellow-300">Diseño web</span> para empresas de reformas en Madrid
+            <span class="text-yellow-300">Diseño web </span> para empresas de reformas en Madrid
           </h1>
           
           <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-            Webs ultra-rápidas que <strong>filtran curiosos y atraen clientes con presupuesto real</strong>. 
-            Calculadora de presupuestos, galería antes/después y SEO local incluido.
+            <strong>Diseño web para empresas de reformas en Madrid</strong> que filtra automáticamente clientes sin presupuesto. 
+            Deja de pagar 40€ por lead compartido. Tu propia máquina de captación desde 1.400€.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4">
@@ -150,19 +155,18 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
             </a>
           </div>
           
-          <!-- Stats -->
           <div class="mt-12 grid grid-cols-3 gap-6">
             <div class="text-center sm:text-left">
               <div class="text-3xl font-bold text-yellow-300">1.2s</div>
-              <div class="text-sm text-blue-200">Carga en móvil</div>
+              <div class="text-sm text-blue-200">Carga ultra-rápida</div>
             </div>
             <div class="text-center sm:text-left">
-              <div class="text-3xl font-bold text-yellow-300">+300%</div>
-              <div class="text-sm text-blue-200">Más conversiones</div>
+              <div class="text-3xl font-bold text-yellow-300">-60%</div>
+              <div class="text-sm text-blue-200">Visitas inútiles</div>
             </div>
             <div class="text-center sm:text-left">
-              <div class="text-3xl font-bold text-yellow-300">100%</div>
-              <div class="text-sm text-blue-200">Responsive móvil</div>
+              <div class="text-3xl font-bold text-yellow-300">0€</div>
+              <div class="text-sm text-blue-200">Coste por lead</div>
             </div>
           </div>
         </div>
@@ -177,7 +181,6 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
     </div>
   </section>
 
-<!-- ======================= CLIENTES OBJETIVO ======================= -->
 <section class="py-12 bg-slate-50 bg-texture">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <p class="text-center text-slate-500 text-sm font-medium mb-6 uppercase tracking-wider">Diseño web especializado para:</p>
@@ -191,7 +194,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
   </div>
 </section>
 
-  <!-- ======================= PROBLEMA ======================= -->
+  <!-- ======================= PROBLEMA  ======================= -->
   <section class="py-20 bg-white" id="problema">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
@@ -248,7 +251,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
-          Web profesional para empresas de reformas que funciona
+          Sistema web para empresas de reformas que funciona
         </h2>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto">
           Un sistema web que <strong>filtra automáticamente</strong> clientes sin presupuesto y te entrega leads cualificados.
@@ -263,9 +266,9 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
                 <span class="text-blue-600 font-bold text-xl">1</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Calculadora de presupuestos de reformas</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Calculadora que filtra clientes automáticamente</h3>
                 <p class="text-slate-600">
-                  El cliente introduce metros, tipo de reforma y calidad. <strong>Obtiene un rango realista</strong> solo después de dar su email. Si su presupuesto es bajo, ya lo sabes antes de visitarlo.
+                  Tu cliente potencial introduce metros, tipo de reforma y calidad. <strong>Obtiene un rango realista</strong> solo después de dar su email. Si su presupuesto es bajo, ya lo sabes antes de perder 2 horas visitándolo.
                 </p>
               </div>
             </div>
@@ -275,21 +278,22 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
                 <span class="text-blue-600 font-bold text-xl">2</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Galería antes y después de reformas</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Galería antes/después que genera confianza</h3>
                 <p class="text-slate-600">
-                  Galería interactiva donde el usuario <strong>desliza para ver la transformación</strong>. Aumenta el tiempo en página y genera confianza instantánea en tus trabajos.
+                  Muestra tus mejores proyectos con slider interactivo. <strong>Demuestra calidad sin palabras</strong>. El cliente ve la transformación y aumenta su intención de contratarte antes de llamar.
                 </p>
               </div>
             </div>
             
+            <!-- PUNTO 3 CORREGIDO - Antes hablaba de keywords B2C -->
             <div class="flex gap-4">
               <div class="shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <span class="text-blue-600 font-bold text-xl">3</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">SEO local para reformas en Madrid</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">SEO local: aparece cuando te buscan en tu zona</h3>
                 <p class="text-slate-600">
-                  Tu web aparece en Google cuando alguien busca <strong>"reformas integrales Madrid"</strong> o "empresa de reformas cerca de mí". Tráfico orgánico y gratuito.
+                  Tu web aparece en Google cuando alguien busca <strong>"empresa de reformas [tu barrio]"</strong> o "reformas cerca de mí". Tráfico orgánico, gratuito y de calidad. Sin pagar por leads a portales.
                 </p>
               </div>
             </div>
@@ -299,9 +303,9 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
                 <span class="text-blue-600 font-bold text-xl">4</span>
               </div>
               <div>
-                <h3 class="text-xl font-bold text-slate-900 mb-2">Velocidad extrema (1.2s en móvil)</h3>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Velocidad extrema (1.2s) = más conversiones</h3>
                 <p class="text-slate-600">
-                  Tecnología moderna sin WordPress. <strong>HTML puro optimizado</strong>. Tu web supera técnicamente al 95% de la competencia.
+                  Tecnología moderna sin WordPress. <strong>Carga instantánea en móvil</strong>. Supera técnicamente al 95% de tu competencia. Google premia la velocidad con mejor posicionamiento.
                 </p>
               </div>
             </div>
@@ -427,7 +431,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
     </div>
   </section>
 
-  <!-- ======================= FAQ ======================= -->
+  <!-- ======================= FAQ - BIEN ======================= -->
 <section class="py-24 bg-white" id="preguntas-frecuentes">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
@@ -445,7 +449,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
     <div class="space-y-4">
       <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden" open>
         <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
-          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto cuesta una página web para una empresa de reformas?</h3>
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto cuesta una página web para mi empresa de reformas?</h3>
           <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
             <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
@@ -463,7 +467,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
             </li>
           </ul>
           <p class="mt-4 p-4 bg-blue-50 rounded-xl text-blue-800 border border-blue-200">
-            💡 La inversión se recupera con 1-2 obras conseguidas a través de la web.
+            💡 La inversión se recupera con 1-2 obras conseguidas a través de la web. Es mucho más rentable que pagar 40€ por lead en Habitissimo.
           </p>
         </div>
       </details>
@@ -497,7 +501,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
 
       <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
         <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
-          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Qué debe incluir la web de una empresa de reformas?</h3>
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Qué debe incluir la web de mi empresa de reformas para captar clientes?</h3>
           <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
             <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
@@ -511,7 +515,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
             </div>
             <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-slate-200">
               <Calculator />
-              <span><strong>Calculadora</strong> que filtra clientes</span>
+              <span><strong>Calculadora</strong> que filtra clientes por presupuesto</span>
             </div>
             <div class="flex items-start gap-2 p-3 bg-white rounded-lg border border-slate-200">
               <Star />
@@ -527,7 +531,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
 
       <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
         <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
-          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto tiempo se tarda en crear una web para reformas?</h3>
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Cuánto tiempo se tarda en crear una web para mi empresa?</h3>
           <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
             <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
@@ -569,7 +573,7 @@ const keywords = "diseño web empresas reformas Madrid, página web empresa refo
 
       <details class="bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden">
         <summary class="flex justify-between items-center cursor-pointer p-6 hover:bg-slate-100 transition-colors">
-          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Es mejor WordPress o una web a medida para reformas?</h3>
+          <h3 class="text-lg font-bold text-slate-900 pr-4">¿Es mejor WordPress o una web a medida para mi empresa?</h3>
           <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-open:bg-blue-500 transition-colors">
             <svg class="w-4 h-4 text-blue-600 group-open:text-white group-open:rotate-180 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </div>
